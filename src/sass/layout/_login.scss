@@ -1,0 +1,32 @@
+.login {
+    margin: 12.5% auto;
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    text-align: center;
+
+    .input-group {
+        &-text {
+            color: $contrast-color;
+            background-color: $primary-color;
+        }
+        .form-control {
+            color: $second-color;
+            background-color: $primary-color;
+        }
+    }
+    .custom-control {
+        &-input {
+            color: $primary-color;
+            
+            &:checked~.custom-control-label::before {
+                background-color: $second-color;
+                border-color: $second-color;
+            }
+        }
+        
+        &-label {
+            color: $primary-color;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.card {
+    text-align: center;
+    .btn {
+        font-size: 2rem;
+        font-weight: 900;
+        color: $second-color;
+    }
+}
+
+
+.picsum-img-wrapper {
+    overflow: hidden;   
+    width: 100%;
+    
+    @media (min-width: 1024px) {
+        height: 90vh;
+    }
+    .carousel-image {
+        background-attachment: fixed;
+        background-size: cover;
+        background-position:center;
+    }
+}
