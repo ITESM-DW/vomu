@@ -6,8 +6,12 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { LandingComponent } from './vomu/landing/landing.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './vomu/login/login.component';
+import { AuthService } from './auth.service';
+import { FormsModule } from '@angular/forms';
+import { ProfileComponent } from './vomu/profile/profile.component';
+import { AuthGuard } from './auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -16,13 +20,15 @@ import { LoginComponent } from './vomu/login/login.component';
     FooterComponent,
     LandingComponent,
     LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     NgbModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

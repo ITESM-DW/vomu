@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbNavConfig, NgbNav, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'app-profile',
@@ -8,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 
 export class ProfileComponent implements OnInit {
 
-    constructor() { }
+    constructor(config: NgbNavConfig) {
+        config.destroyOnHide = false;
+        config.roles = false;
+    }
 
     ngOnInit() {}
 

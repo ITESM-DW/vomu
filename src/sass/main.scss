@@ -10,13 +10,22 @@ body {
     background: linear-gradient(to left bottom, $second-color, $third-color);
     background-attachment: fixed;
 
-    .btn-primary {
+    .btn-main {
         background-color: $primary-color;
         border-color: $primary-color;
         color: $second-color;
         transition: all 250ms ease-out;
+        &:disabled {
+            background-color: $primary-color;
+            border-color: $primary-color;
+            color: $second-color;
 
-        &:hover {
+            &:hover {
+                color: red;
+            }
+        }
+
+        &:not(:disabled):hover {
             transform: translateY(-5%);
             background-color: $second-color;
             border-color: $second-color;
@@ -24,12 +33,5 @@ body {
             box-shadow: 0 0.5rem 1rem #00000070;
         }
 
-        &:active {
-            transform: translateY(-5%);
-            background-color: $third-color;
-            border-color: $third-color;
-            color: $primary-color;
-            box-shadow: 0 0.5rem 1rem #00000070;
-        }
     }
 }

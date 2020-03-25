@@ -2,17 +2,33 @@
     margin: 12.5% auto;
     width: 100%;
     max-width: 330px;
-    padding: 15px;
+    background-color: $primary-color;
+    border-radius: 20px;
+    padding: 25px;
     text-align: center;
+
+    .logo {
+        width: 50%;
+    }
 
     .input-group {
         &-text {
-            color: $contrast-color;
-            background-color: $primary-color;
+            color: $primary-color;
+            background-color: $second-color;
         }
+
         .form-control {
             color: $second-color;
             background-color: $primary-color;
+
+            &.ng-invalid.ng-touched.ng-dirty:not(.focus-visible){
+                color: red;
+            }
+
+            &:focus {
+                border-color: unset;
+                box-shadow: unset;
+            }
         }
     }
     .custom-control {

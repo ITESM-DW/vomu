@@ -1,11 +1,12 @@
 <div class="login">
-    <form class="form-signin">
+    <img class="logo" src="assets/images/logo.png" alt="Vomu">
+    <form class="form-signin" (ngSubmit)="onLogin(f)" #f="ngForm">
         <div class="col-auto">
-            <div class="input-group mb-2">
+            <div [ngStyle]="{'border-color': (email.dirty && email.invalid) ? 'red' : 'none' }" class="input-group mb-2">
                 <div class="input-group-prepend">
                     <label for="inputEmail" class="input-group-text">Email</label>
                 </div>
-                <input type="email" id="inputEmail" class="form-control" placeholder="marie@curie.com" required>
+                <input #email email ngModel type="email" name="email" id="email" class="form-control" placeholder="marie@curie.com" required>
             </div>
         </div>
         <div class="col-auto">
@@ -13,13 +14,13 @@
                 <div class="input-group-prepend">
                     <label for="inputPassword" class="input-group-text">Password</label>
                 </div>
-                <input type="password" id="inputPassword" class="form-control" placeholder="************" required>
+                <input ngModel type="password" name="password" id="password" class="form-control" placeholder="supersecret" required>
             </div>
         </div>
         <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck1">
-            <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+            <input autocomplete="current-password" ngModel type="checkbox" class="custom-control-input" id="rememberMe" name="rememberMe">
+            <label class="custom-control-label" for="rememberMe">Remember me</label>
         </div>
-        <button class="btn btn-primary btn-md" type="submit">Sign in</button>
+        <button [disabled]="f.invalid" class="btn btn-main btn-md" type="submit">Sign in</button>
     </form>
 </div>
