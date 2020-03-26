@@ -34,13 +34,11 @@
     .custom-control {
         &-input {
             color: $primary-color;
-            
             &:checked~.custom-control-label::before {
                 background-color: $second-color;
                 border-color: $second-color;
             }
         }
-        
         &-label {
             color: $primary-color;
         }

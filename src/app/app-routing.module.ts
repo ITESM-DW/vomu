@@ -8,8 +8,8 @@ import { ProfileComponent } from './vomu/profile/profile.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
-  { path: 'login', component: LoginComponent},
-  { path: 'profile/:id', component: ProfileComponent, canActivate: [AuthGuard]}
+  { path: 'login', component: LoginComponent },
+  { path: 'profile/:id', component: ProfileComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
