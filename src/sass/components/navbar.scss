@@ -1,6 +1,5 @@
 .navbar {
-    color: $second-color;
-    background-color: $primary-color;
+    @include setBGcolor($primary-color,$second-color, false);
     flex-wrap: nowrap;
     .logo {
         width: 20%;
@@ -18,8 +17,7 @@
             color: inherit;
 
             &.active {
-                color: $primary-color;
-                background-color: $second-color;
+                @include setBGcolor($second-color, $primary-color, false);
             }
         }
     }

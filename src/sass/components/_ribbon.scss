@@ -1,0 +1,30 @@
+@mixin rotation_transform($rotate){
+    -webkit-transform: rotate($rotate);
+   -moz-transform:    rotate($rotate);
+   -ms-transform:     rotate($rotate);
+   -o-transform:      rotate($rotate);
+ }
+ @mixin ribbon_side($side){
+   @if $side == left{
+     @include rotation_transform(-45deg);
+     left: -60px;
+   }
+   @else{
+     @include rotation_transform(45deg);
+     right: -60px;
+   }
+ }
+ .ribbon {
+   height:  10px;
+   overflow: hidden;
+   position: fixed;
+   font: bold 15px sans-serif;
+   text-align: center;
+   color: #fff;
+   padding: 7px 0;
+   width: 200px;
+   top: 30px;
+   @include ribbon_side(right);
+   &.red{background-color: red;}
+   &.green{background-color: green;}
+ }
