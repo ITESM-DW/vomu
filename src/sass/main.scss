@@ -1,37 +1,42 @@
 @import "abstract/variables";
+@import "abstract/mixin_functions.scss";
 
 @import "components/navbar.scss";
+@import "components/footer.scss";
+@import "components/ribbon";
 
 @import "layout/landing.scss";
 @import "layout/login.scss";
+@import "layout/profile";
+
 body {
     margin: 0;
+    margin-bottom: 2rem;
     padding: 0;
     background: linear-gradient(to left bottom, $second-color, $third-color);
     background-attachment: fixed;
 
     .btn-main {
-        background-color: $primary-color;
-        border-color: $primary-color;
-        color: $second-color;
+        @include setBGcolor($primary-color,$second-color, true);
         transition: all 250ms ease-out;
         &:disabled {
-            background-color: $primary-color;
-            border-color: $primary-color;
-            color: $second-color;
+            @include setBGcolor($primary-color,$second-color, true);
 
             &:hover {
-                color: red;
+                color: $highlight-color;
             }
         }
 
         &:not(:disabled):hover {
             transform: translateY(-5%);
-            background-color: $second-color;
-            border-color: $second-color;
-            color: $primary-color;
+            @include setBGcolor($second-color,$primary-color, true);
             box-shadow: 0 0.5rem 1rem #00000070;
         }
 
     }
+}
+
+h1, p{
+    color: $primary-color;
+    margin: 1rem;
 }

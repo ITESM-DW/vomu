@@ -1,0 +1,57 @@
+$breakpoints: (
+  'small': 767px,
+  'medium': 992px,
+  'large': 1200px
+
+)!default;
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+ 
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@mixin setBGcolor($p_color, $s_color, $border) {
+    background-color: $p_color;
+    color: $s_color;
+    @if $border == true {
+        border-color: $p_color;
+    }
+}
+@mixin login_base($margin_l, $width_l, $max-width_l,$background-color_l, $border-radius_l, $padding_l, $text-align_l) {
+    margin: $margin_l;
+    width: $width_l;
+    max-width: $max-width_l;
+    background-color: $background-color_l;
+    border-radius: $border-radius_l;
+    padding: $padding_l;
+    text-align: $text-align_l;
+}
+@mixin button_card($f_size, $f_wieght, $color){
+    font-size: $f_size;
+    font-weight: $f_wieght;
+    color: $color;
+}
+@mixin carousel_image($bg_attachment,$bg_size,$bg_position ) {
+    background-attachment: $bg_attachment;
+    background-size: $bg_size;
+    background-position:$bg_position ;
+}
+@mixin carousel_text($float_area, $bg_color, $border_radius, $max_width, $opacity, $t_align, $t_justify,$padding_text){
+    float: $float_area;
+    background-color: $bg_color;
+    border-radius: $border_radius;
+    max-width: $max_width;
+    opacity: $opacity;
+    text-align: $t_align;
+    text-justify: $t_justify;
+    padding: $padding_text;
+}
+
