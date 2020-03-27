@@ -1,25 +1,30 @@
 .navbar {
-    color: $second-color;
-    background-color: $primary-color;
-    flex-wrap: nowrap;
+    // color: $second-color;
+    // background-color: $primary-color;
+    // flex-wrap: nowrap;
     .logo {
         width: 20%;
-        
+
         @media (min-width: 568px) {
             width: 10%;
         }
     }
     .nav {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        .nav-link {
-            margin: 5px;
-            padding: 5px;
-            color: inherit;
+        // flex-direction: row;
+        // flex-wrap: nowrap;
+        // .nav-link {
+        //     margin: 5px;
+        //     padding: 5px;
+        //     color: inherit;
 
-            &.active {
-                color: $primary-color;
-                background-color: $second-color;
+        //     &.active {
+        //         color: $primary-color;
+        //         background-color: $second-color;
+        //     }
+        // }
+        .navbar-collapse {
+            .toggler-example {
+                cursor: pointer;
             }
         }
     }
