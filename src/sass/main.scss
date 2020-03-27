@@ -1,6 +1,7 @@
 @import "abstract/variables";
 
 @import "components/navbar.scss";
+@import "components/footer.scss";
 
 @import "layout/landing.scss";
 @import "layout/login.scss";
@@ -34,4 +35,9 @@ body {
         }
 
     }
+}
+
+h1, p{
+    color: $primary-color;
+    margin: 1rem;
 }
