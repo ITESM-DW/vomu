@@ -4,8 +4,13 @@ img{
     height: auto;
 }
 p{
-    background-color: #F3C13A;
-    &.verify{background-color: #CA6924;}
+
+    &.post{
+        background-color: #F3C13A;;
+        &.verify{
+            background-color: #CA6924;
+        }
+    }
     padding:1em
 }
 a{
