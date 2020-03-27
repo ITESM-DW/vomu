@@ -1,28 +1,20 @@
 .login {
-    margin: 12.5% auto;
-    width: 100%;
-    max-width: 330px;
-    background-color: $primary-color;
-    border-radius: 20px;
-    padding: 25px;
-    text-align: center;
+    @include login_base(12.5% auto, $full, 330px, $primary-color, 20px, 25px, center);
 
     .logo {
-        width: 50%;
+        width: $half;
     }
 
     .input-group {
         &-text {
-            color: $primary-color;
-            background-color: $second-color;
+            @include setBGcolor($second-color,$primary-color, false);
         }
 
         .form-control {
-            color: $second-color;
-            background-color: $primary-color;
+            @include setBGcolor($primary-color,$second-color, false);
 
             &.ng-invalid.ng-touched.ng-dirty:not(.focus-visible){
-                color: red;
+                color: $highlight-color;
             }
 
             &:focus {
@@ -35,8 +27,7 @@
         &-input {
             color: $primary-color;
             &:checked~.custom-control-label::before {
-                background-color: $second-color;
-                border-color: $second-color;
+                @include setBGcolor($second-color,$primary-color, true);
             }
         }
         &-label {
