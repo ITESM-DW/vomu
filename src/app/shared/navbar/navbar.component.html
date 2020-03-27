@@ -3,7 +3,8 @@
         <img class="logo" src="assets/images/logo.png" alt="Vomu">
     </div>
     <div class="nav navbar-nav">
-        <a class="btn nav-item nav-link" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active" routerLink="/">Home</a>
+        <a class="btn nav-item nav-link" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active"
+            routerLink="/">Home</a>
         <a *ngIf="!isAuth" class="btn nav-item nav-link" routerLinkActive="active" routerLink="/login">Login</a>
         <a *ngIf="isAuth" class="btn nav-item nav-link" routerLinkActive="active" routerLink="/Profile">Profile</a>
     </div>

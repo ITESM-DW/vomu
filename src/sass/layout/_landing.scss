@@ -9,9 +9,9 @@
 
 
 .picsum-img-wrapper {
-    overflow: hidden;   
+    overflow: hidden;
     width: 100%;
-    
+
     @media (min-width: 1024px) {
         height: 90vh;
     }
@@ -20,4 +20,30 @@
         background-size: cover;
         background-position:center;
     }
+    .scrim {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+
+        // background-color: rgba(0, 0, 0, 0.6);
+    }
+}
+
+.carousel-caption {
+    float: right;
+}
+
+.carousel-text-area {
+    float: left;
+    background-color: $second-color;
+    // background-color: #505050;
+    // background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    max-width: 500px;
+    opacity: 0.7;
+    text-align: justify;
+    text-justify: inter-word;
+    padding: 10px;
 }

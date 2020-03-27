@@ -1,29 +1,57 @@
 <ngb-carousel *ngIf="images">
     <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-            <img class="carousel-image" width="100%" [src]="images[0]" alt="Random first slide">
+            <img class="carousel-image" width="100%" [src]="images[0]" alt="Together we can do it">
+            <div class="scrim"></div>
         </div>
         <div class="carousel-caption">
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <div class="carousel-text-area">
+                <h3>Together we can do it</h3>
+                <p>"Feminism is not a one size fits all movement"...</p>
+                <p>This is why we focus on providing multiple spaces where we can connect but most importantly make the
+                    feminism movement stronger.</p>
+            </div>
         </div>
     </ng-template>
     <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-            <img class="carousel-image" width="100%" [src]="images[1]" alt="Random second slide">
+            <img class="carousel-image" width="100%" [src]="images[1]" alt="The future is ours">
+            <div class="scrim"></div>
         </div>
         <div class="carousel-caption">
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="carousel-text-area">
+                <h3>The future is ours</h3>
+                <p>We make the future and the future is near. Listen/read various leaders of the feminist movement and
+                    become empowered.</p>
+            </div>
         </div>
     </ng-template>
     <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-            <img class="carousel-image" width="100%" [src]="images[2]" alt="Random third slide">
+            <img class="carousel-image" width="100%" [src]="images[2]" alt="Take control">
+            <div class="scrim"></div>
         </div>
         <div class="carousel-caption">
-            <h3>Third slide label</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            <div class="carousel-text-area">
+                <h3>Don't force yourself to anything you don't want to</h3>
+                <p>You are strong and special. Don't let anyone tell you otherwise. If you need support/protection or
+                    any inquiries, please contact us. We also provide experiences from other users who might have been
+                    in a similar situation as yours. Please check out their stories.</p>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img class="carousel-image" width="100%" [src]="images[3]" alt="You are not alone">
+            <div class="scrim"></div>
+        </div>
+        <div class="carousel-caption">
+            <div class="carousel-text-area">
+                <h3>You are not alone</h3>
+                <p>We understand that it is tough and sometimes you feel you are in a situation where only you can
+                    understand the context/pain. However we provide you with experiences given by other people, along
+                    with support groups focused on trying to understand and give solutions to your problems.</p>
+            </div>>
         </div>
     </ng-template>
 </ngb-carousel>
