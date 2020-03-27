@@ -21,7 +21,8 @@ import { QualityComponent } from './vomu/quality/quality.component';
     FooterComponent,
     LandingComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    QualityComponent
   ],
   imports: [
     BrowserModule,
