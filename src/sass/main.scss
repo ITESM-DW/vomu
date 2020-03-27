@@ -2,12 +2,14 @@
 @import "abstract/mixin_functions.scss";
 
 @import "components/navbar.scss";
+@import "components/footer.scss";
 @import "components/ribbon";
 
 @import "layout/landing.scss";
 @import "layout/login.scss";
 body {
     margin: 0;
+    margin-bottom: 2rem;
     padding: 0;
     background: linear-gradient(to left bottom, $second-color, $third-color);
     background-attachment: fixed;
@@ -30,4 +32,9 @@ body {
         }
 
     }
+}
+
+h1, p{
+    color: $primary-color;
+    margin: 1rem;
 }

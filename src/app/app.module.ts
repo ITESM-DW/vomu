@@ -12,6 +12,7 @@ import { AuthService } from './auth.service';
 import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './vomu/profile/profile.component';
 import { AuthGuard } from './auth-guard.service';
+import { QualityComponent } from './vomu/quality/quality.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AuthGuard } from './auth-guard.service';
     FooterComponent,
     LandingComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    QualityComponent
   ],
   imports: [
     BrowserModule,
