@@ -1,7 +1,7 @@
 import { Subscriber, Observable } from 'rxjs';
 
 export class AuthService {
-    private loggedIn = false;
+    private loggedIn = true;
 
     
     isAuth() : Promise<boolean> {
