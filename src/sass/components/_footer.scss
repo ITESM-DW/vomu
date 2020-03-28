@@ -1,13 +1,11 @@
 div#fixedfooter {
+  @include footer_help($foot-color, $foot-background-color);
+
   position:fixed;
   bottom:0px;
   left:0px;
-  width:100%;
-  color:$primary-color;
-  background:$contrast-color;
+  width:$full;
   padding:8px;
   z-index: 501;
   text-align: center;
-  height: 2rem;
-  font-size: x-small;
 }

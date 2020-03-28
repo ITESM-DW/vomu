@@ -1,9 +1,8 @@
 .navbar {
     @include setBGcolor($primary-color,$second-color, false);
-    flex-wrap: nowrap;
     .logo {
         width: 20%;
-        
+
         @media (min-width: 568px) {
             width: 10%;
         }
