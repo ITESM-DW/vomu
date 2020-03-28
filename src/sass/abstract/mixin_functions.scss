@@ -55,3 +55,7 @@ $breakpoints: (
     padding: $padding_text;
 }
 
+@mixin footer_help($color_f,$background_f){
+  color:$color_f;
+  background:$background_f;
+}
