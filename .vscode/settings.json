@@ -1,3 +1,4 @@
 {
-    "liveshare.increasedGuestLimit": false
+    "liveshare.increasedGuestLimit": false,
+    "eslint.enable": false
 }
