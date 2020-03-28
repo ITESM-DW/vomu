@@ -40,3 +40,7 @@ h1, p{
     color: $primary-color;
     margin: 1rem;
 }
+
+.ribbon {
+    z-index: 100000;
+}

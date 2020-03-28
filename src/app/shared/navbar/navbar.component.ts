@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 })
 
 export class NavbarComponent implements OnInit {
-    isAuth = true;
+    isAuth = false;
+    open = false
     loc: string;
     constructor(private authService: AuthService, private router: Router) {
     }
@@ -19,5 +20,9 @@ export class NavbarComponent implements OnInit {
             console.log(loggedIn);
         })
         this.router.setUpLocationChangeListener()
+    }
+
+    toggleNavBar() {
+        this.open = !this.open;
     }
 }

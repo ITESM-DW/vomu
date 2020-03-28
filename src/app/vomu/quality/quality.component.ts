@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QualityComponent implements OnInit {
 
-	images = [1,2,3].map((n) => `../../../assets/images/validator/${n}.jpg`);
+  images = [1, 2, 3].map((n) => `../../../assets/images/validator/${n}.jpg`);
 
   constructor() { }
 
