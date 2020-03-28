@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './vomu/profile/profile.component';
 import { AuthGuard } from './auth-guard.service';
 import { QualityComponent } from './vomu/quality/quality.component';
+import { FeedComponent } from './vomu/feed/feed.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { QualityComponent } from './vomu/quality/quality.component';
     LandingComponent,
     LoginComponent,
     ProfileComponent,
-    QualityComponent
+    QualityComponent,
+    FeedComponent,
   ],
   imports: [
     BrowserModule,
