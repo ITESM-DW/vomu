@@ -1,9 +1,8 @@
 import { Subscriber, Observable } from 'rxjs';
 
 export class AuthService {
-    private loggedIn = true;
+    private loggedIn = false;
 
-    
     isAuth() : Promise<boolean> {
         // Let's simulate an auth verifier
         return new Promise((resolve, reject) => {

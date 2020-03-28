@@ -1,0 +1,28 @@
+.navbar {
+    @include setBGcolor($primary-color,$second-color, false);
+    .logo {
+        width: 20%;
+
+        @media (min-width: 568px) {
+            width: 10%;
+        }
+    }
+    .collapse {
+        .nav-link {
+            margin: 5px;
+            padding: 5px;
+            color: inherit;
+            background: linear-gradient(140deg, $primary-color 0%, $primary-color 50%, $second-color 50%);
+            background-size: 200%;
+            transition: background-position 400ms ease-out;
+            
+            &.active {
+                background-position: 50%;
+            }
+
+            &:hover {
+                background-position: 100%;
+            }
+        }
+    }
+}
