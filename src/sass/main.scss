@@ -25,14 +25,14 @@ body {
             @include setBGcolor($primary-color,$second-color, true);
 
             &:hover {
-                color: $highlight-color;
+                color: $highlight-color !important;
             }
         }
 
         &:not(:disabled):hover {
             transform: translateY(-5%);
             @include setBGcolor($second-color,$primary-color, true);
-            box-shadow: 0 0.5rem 1rem #00000070;
+            box-shadow: 0 0.5rem 1rem #00000070 !important;
         }
 
     }
