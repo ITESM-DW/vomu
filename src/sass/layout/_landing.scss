@@ -14,7 +14,9 @@
         height: 90vh;
     }
     .carousel-image {
-        @include carousel_image(fixed, cover, center)
+        @include carousel_image(fixed, cover, center);
+
+        width: 100%;
     }
     .scrim {
         position: absolute;
