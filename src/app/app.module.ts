@@ -16,6 +16,7 @@ import { LoginComponent } from './vomu/login/login.component';
 import { AuthService } from './auth.service';
 import { ProfileComponent } from './vomu/profile/profile.component';
 import { AuthGuard } from './auth-guard.service';
+import { QualityComponent } from './vomu/quality/quality.component';
 
 registerLocaleData(localeEs, 'es-MX', localeEsExtra);
 
@@ -26,7 +27,8 @@ registerLocaleData(localeEs, 'es-MX', localeEsExtra);
     FooterComponent,
     LandingComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    QualityComponent,
   ],
   imports: [
     BrowserModule,
