@@ -22,7 +22,7 @@ import { QualityComponent } from './vomu/quality/quality.component';
     LandingComponent,
     LoginComponent,
     ProfileComponent,
-    QualityComponent
+    QualityComponent,
   ],
   imports: [
     BrowserModule,
