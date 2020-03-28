@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="ngb.alert.close" datatype="html">
+        <source>Close</source>
+        <target> Cerrar </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/alert/alert.d.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.carousel.previous" datatype="html">
+        <source>Previous</source>
+        <target> Anterior </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/carousel/carousel.d.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.carousel.next" datatype="html">
+        <source>Next</source>
+        <target> Siguiente </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/carousel/carousel.d.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.previous-month" datatype="html">
+        <source>Previous month</source>
+        <target> Mes anterior </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.next-month" datatype="html">
+        <source>Next month</source>
+        <target> El próximo mes </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.select-month" datatype="html">
+        <source>Select month</source>
+        <target> Seleccionar mes </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.select-year" datatype="html">
+        <source>Select year</source>
+        <target> Seleccionar año </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.first" datatype="html">
+        <source>««</source>
+        <target> «« </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.previous" datatype="html">
+        <source>«</source>
+        <target> «</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.next" datatype="html">
+        <source>»</source>
+        <target> »</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.last" datatype="html">
+        <source>»»</source>
+        <target> »» </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.first-aria" datatype="html">
+        <source>First</source>
+        <target> Primero </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.previous-aria" datatype="html">
+        <source>Previous</source>
+        <target> Anterior </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.next-aria" datatype="html">
+        <source>Next</source>
+        <target> Siguiente </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.last-aria" datatype="html">
+        <source>Last</source>
+        <target> Last </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.progressbar.value" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{getPercentValue()}}"/>%</source>
+        <target> <x id = "INTERPOLATION" equiv-text = "{{getPercentValue ()}}" />% </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/progressbar/progressbar.d.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-hours" datatype="html">
+        <source>Increment hours</source>
+        <target> Incremento de horas </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.HH" datatype="html">
+        <source>HH</source>
+        <target> HH </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.hours" datatype="html">
+        <source>Hours</source>
+        <target> Hours </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-hours" datatype="html">
+        <source>Decrement hours</source>
+        <target> Decrementar horas </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-minutes" datatype="html">
+        <source>Increment minutes</source>
+        <target> Incremento de minutos </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.MM" datatype="html">
+        <source>MM</source>
+        <target> MM </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.minutes" datatype="html">
+        <source>Minutes</source>
+        <target> Minutos </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-minutes" datatype="html">
+        <source>Decrement minutes</source>
+        <target> Disminuir minutos </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-seconds" datatype="html">
+        <source>Increment seconds</source>
+        <target> Incremento de segundos </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.SS" datatype="html">
+        <source>SS</source>
+        <target> SS </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.seconds" datatype="html">
+        <source>Seconds</source>
+        <target> Segundos </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-seconds" datatype="html">
+        <source>Decrement seconds</source>
+        <target> Disminuir segundos </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.PM" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ i18n.getAfternoonPeriod() }}"/></source>
+        <target> <x id = "INTERPOLATION" equiv-text = "{{i18n.getAfternoonPeriod ()}}" /> </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.AM" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ i18n.getMorningPeriod() }}"/></source>
+        <target> <x id = "INTERPOLATION" equiv-text = "{{i18n.getMorningPeriod ()}}" /> </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.toast.close-aria" datatype="html">
+        <source>Close</source>
+        <target> Cerrar </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/toast/toast.d.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="navbarHome" datatype="html">
+        <source>Home</source>
+        <target> Inicio </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/navbar/navbar.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">Home link</note>
+      </trans-unit>
+      <trans-unit id="navbarFeed" datatype="html">
+        <source>Feed</source>
+        <target> Feed </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/navbar/navbar.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">Feed link</note>
+      </trans-unit>
+      <trans-unit id="navbarLogin" datatype="html">
+        <source>Login</source>
+        <target> Iniciar sesión </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/navbar/navbar.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="description">Login link</note>
+      </trans-unit>
+      <trans-unit id="navbarProfile" datatype="html">
+        <source>Profile</source>
+        <target> Perfil </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/navbar/navbar.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <note priority="1" from="description">Login profile tag</note>
+      </trans-unit>
+      <trans-unit id="navbarQuality" datatype="html">
+        <source>Quality</source>
+        <target> Calidad </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/navbar/navbar.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <note priority="1" from="description">Login quality tag</note>
+      </trans-unit>
+      <trans-unit id="carousel1" datatype="html">
+        <source>Together we can do it</source>
+        <target> Juntos podemos hacerlo </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/landing/landing.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">Landing description 1</note>
+      </trans-unit>
+      <trans-unit id="carousel1tpreview" datatype="html">
+        <source>&quot;Feminism is not a one size fits all movement&quot;...</source>
+        <target> & quot; El feminismo no es un movimiento único para todos los movimientos & quot; ... </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/landing/landing.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">Landing description text preview</note>
+      </trans-unit>
+      <trans-unit id="carousel1t" datatype="html">
+        <source>This is why we focus on providing multiple spaces where we can connect but most importantly make the
+        <target> Es por eso que nos enfocamos en proporcionar múltiples espacios donde podamos conectarnos, pero lo más importante targetque
+                    feminism movement stronger.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/landing/landing.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description">Landing description text</note>
+      </trans-unit>
+      <trans-unit id="carousel2" datatype="html">
+        <source>The future is ours</source>
+        <target> El futuro es nuestro </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/landing/landing.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <note priority="1" from="description">Landing description 2</note>
+      </trans-unit>
+      <trans-unit id="carousel2t" datatype="html">
+        <source>We make the future and the future is near. Listen/read various leaders of the feminist movement and
+        <target> Hacemos el futuro y el futuro está cerca. Escuchar / leer varios líderes del movimiento targety
+                    become empowered.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/landing/landing.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <note priority="1" from="description">Landing description text</note>
+      </trans-unit>
+      <trans-unit id="carousel3" datatype="html">
+        <source>Don&apos;t force yourself to anything you don&apos;t want to</source>
+        <target> No te obligues a nada que no quieras </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/landing/landing.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <note priority="1" from="description">Landing description 3</note>
+      </trans-unit>
+      <trans-unit id="carousel3text" datatype="html">
+        <source>You are strong and special. Don&apos;t let anyone tell you otherwise. If you need support/protection or
+        <target> Eres fuerte y especial. No dejes que nadie te diga lo contrario. Si necesita apoyo / targeto
+                    any inquiries, please contact us. We also provide experiences from other users who might have been
+                    in a similar situation as yours. Please check out their stories.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/landing/landing.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <note priority="1" from="description">Landing description 3 text</note>
+      </trans-unit>
+      <trans-unit id="carosel4" datatype="html">
+        <source>You are not alone</source>
+        <target> No estás solo </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/landing/landing.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+        <note priority="1" from="description">Landing description 4</note>
+      </trans-unit>
+      <trans-unit id="carosel4text" datatype="html">
+        <source>We understand that it is tough and sometimes you feel you are in a situation where only you can
+        <target> Entendemos que es difícil y a veces sientes que estás en una situación en la que solo targetpuedes
+                    understand the context/pain. However we provide you with experiences given by other people, along
+                    with support groups focused on trying to understand and give solutions to your problems.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/landing/landing.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <note priority="1" from="description">Landing description 4 text</note>
+      </trans-unit>
+      <trans-unit id="landing_help_text" datatype="html">
+        <source>
+        <target>
+            Our team decided to create this webpage to help women that have experienced sexual abuse or harassment. We
+            provide a safe space where they can share their experiences without judgment or exposing their identity.
+            Besides the story sharing, our site will provide tools for people that seek information and support. We will
+            share articles written by experts and a map to track the places where more stories happen.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/landing/landing.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+        <note priority="1" from="description">Landing description Help text</note>
+      </trans-unit>
+      <trans-unit id="9fd5cc2996fcd04d7956ff7853ed9f7d6fa416ce" datatype="html">
+        <source>
+        <target>
+            The main function of our system is to share stories. We implemented different features for the site to be
+            safe, including users, anonymous stories, filters, and moderators. With users, we can validate the
+            information, and moderatos get to determine if the stories or comments don&apos;t attempt against the community.
+            Anonymous stories allow users to share without the fear of being bullied or show their faces.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/landing/landing.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+        <note priority="1" from="description">Landing description shra@e text@landing_share_text</note>
+      </trans-unit>
+      <trans-unit id="landing_learn_text" datatype="html">
+        <source>
+        <target>
+            We want to avoid all these stories from happening again and to protect our community, so we have created
+            useful content for all women in our community.
+            The web page has a map where we can see places where most stories happen. We also have featured content, on
+            the main page, users can find articles from different specialists to learn about feminism and women safety.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/landing/landing.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+        <note priority="1" from="description">Landing description learn text</note>
+      </trans-unit>
+      <trans-unit id="emailTag" datatype="html">
+        <source>Email</source>
+        <target> Correo electrónico </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/login/login.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">Login email tag</note>
+      </trans-unit>
+      <trans-unit id="passwordTag" datatype="html">
+        <source>Password</source>
+        <target> Contraseña </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/login/login.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">Login password tag</note>
+      </trans-unit>
+      <trans-unit id="remembermeTag" datatype="html">
+        <source>Remember me</source>
+        <target> Recordarme </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/login/login.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <note priority="1" from="description">Login remember me tag</note>
+      </trans-unit>
+      <trans-unit id="signinBtn" datatype="html">
+        <source>Sign in</source>
+        <target> Iniciar sesión </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/login/login.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <note priority="1" from="description">Login signin button</note>
+      </trans-unit>
+      <trans-unit id="postNumber" datatype="html">
+        <source>One</source>
+        <target> One </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/profile/profile.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Post title</note>
+      </trans-unit>
+      <trans-unit id="websiteLink" datatype="html">
+        <source>Website</source>
+        <target> Sitio web </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/profile/profile.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">Website link of profile</note>
+      </trans-unit>
+      <trans-unit id="Profile description" datatype="html">
+        <source>Profile Description</source>
+        <target> Descripción del perfil </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/profile/profile.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <note priority="1" from="description">Profile description</note>
+      </trans-unit>
+      <trans-unit id="postsTitle" datatype="html">
+        <source>Posts</source>
+        <target> Publicaciones </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/profile/profile.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/profile/profile.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+        <note priority="1" from="description">Posts title</note>
+      </trans-unit>
+      <trans-unit id="readmoreLink" datatype="html">
+        <source>Read More</source>
+        <target> Leer más </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/profile/profile.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <note priority="1" from="description">Read more posts</note>
+      </trans-unit>
+      <trans-unit id="post2" datatype="html">
+        <source>Two</source>
+        <target> Two </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/profile/profile.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="profileDescription" datatype="html">
+        <source>Profile Description</source>
+        <target> Descripción del perfil </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/profile/profile.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+        <note priority="1" from="description">Profile description</note>
+      </trans-unit>
+      <trans-unit id="writeTitle" datatype="html">
+        <source>Write</source>
+        <target> Write </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/write/write.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">Write title</note>
+      </trans-unit>
+      <trans-unit id="writePageDesc" datatype="html">
+        <source>Here you can safely write your story. Give it a title and explain what happened, if you want to, there&apos;s a space to share images.</source>
+        <target> Aquí puedes escribir tu historia con seguridad. Déle un título y explique lo que sucedió, si lo desea, hay un espacio para compartir imágenes. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/write/write.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Write page desc</note>
+      </trans-unit>
+      <trans-unit id="writeTitleTag" datatype="html">
+        <source>Title</source>
+        <target> Título </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/write/write.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">Write title tag</note>
+      </trans-unit>
+      <trans-unit id="writeStoryTag" datatype="html">
+        <source>Story:</source>
+        <target> Historia: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/write/write.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">Write story tag</note>
+      </trans-unit>
+      <trans-unit id="writeExampleFileInputTag" datatype="html">
+        <source>Example file input</source>
+        <target> Ejemplo de entrada de archivo </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/write/write.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <note priority="1" from="description">Write example file input</note>
+      </trans-unit>
+      <trans-unit id="writeSubmitBtn" datatype="html">
+        <source>Submit</source>
+        <target> Enviar </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/write/write.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="description">Write submit btn</note>
+      </trans-unit>
+      <trans-unit id="feedTag" datatype="html">
+        <source>Feed</source>
+        <target> Feed </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/vomu/feed/feed.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">Feed tag</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

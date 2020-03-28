@@ -16,7 +16,6 @@ const routes: Routes = [
   { path: 'quality', component: QualityComponent },
   { path: 'write', component: WriteComponent },
   { path: 'feed', component: FeedComponent},
-  { path: 'quality', component: QualityComponent }
 ];
 
 @NgModule({
