@@ -4,7 +4,7 @@
         <div class="col-auto">
             <div [ngStyle]="{'border-color': (email.dirty && email.invalid) ? 'red' : 'none' }" class="input-group mb-2">
                 <div class="input-group-prepend">
-                    <label for="inputEmail" class="input-group-text">Email</label>
+                    <label i18n="Login email tag@@emailTag" for="inputEmail" class="input-group-text">Email</label>
                 </div>
                 <input #email email ngModel type="email" name="email" id="email" class="form-control" placeholder="marie@curie.com" required>
             </div>
@@ -12,15 +12,15 @@
         <div class="col-auto">
             <div class="input-group mb-2">
                 <div class="input-group-prepend">
-                    <label for="inputPassword" class="input-group-text">Password</label>
+                    <label i18n="Login password tag@@passwordTag" for="inputPassword" class="input-group-text">Password</label>
                 </div>
                 <input ngModel type="password" name="password" id="password" class="form-control" placeholder="supersecret" required>
             </div>
         </div>
         <div class="custom-control custom-checkbox">
             <input autocomplete="current-password" ngModel type="checkbox" class="custom-control-input" id="rememberMe" name="rememberMe">
-            <label class="custom-control-label" for="rememberMe">Remember me</label>
+            <label i18n="Login remember me tag@@remembermeTag" class="custom-control-label" for="rememberMe">Remember me</label>
         </div>
-        <button [disabled]="f.invalid" class="btn btn-main btn-md" type="submit">Sign in</button>
+        <button i18n="Login signin button@@signinBtn" [disabled]="f.invalid" class="btn btn-main btn-md" type="submit">Sign in</button>
     </form>
 </div>
