@@ -1,14 +1,15 @@
 @import "abstract/variables";
-@import "abstract/mixin_functions.scss";
+@import "abstract/mixin_functions";
 
-@import "components/navbar.scss";
-@import "components/footer.scss";
+@import "components/navbar";
+@import "components/footer";
 @import "components/ribbon";
 
-@import "layout/landing.scss";
-@import "layout/login.scss";
+@import "layout/landing";
+@import "layout/login";
 @import "layout/profile";
-@import "layout/write.scss";
+@import "layout/write";
+@import "layout/feed";
 
 body {
     margin: 0;
@@ -40,4 +41,8 @@ body {
 h1,h2,h3, p{
     color: $primary-color;
     margin: 1rem;
+}
+
+.ribbon {
+    z-index: 100000;
 }

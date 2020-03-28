@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12-sm">
+            <h1>Feed</h1>
+        </div>
+    </div>
+    <div *ngFor="let story of pagination" class="row story">
+        <h3 class="story__title">{{story.title}}</h3>
+        <a class="story__author">@{{story.author}}</a>
+        <div class="story__flex">
+                <div *ngIf="story.imgUrl !== ''"class="story__flex__img">
+                    <img width="100%" height="100%" src="{{story.imgUrl}}" alt="">
+                </div>
+                <p class="story__flex__text">{{story.text}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <ngb-pagination
+                (pageChange)="onPageChange($event)"
+                [(page)]="page"
+                [pageSize]="pageSize"
+                [collectionSize]="stories.length"
+            >
+            </ngb-pagination>
+        </div>
+    </div>
+</div>

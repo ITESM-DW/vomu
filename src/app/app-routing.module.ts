@@ -6,6 +6,7 @@ import { AuthGuard } from './auth-guard.service';
 import { ProfileComponent } from './vomu/profile/profile.component';
 import { QualityComponent } from './vomu/quality/quality.component';
 import { WriteComponent } from './vomu/write/write.component';
+import { FeedComponent } from './vomu/feed/feed.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'profile/:id', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'quality', component: QualityComponent },
-  { path: 'write', component: WriteComponent }
+  { path: 'write', component: WriteComponent },
+  { path: 'feed', component: FeedComponent},
+  { path: 'quality', component: QualityComponent }
 ];
 
 @NgModule({

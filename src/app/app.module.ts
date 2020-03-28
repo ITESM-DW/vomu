@@ -14,6 +14,7 @@ import { ProfileComponent } from './vomu/profile/profile.component';
 import { AuthGuard } from './auth-guard.service';
 import { QualityComponent } from './vomu/quality/quality.component';
 import { WriteComponent } from './vomu/write/write.component';
+import { FeedComponent } from './vomu/feed/feed.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { WriteComponent } from './vomu/write/write.component';
     LoginComponent,
     ProfileComponent,
     QualityComponent,
-    WriteComponent
+    WriteComponent,
+    FeedComponent
   ],
   imports: [
     BrowserModule,
