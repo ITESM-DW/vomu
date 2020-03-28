@@ -6,9 +6,9 @@ img{
 p{
 
     &.post{
-        background-color: #F3C13A;;
+        background-color: $post-color;
         &.verify{
-            background-color: #CA6924;
+            background-color: $post-color-verify;
         }
     }
     padding:1em
