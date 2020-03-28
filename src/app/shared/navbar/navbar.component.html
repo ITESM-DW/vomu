@@ -15,10 +15,13 @@
                     routerLink="/">Home</a>
             </li>
             <li class="nav-item active">
+                <a class="nav-link" routerLinkActive="active" routerLink="/feed">Feed</a>
+            </li>
+            <li class="nav-item active">
                 <a *ngIf="!isAuth" class="nav-link" routerLinkActive="active" routerLink="/login">Login</a>
             </li>
             <li class="nav-item active">
-                <a *ngIf="isAuth" class="nav-link" routerLinkActive="active" routerLink="/Profile">Profile</a>
+                <a *ngIf="isAuth" class="nav-link" routerLinkActive="active" routerLink="/profile">Profile</a>
             </li>
         </ul>
     </div>
