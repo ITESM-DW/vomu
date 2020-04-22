@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "vomu": {
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "vomu"
+    }
+  },
+  "defaultProject": "vomu",
+  "cli": {
+    "analytics": false
+  }
 }
