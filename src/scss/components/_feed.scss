@@ -1,0 +1,73 @@
+.story {
+	@extend .card;
+	@extend .d-flex;
+	@extend .flex-md-row;
+	@extend .m-5;
+	@extend .align-content-center;
+	@extend .align-items-center;
+
+	&__body {
+		@extend .card-body;
+	}
+
+	&__userInfo {
+		@extend .m-3;
+	}
+
+	&__userPhoto {
+		@extend .w-100;
+		@extend .border;
+		@extend .border-primary;
+	}
+
+	&__userName {
+		@extend .card-header;
+		@extend .rounded-bottom;
+	}
+
+	&__title {
+		@extend .card-title;
+		@extend .display-4;
+		@extend .font-weight-bold;
+	}
+
+	&__brief {
+		@extend .card-text;
+		@extend .drop-cap;
+	}
+}
+
+
+.navigation {
+	@extend .pagination;
+
+	&__page {
+		@extend .page-item;
+
+	}
+
+	&__link {
+		@extend .page-link;
+	}
+}
+
+
+.pageInfo {
+	@extend .jumbotron;
+	@extend .jumbotron-fluid;
+
+	&__title {
+		@extend .display-1;
+		@extend .font-weight-bold;
+	}
+
+	&__description {
+		@extend .lead;
+	}
+
+	&__button {
+		@extend .btn;
+		@extend .btn-primary;
+		@extend .btn-lg;
+	}
+}

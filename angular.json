@@ -92,9 +92,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/scss/custom.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/popper.js/dist/popper.min.js",
+              "node_modules/jquery/dist/jquery.min.js"
+            ]
           }
         },
         "lint": {

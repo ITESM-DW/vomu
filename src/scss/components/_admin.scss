@@ -1,0 +1,162 @@
+.adminSection{
+    @extend .w-100;
+    @extend .h-100;
+    & __base{
+        @extend .d-flex;
+        @extend .justify-content-between;
+        @extend .flex-column;
+        @extend .flex-lg-row;
+        @extend .m-5;
+
+        &__card{
+            @extend .card;
+            @extend .bg-light; 
+            @extend .w-100;
+
+            &__centerTitle{
+                @extend .d-flex;
+                @extend .justify-content-around;
+            }
+
+            &__centerRowWrap{
+                @extend .d-flex;
+                @extend .justify-content-around;
+                @extend .align-items-center;
+                @extend .flex-wrap; 
+                @extend .flex-row;
+
+                
+
+                &__body{
+                    @extend .card-body;
+                    &__p{
+                        @extend .card-text;
+                    }
+                    &__approveButton{
+                        @extend .btn;
+                        @extend .btn-primary;
+                    }
+                    &__denyButton{
+                        @extend .btn;
+                        @extend .btn-secondary;
+                    }
+                }
+                
+                &__list{
+                    @extend .list-group;
+                    @extend .w-100; 
+                    @extend .m-5;
+                    &__item{
+                        @extend .list-group-item;
+                        @extend .list-group-item-action;
+                    }
+                }
+            }
+
+        }
+    }
+    & __wrap{
+        @extend .d-flex;
+        @extend .justify-content-between;
+        @extend .flex-column;
+        @extend .flex-wrap;
+        @extend .m-5;
+
+        &__card{
+            @extend .d-flex;
+            @extend .card;
+            @extend .bg-light; 
+            @extend .w-100;
+            @extend .flex-wrap;
+
+            &__centerTitle{
+                @extend .d-flex;
+                @extend .justify-content-around;
+                @extend .align-items-center;
+                @extend .flex-wrap;
+            }
+
+            &__centerRowWrap{
+                @extend .d-flex;
+                @extend .justify-content-around;
+                @extend .align-items-center;
+                @extend .flex-wrap; 
+                @extend .flex-row;
+
+                
+
+                &__body{
+                    @extend .card-body;
+                    &__p{
+                        @extend .card-text;
+                    }
+                    &__imgbase{
+                        @extend .m-2;
+                        &__pp{
+                            @extend .img-fluid; 
+                            @extend .border;
+                            @extend .mw-100;
+                            @extend .h-auto;
+                        }
+                    }   
+                    &__storybase{
+                        @extend .w-100;
+                        &__storyText{
+                            @extend .card-text;
+                        }
+                        &__list{
+                            @extend .list-group;
+                            @extend .w-100; 
+                            @extend .m-5;
+                            &__item{
+                                @extend .list-group-item;
+                                @extend .list-group-item-action;
+                            }
+                        }
+                    }
+                }
+
+                
+                &__list{
+                    @extend .list-group;
+                    @extend .w-100; 
+                    @extend .m-5;
+                    &__item{
+                        @extend .list-group-item;
+                        @extend .list-group-item-action;
+                    }
+                }
+            }
+
+        }
+    }
+    
+}
+.adminPagination{
+    @extend .pagination;
+    &__item{
+        @extend .page-item;
+        &__link{
+            @extend .page-link;
+        }
+    }
+}
+
+.adminForm{
+    @extend .container-fluid; 
+    @extend .text-white;
+
+    &__group{
+        @extend .form-group;
+
+        &__control{
+
+            @extend .form-control;
+        }
+    }
+
+    &__submit{
+        @extend .btn;
+        @extend .btn-primary;
+    }
+}

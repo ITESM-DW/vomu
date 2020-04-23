@@ -1,0 +1,44 @@
+@import "abstract/variables";
+
+// BOOTSTRAP
+// @import "../node_modules/bootstrap/scss/bootstrap";
+// Main
+@import "bootstrap/mixins";
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/utilities";
+@import "bootstrap/transitions";
+@import "bootstrap/bootstrap-reboot";
+@import "bootstrap/type";
+// Basic
+@import "bootstrap/utilities/borders";
+@import "bootstrap/pagination";
+@import "bootstrap/forms";
+@import "bootstrap/list-group";
+// Carousel
+@import "bootstrap/carousel";
+@import "bootstrap/images";
+// Jumbotron / Card
+@import "bootstrap/jumbotron";
+@import "bootstrap/card";
+@import "bootstrap/buttons";
+@import "bootstrap/grid";
+
+
+
+@import "utilities/text";
+@import "components/navbar";
+@import "components/footer";
+@import "components/ribbon";
+@import "components/feed";
+@import "components/index";
+@import "components/login";
+@import "components/profile";
+@import "components/admin";
+@import "components/map";
+
+body {
+  @include gradient-directional($start-color: theme-color(),$end-color: theme-color("secondary"), $deg: 45deg);
+  background-attachment: fixed;
+  padding-bottom: 1.5rem;
+}

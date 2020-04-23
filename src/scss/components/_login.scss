@@ -1,0 +1,56 @@
+.login {
+    @extend .mh-100;
+
+    &__container {
+        @extend .container;
+        @extend .mx-auto;
+        @extend .m-5;
+        @extend .row;
+        @extend .justify-content-center;
+    }
+
+    &__card {
+        @extend .card;
+    }
+
+    &__field {
+        @extend .form-group;
+
+        &__valid {
+            @extend .valid-feedback;
+        }
+
+        &__invalid {
+            @extend .invalid-feedback;
+        }
+
+        &__control {
+            @extend .form-control;
+        }
+    }
+
+    &__body {
+        @extend .card-body;
+    }
+
+    &__form-logo {
+        @extend .card-header;
+    }
+
+    &__checkbox {
+        @extend .form-check;
+
+        &__label {
+            @extend .form-check-label;
+        }
+
+        &__check {
+            @extend .form-check-input;
+        }
+    }
+
+    &__main-btn {
+        @extend .btn;
+        @extend .btn-primary;
+    }
+}

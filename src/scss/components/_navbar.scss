@@ -1,0 +1,26 @@
+@import "../bootstrap/nav";
+@import "../bootstrap/navbar";
+
+.menu {
+    @extend .navbar;
+    @extend .navbar-expand-md;
+    @extend .fixed-top;
+    @extend .navbar-dark;
+    @extend .bg-primary;
+
+    &__logo {
+        @extend .navbar-brand;
+    }
+
+    &__opener {
+        @extend .navbar-toggler;
+    }
+
+    &__options {
+        @extend .navbar-nav;
+
+        &__item {
+            @extend .nav-link;
+        }
+    }
+}
