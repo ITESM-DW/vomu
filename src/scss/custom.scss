@@ -24,18 +24,16 @@
 @import "bootstrap/buttons";
 @import "bootstrap/grid";
 
-
-
 @import "utilities/text";
 @import "components/navbar";
 @import "components/footer";
 @import "components/ribbon";
 @import "components/feed";
 @import "components/index";
+@import "components/itemlist";
 @import "components/login";
 @import "components/profile";
 @import "components/admin";
-@import "components/map";
 
 body {
   @include gradient-directional($start-color: theme-color(),$end-color: theme-color("secondary"), $deg: 45deg);
