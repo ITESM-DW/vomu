@@ -1,0 +1,49 @@
+.userProfile{
+
+    @extend .row;
+    @extend .m-5;
+    // @extend .border;
+    @extend .bg-primary;
+    &__picture{
+        @extend .col;
+        @extend .m-2;
+        // @extend .border;
+    }
+    &__info{
+        @extend .col-9;
+        @extend .m-2;
+        // @extend .border;
+        &__aboutme{
+            // @extend .border;
+            @extend .bg-secondary;
+            p{
+                @extend .m-2;
+            }
+        }
+    }
+}
+.userProfile__img{
+    @extend .img-fluid;
+    @extend .rounded-circle;
+    @extend .bg-secondary;
+    @extend .border;
+    width:200px;
+}
+.img_button{
+    @extend .btn;
+    @extend .btn-primary;
+    position: relative;
+    @media (min-width: 1354px){
+        top:80px;
+    }
+    @media(max-width: 556px){
+        top:80px;
+    }
+}
+.aboutme_button{
+    @extend .btn;
+    @extend .btn-primary;
+    @extend .m-2;
+    position: relative;
+    @extend .float-right;
+}
