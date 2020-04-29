@@ -34,6 +34,8 @@
 @import "components/login";
 @import "components/profile";
 @import "components/admin";
+@import "components/course-form";
+
 
 body {
   @include gradient-directional($start-color: theme-color(),$end-color: theme-color("secondary"), $deg: 45deg);

@@ -1,0 +1,90 @@
+.courseForm {
+    @extend .w-100;
+    @extend .h-100;
+
+    &__container {
+        @extend .d-flex;
+        @extend .justify-content-between;
+        @extend .flex-column;
+        @extend .flex-lg-row;
+        @extend .m-5;
+    }
+
+    &__card {
+        @extend .card;
+        @extend .bg-light;
+        
+        &__row {
+            @extend .d-flex;
+            @extend .justify-content-around;
+            @extend .align-items-center;
+        }
+    }
+
+    &__img {
+        @extend .img-fluid;
+        @extend .border;
+        @extend .mw-100;
+        @extend .h-auto;
+
+        &__label {
+            @extend .text-primary;
+            @extend .text-uppercase;
+        }
+    }
+
+    &__summary {
+        @extend .card-body;
+
+        &__text {
+            @extend .card-text;
+        }
+    }
+
+    &__break {
+        @extend .my-2;
+    }
+
+    &__form {
+        @extend .container-fluid;
+        @extend .text-white;
+
+        &__control {
+            @extend .form-control;
+            &__file {
+                @extend .form-control-file;
+            }
+        }
+
+        &__group {
+            @extend .form-group;
+        }
+
+        &__subgroup {
+            @extend .form-group;
+            display: flex;
+
+            &__label {
+                width:7rem;
+                text-align: right;
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    &__main-btn {
+        @extend .btn;
+        @extend .btn-primary;
+    }
+
+    &__compose {
+        @extend .container;
+        @extend .bg-light;
+
+        &__epic {
+            @extend .w-100;
+            @extend .h-100;
+        }
+    }
+}
+

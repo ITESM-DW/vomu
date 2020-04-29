@@ -1,0 +1,57 @@
+<form class="courseForm__form">
+    <div class="courseForm__form__group">
+        <label for="course-name">Choose a name for your course:</label>
+        <input type="text" class="courseForm__form__control" id="course-name" placeholder="Course name here.">
+    </div>
+    <div class="courseForm__form__group">
+        <label for="category">Category</label>
+        <select class="courseForm__form__control" id="category">
+            <option>Mathematics</option>
+            <option>Literature</option>
+            <option>Chemistry</option>
+            <option>Physics</option>
+            <option>Computer Science</option>
+        </select>
+    </div>
+    <div class="courseForm__form__group">
+        <label for="description">Description</label>
+        <br>
+        <textarea class="courseForm__form__control" id="description" rows="3" placeholder="Course description here."></textarea>
+    </div>
+    <div class="courseForm__form__group">
+        <label for="learning">Enlist what students will learn:</label>
+        <br>
+        <textarea class="courseForm__form__control" id="learning" rows="3" placeholder="Course learning outcomes here."></textarea>
+    </div>
+    <div class="courseForm__form__group">
+        <label for="requirements">Enlist course requirements:</label>
+        <br>
+        <textarea class="courseForm__form__control" id="requirements" rows="3" placeholder="Course requirements here."></textarea>
+    </div>
+    <div class="courseForm__form__group">
+        <label for="createContent">Add content outline:</label>
+        <textarea class="courseForm__form__control" id="createContent" rows="3"></textarea>
+    </div>
+    <div class="courseForm__form__group">
+        <div class="courseForm__form__subgroup">
+            <label for="handOut" class="courseForm__form__subgroup__label">Hand out:</label>
+            <input type="file" class="courseForm__form__control__file" name="" id="handOut" placeholder=""
+                aria-describedby="fileHelpId">
+        </div>
+        <div class="courseForm__form__subgroup">
+            <label for="assignment" class="courseForm__form__subgroup__label">Assignment:</label>
+            <input type="file" class="courseForm__form__control__file" name="" id="assignment" placeholder=""
+                aria-describedby="fileHelpId">
+        </div>
+        <div class="courseForm__form__subgroup">
+            <label for="quiz" class="courseForm__form__subgroup__label">Quiz:</label>
+            <input type="text" class="courseForm__form__control" id="quiz" placeholder="Amazing course title here">
+
+        </div>
+        <div class="courseForm__form__subgroup">
+            <label for="video" class="courseForm__form__subgroup__label">Video: </label>
+            <input type="text" class="courseForm__form__control" id="video" placeholder="Amazing course title here">
+        </div>
+    </div>
+    <button class="courseForm__main-btn" type="submit">Save</button>
+</form>
