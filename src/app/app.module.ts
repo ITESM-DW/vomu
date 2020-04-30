@@ -16,6 +16,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { FeedComponent } from './pages/feed/feed.component';
 import { QualityComponent } from './pages/quality/quality.component';
 import { ApprovalComponent } from './pages/approval/approval.component';
+import { CourseBreakdownComponent } from './components/course-breakdown/course-breakdown.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ApprovalComponent } from './pages/approval/approval.component';
     ProfileComponent,
     FeedComponent,
     QualityComponent,
-    ApprovalComponent
+    ApprovalComponent,
+    CourseBreakdownComponent
   ],
   imports: [
     BrowserModule
