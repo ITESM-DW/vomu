@@ -1,0 +1,14 @@
+.button {
+	@extend .btn;
+	@extend .btn-primary;
+
+	&-fail {
+		@extend .btn-danger;
+	}
+	&-info {
+		@extend .btn-info;
+	}
+	&-success {
+		@extend .btn-outline-success;
+	}
+}

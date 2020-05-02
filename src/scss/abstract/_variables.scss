@@ -1,21 +1,27 @@
 // Your variable overrides
 $enable-gradients: true;
 $fallback-border-radius: 20px;
+$font-family-sans-serif: Lato, sans-serif;
 $body-bg: #fcf8f3;
 $body-color: #111;
 $theme-colors: (
-  "primary": #BF7F7B,
-  "secondary": #ffd3b6,
-  "danger": #ff736c
+  "primary": #222831,
+  "secondary": #30475e,
+  "danger": #ff574f
 );
+
+$font-weight-light:           100 !default;
+$font-weight-normal:          200 !default;
+$font-weight-bold:            500 !default;
+$font-weight-bolder:          700 !default;
 
 $ribbon: (
 	"rotate": 45deg,
 	"horizontal": -50px,
 	"side": "right",
 	"top": 40px,
-	"primary": #a00,
-	"border": #faa,
+	"primary": theme-colors('primary'),
+	"border": theme-colors('secondary'),
 	"text": #fff,
 	"text-shadow": 0 0 5px #444,
 	"box-shadow": 0 0 10px #888

@@ -1,0 +1,29 @@
+.course-creation {
+	@extend .container-fluid;
+	width: 75%;
+	margin-top: 1rem;
+	&--add-subject {
+		@extend .btn;
+		@extend .btn-info;
+
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	&--group {
+		@extend .input-group;
+
+		margin-bottom: 1rem;
+	}
+	&--prepend {
+		@extend .input-group-prepend;
+	}
+	&--append {
+		@extend .input-group-append;
+	}
+	&--text {
+		@extend .input-group-text;
+	}
+	&--control {
+		@extend .form-control;
+	}
+}
