@@ -1,7 +1,7 @@
 @import "abstract/variables";
 
 // BOOTSTRAP
-// @import "../node_modules/bootstrap/scss/bootstrap";
+@import "bootstrap/bootstrap";
 // Main
 @import "bootstrap/mixins";
 @import "bootstrap/functions";
@@ -25,15 +25,17 @@
 @import "bootstrap/grid";
 
 @import "utilities/text";
+@import "components/buttons";
 @import "components/navbar";
 @import "components/footer";
 @import "components/ribbon";
-@import "components/feed";
-@import "components/index";
-@import "components/itemlist";
 @import "components/login";
+@import "components/header";
 @import "components/profile";
-@import "components/admin";
+@import "components/course";
+@import "components/course-view";
+@import "components/course-creation";
+@import "components/course-outline";
 
 body {
   @include gradient-directional($start-color: theme-color(),$end-color: theme-color("secondary"), $deg: 45deg);

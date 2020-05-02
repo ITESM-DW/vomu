@@ -1,6 +1,11 @@
 .login {
     @extend .mh-100;
-
+    &__form-logo {
+        &__logo {
+            @extend .w-50;
+        }
+        @extend .text-center;
+    }
     &__container {
         @extend .container;
         @extend .mx-auto;

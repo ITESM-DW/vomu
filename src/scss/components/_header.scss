@@ -1,0 +1,8 @@
+.header {
+	@extend .jumbotron;
+	@extend .jumbotron-fluid;
+
+	&__title {
+		@extend .display-3;
+	}
+}
