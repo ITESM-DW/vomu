@@ -9,9 +9,9 @@ import { UserModel } from '../../../models/UserModel';
 })
 export class UserProfileComponent implements OnInit {
 
-  @Input() user: UserModel;
+  editBtn: number = 0;
 
-  editBtn:number = 0;
+  @Input() user: UserModel;
 
   constructor() { }
 
@@ -25,9 +25,13 @@ export class UserProfileComponent implements OnInit {
     }
   }
 
-  changeEditBtn():void{
-    if(this.editBtn==0) { this.editBtn=1; }
-    else { this.editBtn = 0; }
+  enableEdition($event)
+  {
+    this.editBtn = $event;
   }
 
+  disableEdition($event)
+  {
+    this.editBtn = $event;
+  }
 }

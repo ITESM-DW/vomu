@@ -7,11 +7,11 @@
     <app-user-profile-description [user]="user"></app-user-profile-description>-->
     
     <div *ngIf="editBtn == 0; else elseBlock">
-		<app-user-profile-description [user]="user"></app-user-profile-description>
+		<app-user-profile-description [user]="user" (askEdition)="enableEdition($event)"></app-user-profile-description>
 	</div>
 	<ng-template #elseBlock>
 		<form action="" class="container-fluid">
-    		<app-user-profile-edit></app-user-profile-edit>
+    		<app-user-profile-edit (editionSave) = "disableEdition($event)"></app-user-profile-edit>
     	</form>
 	</ng-template>
 </div>

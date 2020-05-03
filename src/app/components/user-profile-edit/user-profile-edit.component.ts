@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-user-profile-edit',
@@ -7,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfileEditComponent implements OnInit {
 
+  @Output() editionSave = new EventEmitter<number>();
+  editBtn:number = 1;
+
   constructor() { }
 
 
   ngOnInit(): void {
+  }
+
+  disableEdition():void{
+    this.editBtn=0; 
+    this.editionSave.emit(this.editBtn);
   }
 
 }

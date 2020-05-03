@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { UserModel } from 'src/models/UserModel';
 
 @Component({
@@ -8,11 +8,21 @@ import { UserModel } from 'src/models/UserModel';
 })
 export class UserProfileDescriptionComponent implements OnInit {
 
+  
+  @Output() askEdition = new EventEmitter<number>();
+  editBtn:number = 0;
+
   @Input() user: UserModel;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  enableEdition():void{
+    this.editBtn=1; 
+    console.log("Variable change");
+    this.askEdition.emit(this.editBtn);
   }
 
 }
