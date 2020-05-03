@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { ChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
+import { LoginComponent } from './components/login/login.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { UserProfileDescriptionComponent } from './components/user-profile-description/user-profile-description.component';
 import { UserProfileEditComponent } from './components/user-profile-edit/user-profile-edit.component';
@@ -23,6 +24,7 @@ import { StatsComponent } from './components/stats/stats.component';
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
     UserProfileComponent,
     UserProfileDescriptionComponent,
     UserProfileEditComponent,
