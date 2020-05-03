@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // Import models.
-import { GenericCardModel } from '../../../models/GenericCardModel';
+import { GenericCardModel } from '../../models/GenericCardModel';
 
 @Component({
 	selector: 'app-card-view',

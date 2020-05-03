@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { UserModel } from 'src/models/UserModel';
+import { UserModel } from 'src/app/models/UserModel';
 
 @Component({
 	selector: 'app-user-profile-description',
