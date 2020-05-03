@@ -1,32 +1,32 @@
 .course-view {
 	@extend .header;
 
-	&--container {
+	&__container {
 		@extend .container;
 
-		&-white {
+		&__white {
 			@extend .bg-light;
 
 			padding: 1rem;
 		}
 	}
-	&--video {
+	&__video {
 		@extend .embed-responsive-item;
 
-		&-container {
+		&__container {
 			@extend .embed-responsive;
 			@extend .embed-responsive-16by9;
 		}
 	}
-	&--title {
+	&__title {
 		@extend .display-3;
 	}
-	&--controls {
+	&__controls {
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
 	}
-	&--description {
+	&__description {
 		
 	}
 }
