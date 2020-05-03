@@ -10,6 +10,7 @@
 
     &__logo {
         @extend .navbar-brand;
+        @extend .float-left;
     }
 
     &__opener {
