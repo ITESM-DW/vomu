@@ -1,0 +1,29 @@
+.generic-card {
+	@extend .card;
+	width: 70%;
+	margin: 10px;
+
+	@include media-breakpoint-up(sm) {
+		width: 40%;
+	}
+	@include media-breakpoint-up(md) {
+		width: 30%;
+	}
+	@include media-breakpoint-up(lg) {
+		width: 20%;
+	}
+
+	&__img {
+		@extend .card-img-top;
+	}
+	&__body {
+		@extend .card-body;
+
+		&--title {
+			@extend .card-title;
+		}
+		&--text {
+			@extend .card-text;
+		}
+	}
+}
