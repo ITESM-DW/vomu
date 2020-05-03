@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// External modules.
+import { ChartsModule } from 'ng2-charts';
+
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { RibbonComponent } from './components/ribbon/ribbon.component';
@@ -11,6 +14,8 @@ import { CourseViewVideoComponent } from './components/course-view-video/course-
 import { CourseViewDetailsComponent } from './components/course-view-details/course-view-details.component';
 import { GenericCardComponent } from './components/generic-card/generic-card.component';
 import { CardViewComponent } from './components/card-view/card-view.component';
+
+import { StatsComponent } from './components/stats/stats.component';
 
 @NgModule({
   declarations: [
@@ -23,9 +28,11 @@ import { CardViewComponent } from './components/card-view/card-view.component';
     CourseViewDetailsComponent,
     GenericCardComponent,
     CardViewComponent,
+    StatsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
