@@ -1,5 +1,5 @@
 export class GenericCardModel {
-    title: string;
-    body: string;
-    buttons: Object;    
+	title: string;
+	body: string;
+	buttons: Object;
 }

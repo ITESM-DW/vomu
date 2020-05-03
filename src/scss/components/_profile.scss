@@ -18,15 +18,14 @@
 		flex-wrap: nowrap;
 	}
 	@include media-breakpoint-up(lg) {
-		
 	}
-		
+
 	&__picture {
 		position: relative;
 		text-align: center;
 		width: 100%;
 		padding: 10px;
-		
+
 		&__img {
 			width: 100%;
 			box-shadow: 0 1rem 1rem #000;

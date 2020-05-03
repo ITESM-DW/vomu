@@ -2,22 +2,19 @@ import { Component, OnInit, Input } from '@angular/core';
 import { GenericCardModel } from 'src/models/GenericCardModel';
 
 @Component({
-  selector: 'app-generic-card',
-  templateUrl: './generic-card.component.html',
-  styleUrls: ['./generic-card.component.scss']
+	selector: 'app-generic-card',
+	templateUrl: './generic-card.component.html',
+	styleUrls: ['./generic-card.component.scss'],
 })
 export class GenericCardComponent implements OnInit {
+	@Input() cardDetail: GenericCardModel;
 
-  @Input() cardDetail: GenericCardModel;
+	constructor() {}
 
-  constructor() { }
+	ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
-  getObjectKeys(obj) {
-    console.error(Object.keys(obj))
-    return Object.keys(obj);
-  }
-
+	getObjectKeys(obj) {
+		console.error(Object.keys(obj));
+		return Object.keys(obj);
+	}
 }

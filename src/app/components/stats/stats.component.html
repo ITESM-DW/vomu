@@ -1,6 +1,6 @@
 <div class="charts">
 	<div class="charts__chart" *ngFor="let chart of charts">
-		{{chart.title}}
+		{{ chart.title }}
 		<canvas
 			baseChart
 			[title]="chart.title"
@@ -11,7 +11,8 @@
 			[legend]="chart.legend"
 			[options]="chart.options"
 			[plugins]="chart.plugins"
-			(chartClick)="onChartClick($event)">
+			(chartClick)="onChartClick($event)"
+		>
 		</canvas>
 	</div>
 </div>

@@ -37,20 +37,17 @@
 	}
 }
 
-
 .navigation {
 	@extend .pagination;
 
 	&__page {
 		@extend .page-item;
-
 	}
 
 	&__link {
 		@extend .page-link;
 	}
 }
-
 
 .pageInfo {
 	@extend .jumbotron;

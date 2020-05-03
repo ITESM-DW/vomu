@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-ribbon',
-  templateUrl: './ribbon.component.html',
-  styleUrls: ['./ribbon.component.scss']
+	selector: 'app-ribbon',
+	templateUrl: './ribbon.component.html',
+	styleUrls: ['./ribbon.component.scss'],
 })
 export class RibbonComponent implements OnInit {
+	constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+	ngOnInit(): void {}
 }

@@ -24,31 +24,28 @@ import { SubjectComponent } from './components/create-course/subject/subject.com
 import { StatsComponent } from './components/stats/stats.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CourseOutlineComponent,
-    CourseCardsComponent,
-    LoginComponent,
-    UserProfileComponent,
-    UserProfileDescriptionComponent,
-    UserProfileEditComponent,
-    NavBarComponent,
-    RibbonComponent,
-    FootbarComponent,
-    HeaderComponent,
-    CourseViewVideoComponent,
-    CourseViewDetailsComponent,
-    GenericCardComponent,
-    CardViewComponent,
-    CreateCourseComponent,
-    SubjectComponent,
-    StatsComponent
-  ],
-  imports: [
-    BrowserModule,
-    ChartsModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		CourseOutlineComponent,
+		CourseCardsComponent,
+		LoginComponent,
+		UserProfileComponent,
+		UserProfileDescriptionComponent,
+		UserProfileEditComponent,
+		NavBarComponent,
+		RibbonComponent,
+		FootbarComponent,
+		HeaderComponent,
+		CourseViewVideoComponent,
+		CourseViewDetailsComponent,
+		GenericCardComponent,
+		CardViewComponent,
+		CreateCourseComponent,
+		SubjectComponent,
+		StatsComponent,
+	],
+	imports: [BrowserModule, ChartsModule],
+	providers: [],
+	bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

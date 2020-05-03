@@ -1,61 +1,61 @@
 .login {
-    @extend .mh-100;
-    &__form-logo {
-        &__logo {
-            @extend .w-50;
-        }
-        @extend .text-center;
-    }
-    &__container {
-        @extend .container;
-        @extend .mx-auto;
-        @extend .m-5;
-        @extend .row;
-        @extend .justify-content-center;
-    }
+	@extend .mh-100;
+	&__form-logo {
+		&__logo {
+			@extend .w-50;
+		}
+		@extend .text-center;
+	}
+	&__container {
+		@extend .container;
+		@extend .mx-auto;
+		@extend .m-5;
+		@extend .row;
+		@extend .justify-content-center;
+	}
 
-    &__card {
-        @extend .card;
-    }
+	&__card {
+		@extend .card;
+	}
 
-    &__field {
-        @extend .form-group;
+	&__field {
+		@extend .form-group;
 
-        &__valid {
-            @extend .valid-feedback;
-        }
+		&__valid {
+			@extend .valid-feedback;
+		}
 
-        &__invalid {
-            @extend .invalid-feedback;
-        }
+		&__invalid {
+			@extend .invalid-feedback;
+		}
 
-        &__control {
-            @extend .form-control;
-        }
-    }
+		&__control {
+			@extend .form-control;
+		}
+	}
 
-    &__body {
-        @extend .card-body;
-    }
+	&__body {
+		@extend .card-body;
+	}
 
-    &__form-logo {
-        @extend .card-header;
-    }
+	&__form-logo {
+		@extend .card-header;
+	}
 
-    &__checkbox {
-        @extend .form-check;
+	&__checkbox {
+		@extend .form-check;
 
-        &__label {
-            @extend .form-check-label;
-        }
+		&__label {
+			@extend .form-check-label;
+		}
 
-        &__check {
-            @extend .form-check-input;
-        }
-    }
+		&__check {
+			@extend .form-check-input;
+		}
+	}
 
-    &__main-btn {
-        @extend .btn;
-        @extend .btn-primary;
-    }
+	&__main-btn {
+		@extend .btn;
+		@extend .btn-primary;
+	}
 }

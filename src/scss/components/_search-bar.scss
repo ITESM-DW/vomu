@@ -1,7 +1,7 @@
-.search{
-    @extend .form-inline;
-    &__input{
-        @extend .form-control;
-        @extend .mr-sm-2;
-    }
+.search {
+	@extend .form-inline;
+	&__input {
+		@extend .form-control;
+		@extend .mr-sm-2;
+	}
 }

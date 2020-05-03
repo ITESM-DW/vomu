@@ -1,39 +1,39 @@
 .ribbon {
-  background-color: theme-colors('secondary');
-  overflow: hidden;
-  overflow-x: hidden;
-  white-space: nowrap;
-  direction: rtl;
-  /* top left corner */
-  position: absolute;
-  right: map-get($ribbon,"horizontal");
-  top: map-get($ribbon,"top");
-  /* for 45 deg rotation */
-  -webkit-transform: rotate(map-get($ribbon,"rotate"));
-     -moz-transform: rotate(map-get($ribbon,"rotate"));
-      -ms-transform: rotate(map-get($ribbon,"rotate"));
-       -o-transform: rotate(map-get($ribbon,"rotate"));
-          transform: rotate(map-get($ribbon,"rotate"));
-  /* for creating shadow */
-  -webkit-box-shadow: map-get($ribbon,"box-shadow");
-     -moz-box-shadow: map-get($ribbon,"box-shadow");
-          box-shadow: map-get($ribbon,"box-shadow");
+	background-color: theme-colors('secondary');
+	overflow: hidden;
+	overflow-x: hidden;
+	white-space: nowrap;
+	direction: rtl;
+	/* top left corner */
+	position: absolute;
+	right: map-get($ribbon, 'horizontal');
+	top: map-get($ribbon, 'top');
+	/* for 45 deg rotation */
+	-webkit-transform: rotate(map-get($ribbon, 'rotate'));
+	-moz-transform: rotate(map-get($ribbon, 'rotate'));
+	-ms-transform: rotate(map-get($ribbon, 'rotate'));
+	-o-transform: rotate(map-get($ribbon, 'rotate'));
+	transform: rotate(map-get($ribbon, 'rotate'));
+	/* for creating shadow */
+	-webkit-box-shadow: map-get($ribbon, 'box-shadow');
+	-moz-box-shadow: map-get($ribbon, 'box-shadow');
+	box-shadow: map-get($ribbon, 'box-shadow');
 
-  &:hover {
-    opacity: 0.3;
-  }
+	&:hover {
+		opacity: 0.3;
+	}
 
-  a {
-  overflow: hidden;
-  border: 1px solid map-get($ribbon,"border");
-  color: map-get($ribbon,"text");
-  display: block;
-  font: bold 100% 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  margin: 1px 0;
-  padding: 10px 50px;
-  text-align: center;
-  text-decoration: none;
-  /* for creating shadow */
-  text-shadow: map-get($ribbon,"text-shadow");
-  }
+	a {
+		overflow: hidden;
+		border: 1px solid map-get($ribbon, 'border');
+		color: map-get($ribbon, 'text');
+		display: block;
+		font: bold 100% 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		margin: 1px 0;
+		padding: 10px 50px;
+		text-align: center;
+		text-decoration: none;
+		/* for creating shadow */
+		text-shadow: map-get($ribbon, 'text-shadow');
+	}
 }

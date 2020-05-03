@@ -12,5 +12,5 @@ export class ChartModel {
     labels: Label[];
     options?: ChartOptions;
     legend?: boolean;
-    plugins?: any; 
+    plugins?: any;
 }
