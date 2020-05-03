@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { RibbonComponent } from './components/ribbon/ribbon.component';
 import { FootbarComponent } from './components/footbar/footbar.component';
 import { HeaderComponent } from './components/header/header.component';
 
@@ -13,6 +15,8 @@ import { CardViewComponent } from './components/card-view/card-view.component';
 @NgModule({
   declarations: [
     AppComponent,
+    NavBarComponent,
+    RibbonComponent,
     FootbarComponent,
     HeaderComponent,
     CourseViewVideoComponent,
