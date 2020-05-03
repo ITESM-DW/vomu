@@ -3,33 +3,56 @@
 		<h5>
 			<!-- Title -->
 			<div class="course-creation--group">
-				<a data-toggle="collapse" data-parent="#values" href="#somenumber" aria-expanded="true"
-					aria-controls="learn">
+				<a
+					data-toggle="collapse"
+					data-parent="#values"
+					[href]="'#subject' + subject.id"
+					aria-expanded="true"
+					aria-controls="learn"
+				>
 					<div class="course-creation--prepend">
-						<span class="course-creation--text" id="addon-wrapping">Subject</span>
+						<span class="course-creation--text" id="addon-wrapping"
+							>Subject</span
+						>
 					</div>
 				</a>
-				<input type="text" class="course-creation--control" placeholder="Subject">
+				<input
+					[value]="subject.title"
+					type="text"
+					class="course-creation--control"
+					placeholder="Subject"
+				/>
 				<div class="course-creation--append">
 					<a href="" class="button button-danger">Delete</a>
 				</div>
 			</div>
 		</h5>
 	</div>
-	<div id="somenumber" class="infoCard__collapse" role="tabpanel">
+	<div [id]="'subject' + subject.id" class="infoCard__collapse" role="tabpanel">
 		<div class="infoCard__body">
 			<div class="course-creation--group">
 				<div class="course-creation--prepend">
 					<span class="course-creation--text">Description</span>
 				</div>
-				<textarea class="course-creation--control" aria-label="With textarea"></textarea>
+				<textarea
+					[value]="subject.description"
+					class="course-creation--control"
+					aria-label="With textarea"
+				></textarea>
 			</div>
 			<!-- Video URL -->
 			<div class="course-creation--group">
 				<div class="course-creation--prepend">
-					<span class="course-creation--text" id="addon-wrapping">Video URL</span>
+					<span class="course-creation--text" id="addon-wrapping"
+						>Video URL</span
+					>
 				</div>
-				<input type="text" class="course-creation--control" placeholder="Subject">
+				<input
+					type="text"
+					class="course-creation--control"
+					placeholder="Subject"
+					[value]="subject.videoUrl"
+				/>
 			</div>
 		</div>
 	</div>
