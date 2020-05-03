@@ -15,7 +15,7 @@ import { CourseViewDetailsComponent } from './components/course-view-details/cou
 import { GenericCardComponent } from './components/generic-card/generic-card.component';
 import { CardViewComponent } from './components/card-view/card-view.component';
 
-import { StatsComponent } from './pages/stats/stats.component';
+import { StatsComponent } from './components/stats/stats.component';
 
 @NgModule({
   declarations: [

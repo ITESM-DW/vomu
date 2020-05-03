@@ -1,5 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
-import * as Chart from 'chart.js'
+import { Component, OnInit, Renderer2 } from '@angular/core';
 
 import { ChartModel } from '../../models/ChartModel';
 
@@ -10,11 +9,11 @@ import { ChartModel } from '../../models/ChartModel';
 })
 export class StatsComponent implements OnInit {
 
-  chartIds:Array<string> = ['no_users', 'no_courses'];
+  chartIds: Array<string> = ['no_users', 'no_courses'];
   charts: ChartModel[] = [
     {
-      title: "# of Users (Cumulative)",
-      type: "line",
+      title: '# of Users (Cumulative)',
+      type: 'line',
       datasets: [
         { data: [100, 130, 145, 150, 163, 169, 180, 220, 247, 290, 300, 315], label: 'Students' },
         { data: [5, 8, 14, 16, 16, 18, 20, 26, 25, 27, 30, 33], label: 'Professor' },
@@ -26,8 +25,8 @@ export class StatsComponent implements OnInit {
       },
     },
     {
-      title: "# of Professors (Cumulative)",
-      type: "line",
+      title: '# of Professors (Cumulative)',
+      type: 'line',
       datasets: [
         { data: [330, 600, 260, 700], label: 'Account A' },
         { data: [120, 455, 100, 340], label: 'Account B' },
@@ -40,8 +39,8 @@ export class StatsComponent implements OnInit {
       },
     },
     {
-      title: "Signups per Month",
-      type: "bar",
+      title: 'Signups per Month',
+      type: 'bar',
       datasets: [
         {
         data: [100, 30, 15, 5, 13, 6, 11, 40, 27, 43, 10, 15],
@@ -57,10 +56,10 @@ export class StatsComponent implements OnInit {
       options: {
         responsive: true
       },
-    }, 
+    },
     {
-      title: "Overall Course Contents",
-      type: "pie",
+      title: 'Overall Course Contents',
+      type: 'pie',
       data: [40, 23, 7],
       labels: ['Technology', 'Self Improvement', 'History'],
       legend: true,
@@ -68,19 +67,19 @@ export class StatsComponent implements OnInit {
       options: {
         responsive: true
       },
-    }, 
+    },
     {
-      title: "User Details",
-      type: "doughnut",
+      title: 'User Details',
+      type: 'doughnut',
       data: [
         [315, 33],
         [33, 315],
       ],
       labels: ['Student', 'Teacher'],
-    }, 
+    },
   ];
 
-  constructor() {}
+  constructor(private renderer: Renderer2) {}
 
   ngOnInit(): void {
   }
