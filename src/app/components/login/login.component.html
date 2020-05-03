@@ -1,29 +1,52 @@
 <div class="login__card">
-                <div class="login__form-logo">
-                    <img class="login__form-logo__logo" src="../../../assets/images/logo.png" alt="Vomu" />
-                </div>
-                <div class="login__body">
-                    <form action="/profile.html" class="was-validated">
-                        <div class="login__field">
-                            <label for="uname">Username:</label>
-                            <input type="text" class="login__field__control" id="uname" placeholder="Enter username" name="uname" required>
-                            <div class="login__field__valid">Valid.</div>
-                            <div class="login__field__invalid">Please fill out this field.</div>
-                        </div>
-                        <div class="login__field">
-                            <label for="pwd">Password:</label>
-                            <input type="password" class="login__field__control" id="pwd" placeholder="Enter password" name="pswd" required>
-                            <div class="login__field__valid">Valid.</div>
-                            <div class="login__field__invalid">Please fill out this field.</div>
-                        </div>
-                        <div class="login__field login__checkbox">
-                            <label class="login__checkbox__label">
-                                <input class="login__checkbox__check" type="checkbox" name="remember" required> I agree on blabla.
-                                <div class="login__field__valid">Valid.</div>
-                                <div class="login__field__invalid">Check this checkbox to continue.</div>
-                            </label>
-                        </div>
-                        <button type="submit" class="login__main-btn">Submit</button>
-                    </form>
-                </div>
+    <div class="login__form-logo">
+        <img class="login__form-logo__logo" src="../../../assets/images/logo.png" alt="Vomu" />
+    </div>
+    <div class="login__body">
+        <form action="/profile.html" class="was-validated">
+            <div class="login__field">
+                <label for="uname">Username:</label>
+                <input type="text" class="login__field__control" id="uname" placeholder="Enter username" name="uname" required>
+                <div class="login__field__valid">Valid.</div>
+                <div class="login__field__invalid">Please fill out this field.</div>
             </div>
+            <div class="login__field">
+                <label for="pwd">Password:</label>
+                <input type="password" class="login__field__control" id="pwd" placeholder="Enter password" name="pswd" required>
+                <div class="login__field__valid">Valid.</div>
+                <div class="login__field__invalid">Please fill out this field.</div>
+            </div>
+            <!--Components for registration-->
+            <div *ngIf="register==true">
+                <div class="login__field">
+                    <label for="pwd">Input your password again:</label>
+                    <input type="password" class="login__field__control" id="pwd" placeholder="Enter password" name="pswd" required>
+                    <div class="login__field__valid">Valid.</div>
+                    <div class="login__field__invalid">Please fill out this field.</div>
+                </div>
+                <div class="login__field">
+                    <label for="pwd">E-mail:</label>
+                    <input type="email" class="login__field__control" id="pwd" placeholder="Enter password" name="pswd" required>
+                    <div class="login__field__valid">Valid.</div>
+                    <div class="login__field__invalid">Please fill out this field.</div>
+                </div>
+                <div class="login__field">
+                    <label for="pwd">ID Number:</label>
+                    <input type="email" class="login__field__control" id="pwd" placeholder="Enter password" name="pswd" required>
+                    <div class="login__field__valid">Valid.</div>
+                    <div class="login__field__invalid">Please fill out this field.</div>
+                </div>
+                    </div>
+                <!--Components for registration-->
+                <div class="login__field login__checkbox">
+                    <label class="login__checkbox__label">
+                        <input class="login__checkbox__check" type="checkbox" name="remember" required> I agree on blabla.
+                        <div class="login__field__valid">Valid.</div>
+                        <div class="login__field__invalid">Check this checkbox to continue.</div>
+                    </label>
+                </div>
+            <button type="submit" class="login__main-btn" style="margin: 10px;">{{loginRegister}}</button>
+            <button type="submit" class="login__main-btn" style="margin: 10px;" id="registrationBtn" (click) = "changeRegister()">{{changeOption}}</button>
+        </form>
+    </div>
+</div>
