@@ -11,6 +11,8 @@ import { CourseViewVideoComponent } from './components/course-view-video/course-
 import { CourseViewDetailsComponent } from './components/course-view-details/course-view-details.component';
 import { GenericCardComponent } from './components/generic-card/generic-card.component';
 import { CardViewComponent } from './components/card-view/card-view.component';
+import { CreateCourseComponent } from './components/create-course/create-course.component';
+import { SubjectComponent } from './components/create-course/subject/subject.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { CardViewComponent } from './components/card-view/card-view.component';
     CourseViewDetailsComponent,
     GenericCardComponent,
     CardViewComponent,
+    CreateCourseComponent,
+    SubjectComponent,
   ],
   imports: [
     BrowserModule

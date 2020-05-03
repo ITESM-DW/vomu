@@ -1,0 +1,39 @@
+<div class="course-creation">
+	<!-- Title -->
+	<div class="course-creation--group">
+		<div class="course-creation--prepend">
+			<span class="course-creation--text" id="addon-wrapping">Title</span>
+		</div>
+		<input type="text" class="course-creation--control" placeholder="Username" aria-label="Username"
+			aria-describedby="addon-wrapping">
+	</div>
+	<!-- Description -->
+	<div class="course-creation--group">
+		<div class="course-creation--prepend">
+			<span class="course-creation--text">What will students learn?</span>
+		</div>
+		<textarea class="course-creation--control" aria-label="With textarea"></textarea>
+	</div>
+	<!-- Requirements -->
+	<div class="course-creation--group">
+		<div class="course-creation--prepend">
+			<span class="course-creation--text">What are the minimum requirements?</span>
+		</div>
+		<textarea class="course-creation--control" aria-label="With textarea"></textarea>
+	</div>
+	<!-- Profile picture -->
+	<div class="course-creation--group">
+		<div class="custom-file">
+			<input type="file" class="custom-file-input" id="inputGroupFile02">
+			<label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose
+				course image</label>
+		</div>
+		<div class="course-creation--append">
+			<span class="course-creation--text" id="inputGroupFileAddon02">Upload</span>
+		</div>
+	</div>
+	<a class="button button-info">Add Subject</a>
+	<div id="values" class="mb-3" role="tablist" aria-multiselectable="true">
+		<app-subject *ngFor="let subject of subjects"></app-subject>
+	</div>
+</div>
