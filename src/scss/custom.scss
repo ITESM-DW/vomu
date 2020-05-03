@@ -36,6 +36,7 @@
 @import "components/course-view";
 @import "components/course-creation";
 @import "components/course-outline";
+@import "components/search-bar";
 
 body {
   @include gradient-directional($start-color: theme-color(),$end-color: theme-color("secondary"), $deg: 45deg);
