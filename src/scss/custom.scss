@@ -32,10 +32,16 @@
 @import "components/login";
 @import "components/header";
 @import "components/profile";
-@import "components/course";
+
 @import "components/course-view";
 @import "components/course-creation";
 @import "components/course-outline";
+@import "components/search-bar";
+@import "components/stats";
+
+// Card components
+@import "components/generic-card";
+@import "components/card-view";
 
 body {
   @include gradient-directional($start-color: theme-color(),$end-color: theme-color("secondary"), $deg: 45deg);

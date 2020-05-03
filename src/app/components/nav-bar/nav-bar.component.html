@@ -1,0 +1,41 @@
+<nav class="menu">
+    <app-ribbon></app-ribbon>
+    <div class="menu__logo">
+        <img width="80px" class="logo" src="../../../assets/images/brain.png" alt="Vomu">
+    </div>
+    <button class="menu__opener " type="button" data-toggle="collapse"
+        data-target="#menu" aria-controls="menu" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+        <ul class="menu__options mr-auto">
+            <li class="active">
+                <a class="menu__options__item" href="./index.html">Home</a>
+                <!-- Rourting missing -->
+            </li>
+            <li *ngIf="!loggedin" class="active">
+                <a class="menu__options__item" href="./login.html">Log in</a>
+                <!-- Rourting missing -->
+            </li>
+            <li *ngIf="!loggedin" class="active">
+                <a class="menu__options__item" href="./signup.html">Sign up</a>
+                <!-- Rourting missing -->
+            </li>
+            <li *ngIf="loggedin" class="active">
+                <a class="menu__options__item" href="./profile.html">Profile</a>
+                <!-- Rourting missing -->
+            </li>
+            <li *ngIf="loggedin" class="active">
+                <a class="menu__options__item" href="./index.html">Log out</a>
+                <!-- Rourting missing -->
+            </li>
+        </ul>
+        <form *ngIf="loggedin" class="search">
+            <input class="search__input" type="search" placeholder="Search" aria-label="Search">
+            <button class="button button-success" type="submit">Search</button>
+            <!-- Rourting missing -->
+        </form>
+    </div>
+</nav>

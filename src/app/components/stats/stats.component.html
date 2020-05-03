@@ -1,0 +1,17 @@
+<div class="charts">
+	<div class="charts__chart" *ngFor="let chart of charts">
+		{{chart.title}}
+		<canvas
+			baseChart
+			[title]="chart.title"
+			[chartType]="chart.type"
+			[datasets]="chart.datasets"
+			[data]="chart.data"
+			[labels]="chart.labels"
+			[legend]="chart.legend"
+			[options]="chart.options"
+			[plugins]="chart.plugins"
+			(chartClick)="onChartClick($event)">
+		</canvas>
+	</div>
+</div>
