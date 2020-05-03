@@ -5,6 +5,9 @@ import { NgModule } from '@angular/core';
 import { ChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { UserProfileDescriptionComponent } from './components/user-profile-description/user-profile-description.component';
+import { UserProfileEditComponent } from './components/user-profile-edit/user-profile-edit.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { RibbonComponent } from './components/ribbon/ribbon.component';
 import { FootbarComponent } from './components/footbar/footbar.component';
@@ -20,6 +23,9 @@ import { StatsComponent } from './components/stats/stats.component';
 @NgModule({
   declarations: [
     AppComponent,
+    UserProfileComponent,
+    UserProfileDescriptionComponent,
+    UserProfileEditComponent,
     NavBarComponent,
     RibbonComponent,
     FootbarComponent,

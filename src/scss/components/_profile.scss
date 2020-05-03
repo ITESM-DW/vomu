@@ -27,7 +27,7 @@
 		width: 100%;
 		padding: 10px;
 		
-		&--img {
+		&__img {
 			width: 100%;
 			box-shadow: 0 1rem 1rem #000;
 
@@ -42,7 +42,7 @@
 	&__info {
 		width: 100%;
 
-		&--edit {
+		&__edit {
 			@extend .btn;
 			@extend .btn-primary;
 		}
