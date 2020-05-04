@@ -9,13 +9,12 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { RibbonComponent } from './components/ribbon/ribbon.component';
 import { FootbarComponent } from './components/footbar/footbar.component';
 import { HeaderComponent } from './components/header/header.component';
-import { CreateCourseComponent } from './components/create-course/create-course.component';
-import { SubjectComponent } from './components/create-course/subject/subject.component';
 import { AppRoutingModule } from './app-routing.module';
 import { StudentModule } from './student/student.module';
 import { UserService } from './user.service';
 import { AuthService } from './auth.service';
 import { CourseService } from './course.service';
+import { ProfessorModule } from './professor/professor.module';
 
 @NgModule({
 	declarations: [
@@ -26,11 +25,9 @@ import { CourseService } from './course.service';
 		NavBarComponent,
 		RibbonComponent,
 		FootbarComponent,
-		HeaderComponent,
-		CreateCourseComponent,
-		SubjectComponent,
+		HeaderComponent
 	],
-	imports: [BrowserModule, AppRoutingModule, StudentModule],
+	imports: [BrowserModule, AppRoutingModule, StudentModule, ProfessorModule],
 	providers: [UserService, AuthService, CourseService],
 	bootstrap: [AppComponent],
 })
