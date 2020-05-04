@@ -27,6 +27,7 @@ import { UserService } from './user.service';
 import { CourseService } from './course.service';
 import { StudentService } from './student.service';
 import { AuthService } from './auth.service';
+import { ProfessorService } from './professor.service';
 
 @NgModule({
 	declarations: [
@@ -50,7 +51,7 @@ import { AuthService } from './auth.service';
 		StatsComponent,
 	],
 	imports: [BrowserModule, ChartsModule, AppRoutingModule],
-	providers: [UserService, CourseService, StudentService, AuthService],
+	providers: [UserService, CourseService, StudentService, AuthService, ProfessorService],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

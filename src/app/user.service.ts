@@ -101,7 +101,11 @@ export class UserService {
 
 	updateUserInfo(user: UserModel) {
 		const index = this.users.findIndex(u => u.email === user.email);
-		this.users[index] = user;
+		if(index > -1)
+		{
+			this.users[index] = user;
+		}
+		return;
 	}
 
 	getUserCourses(email: string): number[] {
@@ -110,7 +114,7 @@ export class UserService {
 		{
 			return this.users[index].courses;
 		}
-		return [];
+		return;
 	}
 
 	getUsers(): UserModel[] {

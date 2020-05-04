@@ -132,7 +132,11 @@ export class CourseService {
 
 	editCourse(course: CourseModel) {
 		const index = this.courses.findIndex(c => c.id === course.id);
-		this.courses[index] = course;
+		if(index > -1)
+		{
+			this.courses[index] = course;
+		}
+		return;
 	}
 
 	deleteCourse(id: number) {
@@ -144,6 +148,11 @@ export class CourseService {
 	}
 
 	getCourseStudents(id: number) {
-		return this.getCourse(id).students;
+		const course = this.getCourse(id);
+		if(course != undefined)
+		{
+			return course.students;
+		}
+		return;
 	}
 }

@@ -16,11 +16,11 @@ export class AuthService {
 	isAuth() {
 		return this.loggedIn;
 	}
-	createAccount(user : UserModel) {
+	createUser(user : UserModel) {
 		this.userService.getUsers().push(user);
 
 	}
-	deleteAccount(email: string) {
+	deleteUser(email: string) {
 		this.userService.deleteUser(email);
 	}
 	login() {
