@@ -14,6 +14,7 @@ import { StudentModule } from './student/student.module';
 import { UserService } from './user.service';
 import { AuthService } from './auth.service';
 import { CourseService } from './course.service';
+import { AdminModule } from './admin/admin.module';
 import { ProfessorModule } from './professor/professor.module';
 import { AdminModule } from './admin/admin.module';
 

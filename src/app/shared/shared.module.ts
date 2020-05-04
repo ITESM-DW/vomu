@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserProfileDescriptionComponent } from './user-profile-description/user-profile-description.component';
 import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.component';
