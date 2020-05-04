@@ -15,7 +15,7 @@ import { ProfessorDashboardComponent } from './professor-dashboard/professor-das
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
   ],
   exports: [
     ProfessorDashboardComponent,
