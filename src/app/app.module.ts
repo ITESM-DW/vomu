@@ -19,10 +19,9 @@ import { CourseViewVideoComponent } from './components/course-view-video/course-
 import { CourseViewDetailsComponent } from './components/course-view-details/course-view-details.component';
 import { GenericCardComponent } from './components/generic-card/generic-card.component';
 import { CardViewComponent } from './components/card-view/card-view.component';
-import { CreateCourseComponent } from './components/create-course/create-course.component';
-import { SubjectComponent } from './components/create-course/subject/subject.component';
 import { StatsComponent } from './components/stats/stats.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ProfessorModule } from './professor/professor.module';
 
 @NgModule({
 	declarations: [
@@ -41,11 +40,9 @@ import { AppRoutingModule } from './app-routing.module';
 		CourseViewDetailsComponent,
 		GenericCardComponent,
 		CardViewComponent,
-		CreateCourseComponent,
-		SubjectComponent,
 		StatsComponent,
 	],
-	imports: [BrowserModule, ChartsModule, AppRoutingModule],
+	imports: [BrowserModule, ChartsModule, AppRoutingModule, ProfessorModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })
