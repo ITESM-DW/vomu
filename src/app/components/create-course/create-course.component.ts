@@ -18,7 +18,8 @@ export class CreateCourseComponent implements OnInit {
 	];
 	constructor() { }
 
-	ngOnInit(): void { }
+	ngOnInit(): void {
+	}
 
 	addSubject() {
 		this.subjects.push({

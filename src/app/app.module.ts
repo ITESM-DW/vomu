@@ -22,6 +22,7 @@ import { CardViewComponent } from './components/card-view/card-view.component';
 import { CreateCourseComponent } from './components/create-course/create-course.component';
 import { SubjectComponent } from './components/create-course/subject/subject.component';
 import { StatsComponent } from './components/stats/stats.component';
+import { UserService } from './user.service';
 
 @NgModule({
 	declarations: [
@@ -45,7 +46,7 @@ import { StatsComponent } from './components/stats/stats.component';
 		StatsComponent,
 	],
 	imports: [BrowserModule, ChartsModule],
-	providers: [],
+	providers: [UserService],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
