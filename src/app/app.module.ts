@@ -15,6 +15,9 @@ import { UserService } from './user.service';
 import { AuthService } from './auth.service';
 import { CourseService } from './course.service';
 import { ProfessorModule } from './professor/professor.module';
+import { CourseService } from './course.service';
+import { UserService } from './user.service';
+import { AuthService } from './auth.service';
 
 @NgModule({
 	declarations: [

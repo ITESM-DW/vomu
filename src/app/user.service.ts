@@ -13,7 +13,6 @@ export class UserService {
 			courses: []
 		}
 	];
-
 	getUserInfo() {
 		return this.users[0];
 	}
@@ -23,15 +22,11 @@ export class UserService {
 		this.users[index] = user;
 	}
 
-	getUserCourses() {
-
-	}
+	getUserCourses() {	}
 
 	getUsers() {
 		return this.users;
 	}
 
-	deleteUser() {
-
-	}
+	deleteUser() {	}
 }
