@@ -1,0 +1,15 @@
+.exports {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 100%;
+
+	&__data {
+		width: 25%;
+		margin: 1rem;
+
+		&--text {
+			color: #fff;
+		}
+	}
+}

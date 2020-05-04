@@ -14,10 +14,8 @@ import { StudentModule } from './student/student.module';
 import { UserService } from './user.service';
 import { AuthService } from './auth.service';
 import { CourseService } from './course.service';
+import { AdminModule } from './admin/admin.module';
 import { ProfessorModule } from './professor/professor.module';
-import { CourseService } from './course.service';
-import { UserService } from './user.service';
-import { AuthService } from './auth.service';
 
 @NgModule({
 	declarations: [
@@ -30,7 +28,7 @@ import { AuthService } from './auth.service';
 		FootbarComponent,
 		HeaderComponent
 	],
-	imports: [BrowserModule, AppRoutingModule, StudentModule, ProfessorModule],
+	imports: [BrowserModule, ProfessorModule, StudentModule, AdminModule, AppRoutingModule],
 	providers: [UserService, AuthService, CourseService],
 	bootstrap: [AppComponent],
 })
