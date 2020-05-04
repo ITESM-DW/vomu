@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { UserModel } from '../../models/UserModel';
+import { UserService } from 'src/app/user.service';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
 	selector: 'app-user-profile',
@@ -12,17 +14,13 @@ export class UserProfileComponent implements OnInit {
 
 	@Input() user: UserModel;
 
-	constructor() {}
+	constructor(private userService: UserService, private authService: AuthService) {}
 
 	ngOnInit(): void {
 		// TODO(kevinwkt): undo hardcode for now.
-		this.user = {
-			username: 'Ramón González',
-			title: 'PhD.',
-			description:
-				'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem deleniti molestiae officiis optio? Facilis aliquam aut dicta impedit autem neque ut cumque, praesentium eveniet quasi accusantium blanditiis. Ipsam, aspernatur consequatur.',
-			image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330',
-		};
+		if (this.authService.isAuth()) {
+			this.user = this.userService.getUserInfo(); // TODO Get id with routing
+		}
 	}
 
 	enableEdition($event) {

@@ -14,6 +14,7 @@ import { CourseViewDetailsComponent } from './components/course-view-details/cou
 import { AppRoutingModule } from './app-routing.module';
 import { ProfessorModule } from './professor/professor.module';
 
+
 @NgModule({
 	declarations: [
 		AppComponent,
