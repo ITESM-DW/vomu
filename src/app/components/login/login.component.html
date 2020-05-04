@@ -35,7 +35,7 @@
 				<div class="login__field__invalid">Please fill out this field.</div>
 			</div>
 			<!--Components for registration-->
-			<div *ngIf="register == true">
+			<div *ngIf="now === 'signup'">
 				<div class="login__field">
 					<label for="pwd">Input your password again:</label>
 					<input
@@ -100,7 +100,7 @@
 				class="login__main-btn"
 				style="margin: 10px;"
 				id="registrationBtn"
-				(click)="changeRegister()"
+				(click)="onChangeOption()" 
 			>
 				{{ changeOption }}
 			</button>
