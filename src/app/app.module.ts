@@ -16,6 +16,7 @@ import { AuthService } from './auth.service';
 import { CourseService } from './course.service';
 import { AdminModule } from './admin/admin.module';
 import { ProfessorModule } from './professor/professor.module';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
 	declarations: [
@@ -28,7 +29,7 @@ import { ProfessorModule } from './professor/professor.module';
 		FootbarComponent,
 		HeaderComponent
 	],
-	imports: [BrowserModule, AppRoutingModule, StudentModule, ProfessorModule, AdminModule],
+	imports: [BrowserModule, ProfessorModule, StudentModule, AdminModule, AppRoutingModule],
 	providers: [UserService, AuthService, CourseService],
 	bootstrap: [AppComponent],
 })
