@@ -19,6 +19,7 @@ import { CardViewComponent } from './components/card-view/card-view.component';
 import { CreateCourseComponent } from './components/create-course/create-course.component';
 import { SubjectComponent } from './components/create-course/subject/subject.component';
 import { AppRoutingModule } from './app-routing.module';
+import { UserService } from './user.service';
 
 // Modules.
 import { AdminModule } from './admin/admin.module';
@@ -44,7 +45,7 @@ import { AdminModule } from './admin/admin.module';
 		SubjectComponent,
 	],
 	imports: [BrowserModule, AppRoutingModule, AdminModule],
-	providers: [],
+	providers: [UserService],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

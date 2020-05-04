@@ -12,4 +12,8 @@ export class ExportFilesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  downloadUsers() {}
+
+  downloadProfessors() {}
+
 }

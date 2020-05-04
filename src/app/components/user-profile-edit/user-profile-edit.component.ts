@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { UserService } from 'src/app/user.service';
+import { UserModel } from 'src/app/models/UserModel';
 
 @Component({
 	selector: 'app-user-profile-edit',
@@ -6,14 +8,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 	styleUrls: ['./user-profile-edit.component.scss'],
 })
 export class UserProfileEditComponent implements OnInit {
+	@Input() user: UserModel;
 	@Output() editionSave = new EventEmitter<number>();
 	editBtn = 1;
 
-	constructor() {}
+	constructor(private userService: UserService) {}
 
 	ngOnInit(): void {}
 
 	disableEdition(): void {
+		this.userService.updateUserInfo(this.user);
 		this.editBtn = 0;
 		this.editionSave.emit(this.editBtn);
 	}

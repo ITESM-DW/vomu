@@ -15,6 +15,7 @@
 	<ng-template #elseBlock>
 		<form action="" class="container-fluid">
 			<app-user-profile-edit
+				[user]="user"
 				(editionSave)="disableEdition($event)"
 			></app-user-profile-edit>
 		</form>
