@@ -1,4 +1,4 @@
-.generic-card {
+app-generic-card {
 	@extend .card;
 	width: 70%;
 	margin: 10px;
@@ -13,10 +13,10 @@
 		width: 20%;
 	}
 
-	&__img {
-		@extend .card-img-top;
-	}
-	&__body {
+	.generic-card__img {
+			@extend .card-img-top;
+		}
+	.generic-card__body {
 		@extend .card-body;
 
 		&--title {
@@ -25,5 +25,5 @@
 		&--text {
 			@extend .card-text;
 		}
-	}
+	}	
 }

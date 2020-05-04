@@ -11,18 +11,16 @@ import { AuthService } from 'src/app/auth.service';
 })
 export class UserProfileComponent implements OnInit {
 	editBtn = 0;
-
 	@Input() user: UserModel;
 
 	constructor(private userService: UserService, private authService: AuthService) {}
 
 	ngOnInit(): void {
-		// TODO(kevinwkt): undo hardcode for now.
 		if (this.authService.isAuth()) {
+			console.log(this.user);
 			this.user = this.userService.getUserInfo(); // TODO Get id with routing
 		}
 	}
-
 	enableEdition($event) {
 		this.editBtn = $event;
 	}
