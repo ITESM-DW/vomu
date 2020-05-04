@@ -5,6 +5,7 @@ import { StudentCourseViewComponent } from './student-course-view/student-course
 import { CourseViewDetailsComponent } from './student-course-view/course-view-details/course-view-details.component';
 import { StudentProfileComponent } from './student-profile/student-profile.component';
 import { SharedModule } from '../shared/shared.module';
+import { StudentRoutingModule } from './student-routing.module';
 
 @NgModule({
 	declarations: [
@@ -15,7 +16,8 @@ import { SharedModule } from '../shared/shared.module';
 	],
 	imports: [
 		CommonModule,
-		SharedModule
+		SharedModule,
+		StudentRoutingModule
 	],
 	exports: [
 		StudentCourseViewComponent,

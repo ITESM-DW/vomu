@@ -27,7 +27,7 @@ import { ProfessorModule } from './professor/professor.module';
 		FootbarComponent,
 		HeaderComponent
 	],
-	imports: [BrowserModule, AppRoutingModule, StudentModule, ProfessorModule],
+	imports: [BrowserModule, StudentModule, ProfessorModule, AppRoutingModule],
 	providers: [UserService, AuthService, CourseService],
 	bootstrap: [AppComponent],
 })
