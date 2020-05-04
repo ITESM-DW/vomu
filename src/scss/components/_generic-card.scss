@@ -14,8 +14,8 @@ app-generic-card {
 	}
 
 	.generic-card__img {
-			@extend .card-img-top;
-		}
+		@extend .card-img-top;
+	}
 	.generic-card__body {
 		@extend .card-body;
 
@@ -25,5 +25,5 @@ app-generic-card {
 		&--text {
 			@extend .card-text;
 		}
-	}	
+	}
 }

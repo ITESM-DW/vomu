@@ -1,10 +1,9 @@
 .generic-table {
-	
 	@extend .table;
 	@extend .table-striped;
 	@extend .table-light;
 	@extend .table-hover;
-	
+
 	width: 90%;
 	margin: 0 auto;
 	&__header {

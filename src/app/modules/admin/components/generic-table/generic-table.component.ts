@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserModel, UserType } from 'src/app/modules/shared/models/UserModel';
 import { UserService } from 'src/app/services/user.service';
+import { UserModel, UserType } from 'src/app/modules/shared/models/UserModel';
 
 @Component({
 	selector: 'app-generic-table',
