@@ -9,7 +9,7 @@ import { GenericCardModel } from '../../models/GenericCardModel';
 	styleUrls: ['./card-view.component.scss'],
 })
 export class CardViewComponent implements OnInit {
-	cardDetails: GenericCardModel[];
+	cardDetails: GenericCardModel[] = [];
 
 	constructor() {}
 

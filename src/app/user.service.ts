@@ -1,7 +1,7 @@
-import { UserModel } from './models/UserModel';
-import { UserType } from './models/UserModel';
+import { UserModel, UserType } from './models/UserModel';
+import { Injectable } from '@angular/core';
 
-
+@Injectable()
 export class UserService {
 	users: UserModel[] = [
 	{
