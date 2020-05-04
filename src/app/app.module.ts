@@ -24,6 +24,9 @@ import { SubjectComponent } from './components/create-course/subject/subject.com
 import { StatsComponent } from './components/stats/stats.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UserService } from './user.service';
+import { CourseService } from './course.service';
+import { StudentService } from './student.service';
+import { AuthService } from './auth.service';
 
 @NgModule({
 	declarations: [
@@ -47,7 +50,7 @@ import { UserService } from './user.service';
 		StatsComponent,
 	],
 	imports: [BrowserModule, ChartsModule, AppRoutingModule],
-	providers: [UserService],
+	providers: [UserService, CourseService, StudentService, AuthService],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

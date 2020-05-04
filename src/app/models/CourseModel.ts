@@ -6,6 +6,6 @@ export class CourseModel {
 	title: string;
 	description: string;
 	subjects: Subject[];
-	students: UserModel[];
-	teacher: UserModel;
+	students: string[];
+	teacher: string;
 }

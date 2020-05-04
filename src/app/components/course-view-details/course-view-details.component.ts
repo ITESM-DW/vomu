@@ -21,6 +21,6 @@ export class CourseViewDetailsComponent implements OnInit {
 		// 	subjects: []
 		// };
 
-		this.course = this.courseService.getCourse();
+		this.course = this.courseService.getCourse(1);
 	}
 }

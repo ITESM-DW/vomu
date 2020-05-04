@@ -7,8 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-	"e2e": "ng e2e",
-	"prettify": "prettier --single-quote --use-tabs --write src/**/*.{html,ts} src/scss/**/*.scss"
+    "e2e": "ng e2e",
+    "prettify": "prettier --single-quote --use-tabs --write src/**/*.{html,ts} src/scss/**/*.scss"
   },
   "private": true,
   "dependencies": {
@@ -17,6 +17,7 @@
     "@angular/compiler": "~9.1.3",
     "@angular/core": "~9.1.3",
     "@angular/forms": "~9.1.3",
+    "@angular/localize": "^9.1.4",
     "@angular/platform-browser": "~9.1.3",
     "@angular/platform-browser-dynamic": "~9.1.3",
     "@angular/router": "~9.1.3",

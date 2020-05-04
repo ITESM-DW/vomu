@@ -9,13 +9,13 @@
 	<div class="login__body">
 		<form action="/profile.html" class="was-validated">
 			<div class="login__field">
-				<label for="uname">Username:</label>
+				<label for="email">E-mail:</label>
 				<input
-					type="text"
+					type="email"
 					class="login__field__control"
-					id="uname"
+					id="email"
 					placeholder="Enter username"
-					name="uname"
+					name="email"
 					required
 				/>
 				<div class="login__field__valid">Valid.</div>
@@ -50,33 +50,51 @@
 					<div class="login__field__invalid">Please fill out this field.</div>
 				</div>
 				<div class="login__field">
-					<label for="pwd">E-mail:</label>
+					<label for="description">Add a brief description about your career:</label>
 					<input
-						type="email"
+						type="text"
 						class="login__field__control"
-						id="pwd"
-						placeholder="Enter password"
-						name="pswd"
+						id="description"
+						placeholder="Career, experience years, school, etc."
+						name="description"
 						required
 					/>
 					<div class="login__field__valid">Valid.</div>
 					<div class="login__field__invalid">Please fill out this field.</div>
 				</div>
 				<div class="login__field">
-					<label for="pwd">ID Number:</label>
-					<input
-						type="email"
-						class="login__field__control"
-						id="pwd"
-						placeholder="Enter password"
-						name="pswd"
-						required
-					/>
-					<div class="login__field__valid">Valid.</div>
-					<div class="login__field__invalid">Please fill out this field.</div>
+					<label for="role">Choose your role:</label>
+					<select name="title" id="role">
+						<option (click) = "choseProfessor()">Professor</option>
+						<option (click) = "choseStudent()">Student</option>
+					</select>
+					
+				</div>
+				<!--Chose professor-->
+				<div *ngIf="role == 'Professor'">
+					<p>ES UN PROFESOR</p>
+				</div>
+				<!--Chose student-->
+				<div *ngIf="role == 'Student'">
+					<p>ES UN ALUMNO</p>
+				</div>
+				<!--End chose-->
+				<div class="input-group mb-3">
+					<div class="custom-file">
+						<input type="file" class="custom-file-input" id="inputGroupFile02" />
+						<label
+							class="custom-file-label"
+							for="profilePic"
+							aria-describedby="inputGroupFileAddon02"
+							>Choose your profile picture</label
+						>
+					</div>
+					<div class="input-group-append">
+						<span class="input-group-text" id="profilePic">Upload</span>
+					</div>
 				</div>
 			</div>
-			<!--Components for registration-->
+			<!--Components for registration end-->
 			<div class="login__field login__checkbox">
 				<label class="login__checkbox__label">
 					<input

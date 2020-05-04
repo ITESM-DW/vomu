@@ -1,2 +1,19 @@
 <app-nav-bar></app-nav-bar>
+<div *ngFor="let user of users">
+    <p>{{user.email}}</p>
+</div>
+<div *ngFor="let course of courses">
+    <p>{{course}}</p>
+</div>
+<p>{{user2.password}}</p>
+<p>{{course.title}}</p>
+<div *ngFor="let course of coursesAll">
+    <p>{{course.id}} = {{course.title}}</p>
+</div>
+<div *ngFor="let email of x">
+    <p>{{email}}</p>
+</div>
+<div *ngFor="let email of y">
+    <p>{{email}}</p>
+</div>
 <app-footbar></app-footbar>

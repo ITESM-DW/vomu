@@ -19,7 +19,7 @@ export class UserProfileComponent implements OnInit {
 	ngOnInit(): void {
 		// TODO(kevinwkt): undo hardcode for now.
 		if (this.authService.isAuth()) {
-			this.user = this.userService.getUserInfo(); // TODO Get id with routing
+			this.user = this.userService.getUserInfo("cursus.vestibulum.Mauris@idlibero.co.uk"); // TODO Get id with routing
 		}
 	}
 
