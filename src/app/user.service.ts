@@ -10,12 +10,15 @@ export class UserService {
 		const index = this.users.findIndex(u => u.email === user.email);
 		this.users[index] = user;
 	}
+
 	getUserCourses() {
 
 	}
+
 	getUsers() {
 		return this.users;
 	}
+
 	deleteUser() {
 
 	}
