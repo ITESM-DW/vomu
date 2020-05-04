@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ExportFilesComponent } from './export-files/export-files.component';
+import { SharedModule } from '../shared/shared.module';
+
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-
-
+import { ExportFilesComponent } from './export-files/export-files.component';
 
 @NgModule({
   declarations: [ExportFilesComponent, AdminDashboardComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule,
   ],
   exports: [AdminDashboardComponent],
 })

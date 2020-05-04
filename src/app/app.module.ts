@@ -1,9 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-// External modules.
-import { ChartsModule } from 'ng2-charts';
-
 import { AppComponent } from './app.component';
 import { CourseOutlineComponent } from './components/course-outline/course-outline.component';
 import { CourseCardsComponent } from './components/course-cards/course-cards.component';
@@ -21,7 +18,6 @@ import { GenericCardComponent } from './components/generic-card/generic-card.com
 import { CardViewComponent } from './components/card-view/card-view.component';
 import { CreateCourseComponent } from './components/create-course/create-course.component';
 import { SubjectComponent } from './components/create-course/subject/subject.component';
-import { StatsComponent } from './components/stats/stats.component';
 import { AppRoutingModule } from './app-routing.module';
 
 // Modules.
@@ -46,9 +42,8 @@ import { AdminModule } from './admin/admin.module';
 		CardViewComponent,
 		CreateCourseComponent,
 		SubjectComponent,
-		StatsComponent,
 	],
-	imports: [BrowserModule, ChartsModule, AppRoutingModule, AdminModule],
+	imports: [BrowserModule, AppRoutingModule, AdminModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })
