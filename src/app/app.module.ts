@@ -24,6 +24,9 @@ import { SubjectComponent } from './components/create-course/subject/subject.com
 import { StatsComponent } from './components/stats/stats.component';
 import { AppRoutingModule } from './app-routing.module';
 
+// Modules.
+import { AdminModule } from './admin/admin.module';
+
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -45,7 +48,7 @@ import { AppRoutingModule } from './app-routing.module';
 		SubjectComponent,
 		StatsComponent,
 	],
-	imports: [BrowserModule, ChartsModule, AppRoutingModule],
+	imports: [BrowserModule, ChartsModule, AppRoutingModule, AdminModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })
