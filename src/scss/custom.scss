@@ -38,10 +38,14 @@
 @import "components/course-outline";
 @import "components/search-bar";
 @import "components/stats";
+// Admin Dashboard
+@import "components/exports";
+@import "components/generic-table";
 
 // Card components
 @import "components/generic-card";
 @import "components/card-view";
+@import "components/types";
 
 body {
   @include gradient-directional($start-color: theme-color(),$end-color: theme-color("secondary"), $deg: 45deg);

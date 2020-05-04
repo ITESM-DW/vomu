@@ -1,7 +1,8 @@
 .button {
 	@extend .btn;
-	@extend .btn-primary;
-
+	&-primary {
+		@extend .btn-primary;
+	}
 	&-fail {
 		@extend .btn-danger;
 	}
@@ -10,5 +11,9 @@
 	}
 	&-success {
 		@extend .btn-outline-success;
+	}
+	&-danger {
+		@extend .btn-outline-danger;
+		@extend .btn-sm;
 	}
 }
