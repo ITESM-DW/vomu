@@ -22,6 +22,7 @@ import { CardViewComponent } from './components/card-view/card-view.component';
 import { CreateCourseComponent } from './components/create-course/create-course.component';
 import { SubjectComponent } from './components/create-course/subject/subject.component';
 import { StatsComponent } from './components/stats/stats.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
 	declarations: [
@@ -44,7 +45,7 @@ import { StatsComponent } from './components/stats/stats.component';
 		SubjectComponent,
 		StatsComponent,
 	],
-	imports: [BrowserModule, ChartsModule],
+	imports: [BrowserModule, ChartsModule, AppRoutingModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })
