@@ -2,14 +2,33 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChartsModule } from 'ng2-charts';
 
+import { CardViewComponent } from './card-view/card-view.component';
+import { GenericCardComponent } from './generic-card/generic-card.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserProfileDescriptionComponent } from './user-profile-description/user-profile-description.component';
+import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.component';
 import { StatsComponent } from './stats/stats.component';
 
 @NgModule({
-  declarations: [StatsComponent],
-  imports: [
-    CommonModule,
-    ChartsModule,
+  declarations: [
+    CardViewComponent,
+    GenericCardComponent,
+    UserProfileComponent,
+    UserProfileDescriptionComponent,
+    UserProfileEditComponent,
+    StatsComponent
+
   ],
-  exports: [StatsComponent],
+  imports: [
+    CommonModule, ChartsModule
+  ],
+  exports:[
+    CardViewComponent,
+    GenericCardComponent,
+    UserProfileComponent,
+    UserProfileDescriptionComponent,
+    UserProfileEditComponent,
+    StatsComponent
+  ]
 })
 export class SharedModule { }

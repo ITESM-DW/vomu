@@ -5,24 +5,18 @@ import { AppComponent } from './app.component';
 import { CourseOutlineComponent } from './components/course-outline/course-outline.component';
 import { CourseCardsComponent } from './components/course-cards/course-cards.component';
 import { LoginComponent } from './components/login/login.component';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
-import { UserProfileDescriptionComponent } from './components/user-profile-description/user-profile-description.component';
-import { UserProfileEditComponent } from './components/user-profile-edit/user-profile-edit.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { RibbonComponent } from './components/ribbon/ribbon.component';
 import { FootbarComponent } from './components/footbar/footbar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CourseViewVideoComponent } from './components/course-view-video/course-view-video.component';
 import { CourseViewDetailsComponent } from './components/course-view-details/course-view-details.component';
-import { GenericCardComponent } from './components/generic-card/generic-card.component';
-import { CardViewComponent } from './components/card-view/card-view.component';
-import { CreateCourseComponent } from './components/create-course/create-course.component';
-import { SubjectComponent } from './components/create-course/subject/subject.component';
-import { AppRoutingModule } from './app-routing.module';
-import { UserService } from './user.service';
+
 
 // Modules.
+import { AppRoutingModule } from './app-routing.module';
 import { AdminModule } from './admin/admin.module';
+import { ProfessorModule } from './professor/professor.module';
 
 @NgModule({
 	declarations: [
@@ -30,22 +24,15 @@ import { AdminModule } from './admin/admin.module';
 		CourseOutlineComponent,
 		CourseCardsComponent,
 		LoginComponent,
-		UserProfileComponent,
-		UserProfileDescriptionComponent,
-		UserProfileEditComponent,
 		NavBarComponent,
 		RibbonComponent,
 		FootbarComponent,
 		HeaderComponent,
 		CourseViewVideoComponent,
 		CourseViewDetailsComponent,
-		GenericCardComponent,
-		CardViewComponent,
-		CreateCourseComponent,
-		SubjectComponent,
 	],
-	imports: [BrowserModule, AppRoutingModule, AdminModule],
-	providers: [UserService],
+	imports: [BrowserModule, AppRoutingModule, ProfessorModule, AdminModule],
+	providers: [],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
