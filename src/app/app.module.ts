@@ -28,7 +28,7 @@ import { AdminModule } from './admin/admin.module';
 		FootbarComponent,
 		HeaderComponent
 	],
-	imports: [BrowserModule, AppRoutingModule, StudentModule, AdminModule, ProfessorModule],
+	imports: [BrowserModule, ProfessorModule, StudentModule, AdminModule, AppRoutingModule],
 	providers: [UserService, AuthService, CourseService],
 	bootstrap: [AppComponent],
 })
