@@ -12,9 +12,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { CreateCourseComponent } from './components/create-course/create-course.component';
 import { SubjectComponent } from './components/create-course/subject/subject.component';
 import { AppRoutingModule } from './app-routing.module';
-import { UserService } from './user.service';
 import { StudentModule } from './student/student.module';
-import { SharedModule } from './shared/shared.module';
+import { UserService } from './user.service';
+import { AuthService } from './auth.service';
+import { CourseService } from './course.service';
 
 @NgModule({
 	declarations: [
@@ -29,8 +30,8 @@ import { SharedModule } from './shared/shared.module';
 		CreateCourseComponent,
 		SubjectComponent,
 	],
-	imports: [BrowserModule, AppRoutingModule, SharedModule, StudentModule],
-	providers: [UserService],
+	imports: [BrowserModule, AppRoutingModule, StudentModule],
+	providers: [UserService, AuthService, CourseService],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

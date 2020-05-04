@@ -6,7 +6,7 @@ import { UserProfileDescriptionComponent } from './user-profile-description/user
 import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.component';
 import { GenericCardComponent } from './card-view/generic-card/generic-card.component';
 import { CardViewComponent } from './card-view/card-view.component';
-import { StatsComponent } from '../components/stats/stats.component';
+import { StatsComponent } from './stats/stats.component';
 import { ChartsModule } from 'ng2-charts';
 
 
