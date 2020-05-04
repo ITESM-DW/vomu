@@ -4,7 +4,7 @@ import { CreateCourseComponent } from './create-course/create-course.component';
 import { SubjectComponent } from './create-course/subject/subject.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProfessorDashboardComponent } from './professor-dashboard/professor-dashboard.component';
-
+import { ProfessorRoutingModule } from './professor-routing.module';
 
 
 @NgModule({
@@ -16,6 +16,7 @@ import { ProfessorDashboardComponent } from './professor-dashboard/professor-das
   imports: [
     CommonModule,
     SharedModule,
+    ProfessorRoutingModule
   ],
   exports: [
     ProfessorDashboardComponent,

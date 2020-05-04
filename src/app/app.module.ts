@@ -13,6 +13,9 @@ import { CourseViewVideoComponent } from './components/course-view-video/course-
 import { CourseViewDetailsComponent } from './components/course-view-details/course-view-details.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProfessorModule } from './professor/professor.module';
+import { CourseService } from './course.service';
+import { UserService } from './user.service';
+import { AuthService } from './auth.service';
 
 
 @NgModule({
@@ -28,8 +31,16 @@ import { ProfessorModule } from './professor/professor.module';
 		CourseViewVideoComponent,
 		CourseViewDetailsComponent,
 	],
-	imports: [BrowserModule, AppRoutingModule, ProfessorModule],
-	providers: [],
+	imports: [
+		BrowserModule,
+		AppRoutingModule, 
+		ProfessorModule
+	],
+	providers: [
+		UserService,
+		CourseService, 
+		AuthService
+	],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
