@@ -2,7 +2,7 @@
 	<div class="login__form-logo">
 		<img
 			class="login__form-logo__logo"
-			src="../../../assets/images/logo.png"
+			src="src/assets/images/logo.png"
 			alt="Vomu"
 		/>
 	</div>
@@ -35,7 +35,7 @@
 				<div class="login__field__invalid">Please fill out this field.</div>
 			</div>
 			<!--Components for registration-->
-			<div *ngIf="register == true">
+			<div *ngIf="now === 'signup'">
 				<div class="login__field">
 					<label for="pwd">Input your password again:</label>
 					<input
@@ -157,7 +157,7 @@
 				class="login__main-btn"
 				style="margin: 10px;"
 				id="registrationBtn"
-				(click)="changeRegister()"
+				(click)="onChangeOption()" 
 			>
 				{{ changeOption }}
 			</button>

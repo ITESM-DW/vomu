@@ -10,4 +10,8 @@ export class NavBarComponent implements OnInit {
 	loggedin = true;
 
 	ngOnInit(): void {}
+
+	onLogOut() {
+		this.loggedin = false;
+	}
 }

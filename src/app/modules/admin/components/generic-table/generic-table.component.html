@@ -1,0 +1,27 @@
+<h1 class="header text-center">Search for users or professors</h1>
+<select class="types" (change)="filterUsers($event.target.value)">
+  <option value="student">Student</option>
+  <option value="professor">Professor</option>
+</select>
+<table class="generic-table">
+  <thead class="generic-table__header">
+    <tr>
+      <th scope="generic-table__header-col">#</th>
+      <th scope="generic-table__header-col">First Name</th>
+      <th scope="generic-table__header-col">Last Name</th>
+      <th scope="generic-table__header-col">Email</th>
+      <th scope="generic-table__header-col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of visualUsers; index as i;">
+      <th scope="row">{{ i }}</th>
+      <td>{{ user.firstname || "none" }}</td>
+      <td>{{ user.lastname || "none" }}</td>
+      <td>{{ user.email }}</td>
+      <td>
+          <a class="button button-danger" type="button" (click)="deleteUser(user)">x</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,21 @@
+<div class="generic-card">
+	<img
+		class="generic-card__img"
+		alt=""
+		src="https://source.unsplash.com/random/1280x720"
+	/>
+
+	<div class="generic-card__body">
+		<h5 class="generic-card__body--title">{{ cardDetail.title }}</h5>
+		<p class="generic-card__body--text">
+			{{ cardDetail.body }}
+		</p>
+		<!-- TODO(kevinwkt) routing to course and optional buttons. -->
+		<a
+			class="button button-primary"
+			*ngFor="let button of cardDetail.buttons"
+			href="{{ button.href }}"
+			>{{ button.name }}</a
+		>
+	</div>
+</div>
