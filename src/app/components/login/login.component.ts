@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
 	changeOption = "I don't have an account";
 
 	role:string = "none";
+	deviceValue;
 
 	constructor() {}
 
@@ -35,6 +36,13 @@ export class LoginComponent implements OnInit {
 	}
 	choseStudent(){
 		this.role = "student";
-		console.log("chose st");
+		console.log("chose Student");
+	}
+	onChange($event, deviceValue) {
+	    console.log(deviceValue);
+	    if(deviceValue=="Student")
+	    	{this.choseStudent();}
+	    else if(deviceValue=="Professor")
+	    	{this.choseProfessor();}
 	}
 }

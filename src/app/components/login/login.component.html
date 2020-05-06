@@ -49,6 +49,62 @@
 					<div class="login__field__valid">Valid.</div>
 					<div class="login__field__invalid">Please fill out this field.</div>
 				</div>
+				<div style="display: flex;">
+					<div class="login__field" style="width: 50%; margin: 0 1rem 0 0;">
+						<label for="fName">First name:</label>
+						<input
+							type="text"
+							class="login__field__control"
+							id="fName"
+							placeholder="Samantha"
+							name="description"
+							required
+						/>
+						<div class="login__field__valid">Valid.</div>
+						<div class="login__field__invalid">Please fill out this field.</div>
+					</div>
+					<div class="login__field" style="width: 50%;">
+						<label for="lName">Last name:</label>
+						<input
+							type="text"
+							class="login__field__control"
+							id="lName"
+							placeholder="Barco"
+							name="description"
+							required
+						/>
+						<div class="login__field__valid">Valid.</div>
+						<div class="login__field__invalid">Please fill out this field.</div>
+					</div>
+					
+				</div>
+				<div class="login__field">
+					<label for="role">Choose your role:</label>
+					<select #device name="title" id="role" (change)="onChange($event, device
+					.value)">
+						<option></option>
+						<option>Professor</option>
+						<option>Student</option>
+					</select>
+					
+				</div>
+				<!--Chose professor-->
+				<div *ngIf="role == 'teacher'">
+					<div class="login__field">
+						<label for="description">Add your title:</label>
+						<input
+							type="text"
+							class="login__field__control"
+							id="description"
+							placeholder="PhD., DBA, EdD, PsyD, etc."
+							name="description"
+							required
+						/>
+						<div class="login__field__valid">Valid.</div>
+						<div class="login__field__invalid">Please fill out this field.</div>
+					</div>
+				</div>
+				<!--End chose-->
 				<div class="login__field">
 					<label for="description">Add a brief description about your career:</label>
 					<input
@@ -62,23 +118,6 @@
 					<div class="login__field__valid">Valid.</div>
 					<div class="login__field__invalid">Please fill out this field.</div>
 				</div>
-				<div class="login__field">
-					<label for="role">Choose your role:</label>
-					<select name="title" id="role">
-						<option (click) = "choseProfessor()">Professor</option>
-						<option (click) = "choseStudent()">Student</option>
-					</select>
-					
-				</div>
-				<!--Chose professor-->
-				<div *ngIf="role == 'Professor'">
-					<p>ES UN PROFESOR</p>
-				</div>
-				<!--Chose student-->
-				<div *ngIf="role == 'Student'">
-					<p>ES UN ALUMNO</p>
-				</div>
-				<!--End chose-->
 				<div class="input-group mb-3">
 					<div class="custom-file">
 						<input type="file" class="custom-file-input" id="inputGroupFile02" />
