@@ -3,20 +3,22 @@ import { CourseService } from '../professor/course.service';
 import { CourseModel } from '../professor/models/CourseModel';
 import { UserModel } from './models/UserModel';
 import { Injectable } from '@angular/core';
+import { StudentModel } from '../student/models/StudentModel';
+import { ProfessorModel } from '../professor/models/ProfessorModel';
 
-@Injectable ({
+@Injectable({
 	providedIn: 'root'
 })
 
 
 export class AuthService {
-	constructor(public userService : UserService, public courseService : CourseService) {}
+	constructor(public userService: UserService, public courseService: CourseService) { }
 
 	loggedIn = false;
 	isAuth() {
 		return this.loggedIn;
 	}
-	createUser(user : (StudentModel|ProfessorModel)) {
+	createUser(user: StudentModel | ProfessorModel) {
 		this.userService.getUsers().push(user);
 
 	}

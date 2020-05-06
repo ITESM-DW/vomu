@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardViewComponent } from './card-view/card-view.component';
-import { GenericCardComponent } from './generic-card/generic-card.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { UserProfileDescriptionComponent } from './user-profile-description/user-profile-description.component';
-import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.component';
-import { StatsComponent } from './stats/stats.component';
+
+import { UserProfileDescriptionComponent } from './components/user-profile-description/user-profile-description.component';
+import { UserProfileEditComponent } from './components/user-profile-edit/user-profile-edit.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { CourseOutlineComponent } from './components/course-outline/course-outline.component';
+import { CourseCardsComponent } from './components/course-cards/course-cards.component';
+import { GenericCardComponent } from './components/generic-card/generic-card.component';
+import { CardViewComponent } from './components/card-view/card-view.component';
+import { StatsComponent } from './components/stats/stats.component';
+
 import { ChartsModule } from 'ng2-charts';
+
 import { AuthService } from './auth.service';
 import { UserService } from './user.service';
 
@@ -16,6 +21,8 @@ import { UserService } from './user.service';
 		UserProfileDescriptionComponent,
 		UserProfileEditComponent,
 		UserProfileComponent,
+		CourseOutlineComponent,
+		CourseCardsComponent,
 		GenericCardComponent,
 		CardViewComponent,
 		StatsComponent

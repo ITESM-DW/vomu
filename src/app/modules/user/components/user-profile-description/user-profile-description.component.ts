@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { UserModel } from '../models/UserModel';
+import { ProfessorModel } from 'src/app/modules/professor/models/ProfessorModel';
+import { StudentModel } from 'src/app/modules/student/models/StudentModel';
 
 @Component({
 	selector: 'app-user-profile-description',
@@ -10,7 +11,7 @@ export class UserProfileDescriptionComponent implements OnInit {
 	@Output() askEdition = new EventEmitter<number>();
 	editBtn = 0;
 
-	@Input() user: UserModel;
+	@Input() user: StudentModel | ProfessorModel;
 
 	constructor() {}
 

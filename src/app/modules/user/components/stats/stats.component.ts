@@ -1,5 +1,5 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
-import { ChartModel } from '../models/ChartModel';
+import { ChartModel } from '../../models/ChartModel';
 
 
 

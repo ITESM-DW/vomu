@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/modules/user/user.service';
-import { UserModel, UserType } from 'src/app/modules/shared/models/UserModel';
+import { StudentModel } from 'src/app/modules/student/models/StudentModel';
+import { ProfessorModel } from 'src/app/modules/professor/models/ProfessorModel';
+import { UserType } from 'src/app/modules/user/models/UserModel';
 
 @Component({
 	selector: 'app-generic-table',
@@ -8,8 +10,8 @@ import { UserModel, UserType } from 'src/app/modules/shared/models/UserModel';
 	styleUrls: ['./generic-table.component.scss']
 })
 export class GenericTableComponent implements OnInit {
-	fetchedUsers: UserModel[];
-	visualUsers: UserModel[];
+	fetchedUsers: (StudentModel | ProfessorModel)[];
+	visualUsers: (StudentModel | ProfessorModel)[];
 
 	currentFilter: UserType;
 
@@ -33,7 +35,7 @@ export class GenericTableComponent implements OnInit {
 		this.currentFilter = filterVal;
 	}
 
-	deleteUser(user: UserModel): void {
+	deleteUser(user: StudentModel | ProfessorModel): void {
 		this.userService.deleteUser(user.email);
 
 		// TODO(kevinwkt): subscribe to delete but refresh for now.

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GenericCardModel } from '../models/GenericCardModel';
+import { GenericCardModel } from '../../models/GenericCardModel';
 
 // Import models.
 
