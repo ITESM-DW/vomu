@@ -1,4 +1,6 @@
 import { UserService } from './user.service';
+import { StudentModel } from './models/UserModel';
+import { ProfessorModel } from './models/UserModel';
 import { CourseService } from './course.service';
 import { CourseModel } from './models/CourseModel';
 import { UserModel } from './models/UserModel';
@@ -16,7 +18,7 @@ export class AuthService {
 	isAuth() {
 		return this.loggedIn;
 	}
-	createUser(user : UserModel) {
+	createUser(user : (StudentModel|ProfessorModel)) {
 		this.userService.getUsers().push(user);
 
 	}

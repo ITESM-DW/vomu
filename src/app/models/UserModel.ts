@@ -12,7 +12,6 @@ export interface UserModel {
 	description: string;
 	image: string;
 	courses: number[];
-	title: string;
 }
 
 export class ProfessorModel implements UserModel {
@@ -36,6 +35,5 @@ export class StudentModel implements UserModel {
 	description: string;
 	image: string;
 	courses: number[];
-	title: string;
 	followup: {course_id: number, subject_id: number}[];
 }
