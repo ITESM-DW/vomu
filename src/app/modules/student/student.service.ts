@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { UserService } from '../user/user.service';
-import { CourseService } from '../professor/course.service';
+import { UserService } from '../../user.service';
+import { CourseService } from '../user/course.service';
 import { UserType } from '../user/models/UserModel';
+import { StudentModel } from './models/StudentModel';
 
 @Injectable({
 	providedIn: 'root'
@@ -11,13 +12,20 @@ import { UserType } from '../user/models/UserModel';
 export class StudentService {
 	constructor(public userService: UserService, public courseService: CourseService) { }
 
-	registerCourse(id: number, email: string) {
-		const course = this.courseService.getCourse(id);
-		const student = this.userService.getUserInfo(email);
+	getStudent(id: number): StudentModel {
+		return this.userService.getUser(id) as StudentModel;
+	}
+
+	registerCourse(studentId: number, courseId: number) {
+		const course = this.courseService.getCourse(courseId);
+		const student = this.getStudent(studentId);
 		if (student !== undefined) {
 			if (student.type === UserType.STUDENT) {
-				course.students.push(email);
-				student.courses.push(id);
+				course.students.push(studentId);
+				student.followup.push({course_id: courseId, subject_id: 1});
+
+				this.userService.updateUser(student);
+				this.courseService.updateCourse(course);
 			} else {
 				console.log('Teachers can\'t be registered.');
 			}
@@ -26,19 +34,24 @@ export class StudentService {
 		}
 	}
 
-	unregisterCourse(id: number, email: string) {
-		const course = this.courseService.getCourse(id);
-		const student = this.userService.getUserInfo(email);
-		if (student !== undefined) {
-			if (student.type === UserType.STUDENT) {
-				course.students = course.students.filter(studentid => studentid !== email);
-				student.courses = student.courses.filter(courseid => courseid !== id);
-			} else {
-				console.log('Teachers can\'t unregister');
-			}
-		} else {
-			console.log('User not found.');
-		}
+	unregisterCourse(studentId: number, courseId: number) {
+		const course = this.courseService.getCourse(courseId);
+		const student = this.getStudent(studentId);
 
+		course.students = course.students.filter(sId => studentId !== sId);
+		student.followup = student.followup.filter(({course_id}) => courseId !== course_id);
+
+		this.courseService.updateCourse(course);
+		this.userService.updateUser(student);
+	}
+
+	updateCourse(studentId: number, courseId: number, subjectId: number) {
+		const student = this.getStudent(studentId);
+		student.followup.map(({course_id, subject_id}) => {
+			if (course_id === courseId) {
+				subject_id = subjectId;
+			}
+		});
+		this.userService.updateUser(student);
 	}
 }

@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -15,6 +16,8 @@ import { UserModule } from './modules/user/user.module';
 import { StudentModule } from './modules/student/student.module';
 import { ProfessorModule } from './modules/professor/professor.module';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthService } from './auth.service';
+import { UserService } from './user.service';
 
 @NgModule({
 	declarations: [
@@ -28,6 +31,7 @@ import { AppRoutingModule } from './app-routing.module';
 	],
 	imports: [
 		BrowserModule,
+		FormsModule,
 		UserModule,
 		ProfessorModule,
 		StudentModule,
@@ -35,5 +39,6 @@ import { AppRoutingModule } from './app-routing.module';
 		AppRoutingModule,
 	],
 	bootstrap: [AppComponent],
+	providers: [AuthService, UserService]
 })
 export class AppModule {}

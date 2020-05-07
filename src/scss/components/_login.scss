@@ -6,6 +6,7 @@ app-login {
 
 	.login {
 		&__form-logo {
+			background-color: theme-color('primary');
 			&__logo {
 				@extend .w-50;
 			}

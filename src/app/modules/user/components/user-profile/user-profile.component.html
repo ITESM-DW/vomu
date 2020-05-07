@@ -3,18 +3,14 @@
 		<img class="userprofile__picture__img" [src]="user.image" alt="" />
 	</div>
 
-	<div *ngIf="editBtn == 0; else elseBlock">
-		<app-user-profile-description
-			[user]="user"
-			(askEdition)="enableEdition($event)"
-		></app-user-profile-description>
+	<div *ngIf="!edit; else profileedit">
+		<app-user-profile-description [user]="user"></app-user-profile-description>
+		<a class="button button-primary" (click)="onEdit()">Edit</a>
 	</div>
-	<ng-template #elseBlock>
-		<form action="" class="container-fluid">
-			<app-user-profile-edit
-				[user]="user"
-				(editionSave)="disableEdition($event)"
-			></app-user-profile-edit>
+	<ng-template #profileedit>
+		<form class="container-fluid">
+			<app-user-profile-edit [user]="user" ></app-user-profile-edit>
 		</form>
+		<a class="button button-primary" (click)="onSave()">Save</a>
 	</ng-template>
 </div>

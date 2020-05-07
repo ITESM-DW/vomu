@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { UserProfileDescriptionComponent } from './components/user-profile-description/user-profile-description.component';
 import { UserProfileEditComponent } from './components/user-profile-edit/user-profile-edit.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
-import { CourseOutlineComponent } from './components/course-outline/course-outline.component';
 import { CourseCardsComponent } from './components/course-cards/course-cards.component';
 import { GenericCardComponent } from './components/generic-card/generic-card.component';
 import { CardViewComponent } from './components/card-view/card-view.component';
@@ -12,8 +11,10 @@ import { StatsComponent } from './components/stats/stats.component';
 
 import { ChartsModule } from 'ng2-charts';
 
-import { AuthService } from './auth.service';
-import { UserService } from './user.service';
+import { AuthService } from '../../auth.service';
+import { UserService } from '../../user.service';
+import { CourseService } from './course.service';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -21,7 +22,6 @@ import { UserService } from './user.service';
 		UserProfileDescriptionComponent,
 		UserProfileEditComponent,
 		UserProfileComponent,
-		CourseOutlineComponent,
 		CourseCardsComponent,
 		GenericCardComponent,
 		CardViewComponent,
@@ -29,7 +29,8 @@ import { UserService } from './user.service';
 	],
 	imports: [
 		CommonModule,
-		ChartsModule
+		ChartsModule,
+		RouterModule
 	],
 	exports: [
 		UserProfileDescriptionComponent,
@@ -40,8 +41,7 @@ import { UserService } from './user.service';
 		StatsComponent
 	],
 	providers: [
-		AuthService,
-		UserService
+		CourseService
 	]
 })
 export class UserModule { }

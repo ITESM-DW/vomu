@@ -4,12 +4,13 @@ export enum UserType {
 }
 
 export interface UserModel {
+	id: number;
 	email: string;
-	fName: string;
-	lName: string;
 	password: string;
+	name: string;
+	last: string;
+	title: string;
 	type: UserType;
 	description: string;
 	image: string;
-	courses: number[];
 }

@@ -1,9 +1,8 @@
 .card-view {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
 	width: 100%;
 	margin: 10px auto;
 	padding: 0;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
 }

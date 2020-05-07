@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/modules/user/user.service';
+import { UserService } from 'src/app/user.service';
 import { StudentModel } from 'src/app/modules/student/models/StudentModel';
 import { ProfessorModel } from 'src/app/modules/professor/models/ProfessorModel';
 import { UserType } from 'src/app/modules/user/models/UserModel';
@@ -36,7 +36,7 @@ export class GenericTableComponent implements OnInit {
 	}
 
 	deleteUser(user: StudentModel | ProfessorModel): void {
-		this.userService.deleteUser(user.email);
+		this.userService.deleteUser(user.id);
 
 		// TODO(kevinwkt): subscribe to delete but refresh for now.
 		this.fetchedUsers = this.userService.getUsers();
