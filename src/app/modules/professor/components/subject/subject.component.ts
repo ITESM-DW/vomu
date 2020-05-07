@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { Subject } from 'src/app/modules/shared/models/Subject';
+import { SubjectModel } from '../../models/SubjectModel';
 
 @Component({
 	selector: 'app-subject',
@@ -7,7 +7,7 @@ import { Subject } from 'src/app/modules/shared/models/Subject';
 	styleUrls: ['./subject.component.scss'],
 })
 export class SubjectComponent implements OnInit {
-	@Input() subject: Subject;
+	@Input() subject: SubjectModel;
 	constructor() {}
 
 	ngOnInit(): void {

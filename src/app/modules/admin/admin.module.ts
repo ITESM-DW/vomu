@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from '../shared/shared.module';
+import { UserModule } from '../user/user.module';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { ExportFilesComponent } from './components/export-files/export-files.component';
@@ -11,9 +11,9 @@ import { GenericTableComponent } from './components/generic-table/generic-table.
 	declarations: [ExportFilesComponent, AdminDashboardComponent, GenericTableComponent],
 	imports: [
 		CommonModule,
-		SharedModule,
+		UserModule,
 		AdminRoutingModule,
 	],
-	exports: [AdminDashboardComponent],
+	exports: [AdminDashboardComponent]
 })
 export class AdminModule { }

@@ -1,0 +1,12 @@
+	<img
+		class="generic-card__img"
+		alt=""
+		src="{{ cardDetail.imgURL }}"
+	/>
+
+	<div class="generic-card__body">
+		<h5 class="generic-card__body--title">{{ cardDetail.title }}</h5>
+		<em class="generic-card__body--subtitle">{{ cardDetail.subtitle }}</em>
+		<p class="generic-card__body--text">{{ cardDetail.body }}</p>
+	</div>
+	<a [routerLink]="[cardDetail.url]" class="button button-primary">View</a>

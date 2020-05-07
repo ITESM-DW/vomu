@@ -7,13 +7,13 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 	styleUrls: ['./course-view-video.component.scss'],
 })
 export class CourseViewVideoComponent implements OnInit {
-	@Input() videoLink: SafeResourceUrl;
+	@Input() videoLink = 'https://www.youtube.com/embed/zpOULjyy-n8?rel=0';
+	videoResource: SafeResourceUrl;
+
 
 	constructor(private sanitizer: DomSanitizer) {}
 
 	ngOnInit(): void {
-		this.videoLink = this.sanitizer.bypassSecurityTrustResourceUrl(
-			'https://www.youtube.com/embed/zpOULjyy-n8?rel=0'
-		);
+		this.videoResource = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoLink);
 	}
 }
