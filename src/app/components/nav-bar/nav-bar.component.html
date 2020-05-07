@@ -4,7 +4,7 @@
 		<img
 			width="80px"
 			class="logo"
-			src="../../../assets/images/brain.png"
+			src="src/assets/images/brain.png"
 			alt="Vomu"
 		/>
 	</div>
@@ -23,22 +23,22 @@
 	<div class="collapse navbar-collapse" id="menu">
 		<ul class="menu__options mr-auto">
 			<li class="active">
-				<a class="menu__options__item" href="./index.html">Home</a>
+				<a class="menu__options__item" [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a>
 				<!-- Rourting missing -->
 			</li>
 			<li *ngIf="!loggedin" class="active">
-				<a class="menu__options__item" href="./login.html">Log in</a>
+				<a class="menu__options__item" [routerLink]="['/login']" routerLinkActive="router-link-active" >Log in</a>
 				<!-- Rourting missing -->
 			</li>
 			<li *ngIf="!loggedin" class="active">
-				<a class="menu__options__item" href="./signup.html">Sign up</a>
+				<a class="menu__options__item" [routerLink]="['/signup']" routerLinkActive="router-link-active" >Sign up</a>
 				<!-- Rourting missing -->
 			</li>
 			<li *ngIf="loggedin" class="active">
 				<a [routerLink]="['student', 'profile']" routerLinkActive="router-link-active"  class="menu__options__item">Profile</a>
 			</li>
 			<li *ngIf="loggedin" class="active">
-				<a class="menu__options__item" href="./index.html">Log out</a>
+				<a class="menu__options__item" (click)="onLogOut()">Log out</a>
 				<!-- Rourting missing -->
 			</li>
 		</ul>

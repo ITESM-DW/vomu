@@ -1,0 +1,78 @@
+<!-- First Name -->
+<div class="input-group mb-3">
+	<div class="input-group-prepend">
+		<span class="input-group-text" id="addon-wrapping">Username</span>
+	</div>
+	<input
+		[value]="user.name"
+		type="text"
+		class="form-control"
+		placeholder="Username"
+		aria-label="Username"
+		aria-describedby="addon-wrapping"
+	/>
+</div>
+<!-- Last Name -->
+<div class="input-group mb-3">
+	<div class="input-group-prepend">
+		<span class="input-group-text" id="addon-wrapping">Username</span>
+	</div>
+	<input
+		[value]="user.last"
+		type="text"
+		class="form-control"
+		placeholder="Username"
+		aria-label="Username"
+		aria-describedby="addon-wrapping"
+	/>
+</div>
+<!-- Username -->
+<div class="input-group mb-3">
+	<div class="input-group-prepend">
+		<span class="input-group-text" id="addon-wrapping">Email</span>
+	</div>
+	<input
+		[value]="user.email"
+		type="text"
+		class="form-control"
+		placeholder="Email"
+		aria-label="Email"
+		aria-describedby="addon-wrapping"
+	/>
+</div>
+<!-- Title -->
+<div class="input-group mb-3">
+	<div class="input-group-prepend">
+		<span class="input-group-text" id="addon-wrapping">Title</span>
+	</div>
+	<input
+		[value]="user.title"
+		type="text"
+		class="form-control"
+		placeholder="Username"
+		aria-label="Username"
+		aria-describedby="addon-wrapping"
+	/>
+</div>
+<!-- Description -->
+<div class="input-group mb-3">
+	<div class="input-group-prepend">
+		<span class="input-group-text">Description</span>
+	</div>
+	<textarea class="form-control" aria-label="With textarea"> {{ user.description }} </textarea>
+</div>
+<!-- Profile picture -->
+<div class="input-group mb-3">
+	<div class="custom-file">
+		<input type="file" class="custom-file-input" id="inputGroupFile02" />
+		<label
+			class="custom-file-label"
+			for="inputGroupFile02"
+			aria-describedby="inputGroupFileAddon02"
+			>Choose file</label
+		>
+	</div>
+	<div class="input-group-append">
+		<span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
+	</div>
+</div>

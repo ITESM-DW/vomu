@@ -2,40 +2,42 @@
 	<div class="login__form-logo">
 		<img
 			class="login__form-logo__logo"
-			src="../../../assets/images/logo.png"
+			src="../../../assets/images/brain.png"
 			alt="Vomu"
 		/>
 	</div>
 	<div class="login__body">
-		<form action="/profile.html" class="was-validated">
+		<form (ngSubmit)="onSubmit(f)" #f="ngForm" a-form class="was-validated">
 			<div class="login__field">
-				<label for="uname">Username:</label>
+				<label for="email">E-mail:</label>
 				<input
-					type="text"
+					type="email"
 					class="login__field__control"
-					id="uname"
+					id="email"
 					placeholder="Enter username"
-					name="uname"
+					name="email"
 					required
+					ngModel
 				/>
 				<div class="login__field__valid">Valid.</div>
 				<div class="login__field__invalid">Please fill out this field.</div>
 			</div>
 			<div class="login__field">
-				<label for="pwd">Password:</label>
+				<label for="password">Password:</label>
 				<input
 					type="password"
 					class="login__field__control"
-					id="pwd"
+					id="password"
 					placeholder="Enter password"
-					name="pswd"
+					name="password"
 					required
+					ngModel
 				/>
 				<div class="login__field__valid">Valid.</div>
 				<div class="login__field__invalid">Please fill out this field.</div>
 			</div>
 			<!--Components for registration-->
-			<div *ngIf="register == true">
+			<div *ngIf="register === true">
 				<div class="login__field">
 					<label for="pwd">Input your password again:</label>
 					<input
@@ -43,40 +45,113 @@
 						class="login__field__control"
 						id="pwd"
 						placeholder="Enter password"
-						name="pswd"
+						name="pwd"
 						required
+						ngModel
+					/>
+					<div class="login__field__valid">Valid.</div>
+					<div class="login__field__invalid">Please fill out this field.</div>
+				</div>
+				<div style="display: flex;">
+					<div class="login__field" style="width: 50%; margin: 0 1rem 0 0;">
+						<label for="fName">First name:</label>
+						<input
+							type="text"
+							class="login__field__control"
+							id="fName"
+							placeholder="Samantha"
+							name="name"
+							required
+							ngModel
+						/>
+						<div class="login__field__valid">Valid.</div>
+						<div class="login__field__invalid">Please fill out this field.</div>
+					</div>
+					<div class="login__field" style="width: 50%;">
+						<label for="lName">Last name:</label>
+						<input
+							type="text"
+							class="login__field__control"
+							id="lName"
+							placeholder="Barco"
+							name="last"
+							required
+							ngModel
+						/>
+						<div class="login__field__valid">Valid.</div>
+						<div class="login__field__invalid">Please fill out this field.</div>
+					</div>
+					
+				</div>
+				<div class="login__field">
+					<label for="role">Choose your role:</label>
+					<select ngModel #device name="type" id="role" (change)="onChange($event, device
+					.value)">
+						<option></option>
+						<option>Professor</option>
+						<option>Student</option>
+					</select>
+					
+				</div>
+				<div>
+					<div class="login__field">
+						<label for="description">Add your title:</label>
+						<input
+							type="text"
+							class="login__field__control"
+							id="description"
+							placeholder="PhD., DBA, EdD, PsyD, etc."
+							name="title"
+							required
+							ngModel
+						/>
+						<div class="login__field__valid">Valid.</div>
+						<div class="login__field__invalid">Please fill out this field.</div>
+					</div>
+				</div>
+				<div class="login__field">
+					<label for="description">Add a brief description about your career:</label>
+					<input
+						type="text"
+						class="login__field__control"
+						id="description"
+						placeholder="Career, experience years, school, etc."
+						name="description"
+						required
+						ngModel
 					/>
 					<div class="login__field__valid">Valid.</div>
 					<div class="login__field__invalid">Please fill out this field.</div>
 				</div>
 				<div class="login__field">
-					<label for="pwd">E-mail:</label>
+					<label for="picture">Profile Picture (URL):</label>
 					<input
-						type="email"
+						type="url"
 						class="login__field__control"
-						id="pwd"
-						placeholder="Enter password"
-						name="pswd"
+						id="picture"
+						placeholder="Career, experience years, school, etc."
 						required
-					/>
+						name="imgURL"
+						ngModel />
 					<div class="login__field__valid">Valid.</div>
 					<div class="login__field__invalid">Please fill out this field.</div>
 				</div>
-				<div class="login__field">
-					<label for="pwd">ID Number:</label>
-					<input
-						type="email"
-						class="login__field__control"
-						id="pwd"
-						placeholder="Enter password"
-						name="pswd"
-						required
-					/>
-					<div class="login__field__valid">Valid.</div>
-					<div class="login__field__invalid">Please fill out this field.</div>
-				</div>
+				<!-- <div class="input-group mb-3">
+					<div class="custom-file">
+						<input ngModel (change)="onProfilePictureChange($event.target.files)" name="picture" type="file" class="custom-file-input" id="inputGroupFile02" />
+						<label
+							class="custom-file-label"
+							for="profilePic"
+							aria-describedby="inputGroupFileAddon02"
+							>Choose your profile picture</label
+						>
+					</div>
+					<div class="input-group-append">
+						<span class="input-group-text" id="profilePic">Upload</span>
+					</div>
+				</div> -->
 			</div>
-			<!--Components for registration-->
+			<!--Components for registration end-->
 			<div class="login__field login__checkbox">
 				<label class="login__checkbox__label">
 					<input
@@ -95,15 +170,7 @@
 			<button type="submit" class="login__main-btn" style="margin: 10px;">
 				{{ loginRegister }}
 			</button>
-			<button
-				type="submit"
-				class="login__main-btn"
-				style="margin: 10px;"
-				id="registrationBtn"
-				(click)="changeRegister()"
-			>
-				{{ changeOption }}
-			</button>
+			<a class="button button-primary" (click)="onFormChange()">{{ changeOption }}</a>
 		</form>
 	</div>
 </div>
