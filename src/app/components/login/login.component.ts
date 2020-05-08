@@ -7,10 +7,50 @@ import { StudentModel } from 'src/app/modules/student/models/StudentModel';
 import { ProfessorModel } from 'src/app/modules/professor/models/ProfessorModel';
 import { UserType } from 'src/app/modules/user/models/UserModel';
 
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+	trigger,
+	state,
+	style,
+	animate,
+	transition,
+	group,
+	sequence,
+	// ...
+} from '@angular/animations';
+
 @Component({
 	selector: 'app-login',
 	templateUrl: './login.component.html',
 	styleUrls: ['./login.component.scss'],
+
+	//Animations
+	animations: [
+		trigger('fadeInOut', [
+			transition(':enter', [	 // :enter is alias to 'void => *'
+				style({opacity:0,height:0}),
+				sequence([
+			        animate('0.5s', style({
+			          height:"500px"
+			        })),
+			        animate('0.5s', style({
+			          opacity:1
+			        }))
+			      ])
+			]),
+			transition(':leave', [	 // :leave is alias to '* => void'
+				sequence([
+			        animate('0s', style({
+			          opacity:0
+			        })),
+			        animate('5s', style({
+			          height:0
+			        }))
+			      ])
+			])
+		]),
+	],
 })
 export class LoginComponent implements OnInit {
 	register = false;

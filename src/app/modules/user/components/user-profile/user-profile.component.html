@@ -3,14 +3,24 @@
 		<img class="userprofile__picture__img" [src]="user.image" alt="" />
 	</div>
 
-	<div *ngIf="!edit; else profileedit">
+	<!--<div *ngIf="!edit; else profileedit" [@fadeInOut]>
 		<app-user-profile-description [user]="user"></app-user-profile-description>
 		<a class="button button-primary" (click)="onEdit()">Edit</a>
 	</div>
-	<ng-template #profileedit>
+	<ng-template #profileedit [@fadeInOut]>
 		<form class="container-fluid">
 			<app-user-profile-edit [user]="user" ></app-user-profile-edit>
 		</form>
 		<a class="button button-primary" (click)="onSave()">Save</a>
-	</ng-template>
+	</ng-template>-->
+	<div *ngIf="!edit" [@fadeInOut]>
+		<app-user-profile-description [user]="user"></app-user-profile-description>
+		<a class="button button-primary" (click)="onEdit()">Edit</a>
+	</div>
+	<div *ngIf="edit" [@fadeInOut]>
+		<form class="container-fluid">
+			<app-user-profile-edit [user]="user" ></app-user-profile-edit>
+		</form>
+		<a class="button button-primary" (click)="onSave()">Save</a>
+	</div>
 </div>
