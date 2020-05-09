@@ -4,8 +4,8 @@ import { CreateCourseComponent } from './components/create-course/create-course.
 import { ProfessorDashboardComponent } from './pages/professor-dashboard/professor-dashboard.component';
 
 const routes: Routes = [
-	{ path: 'create', component: CreateCourseComponent},
-	{ path: 'profile', component: ProfessorDashboardComponent}
+	{ path: 'create', component: CreateCourseComponent, data: { animationState: 'CreateCourse' }},
+	{ path: 'profile', component: ProfessorDashboardComponent, data: { animationState: 'ProfessorDashboard' }}
 ];
 
 @NgModule({

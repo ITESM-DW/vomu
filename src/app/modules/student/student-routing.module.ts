@@ -4,8 +4,8 @@ import { StudentProfileComponent } from './pages/student-profile/student-profile
 import { StudentCourseViewComponent } from './pages/student-course-view/student-course-view.component';
 
 const routes: Routes = [
-	{ path: 'profile', component: StudentProfileComponent },
-	{ path: 'course/:course_id/:subject_id', component: StudentCourseViewComponent }
+	{ path: 'profile', component: StudentProfileComponent, data: { animationState: 'StudentProfile' }},
+	{ path: 'course/:course_id/:subject_id', component: StudentCourseViewComponent, data: { animationState: 'StudentCourse' }}
 ];
 
 @NgModule({
