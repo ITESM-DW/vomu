@@ -1,8 +1,8 @@
-import { trigger, transition, style, query, animateChild, group, animate } from '@angular/animations';
+import { trigger, transition, style, query, animateChild, group, animate, sequence, } from '@angular/animations';
 
 export const routeTransitionAnimations = trigger('slidePage', [
 	transition('* => Home, StudentProfile <=> StudentCourse, Home<=>StudentProfile', [
-		style({ position: 'relative', width:'' }),
+		style({ position: 'relative' }),
 		query(':enter, :leave', [
 			style({
 				position: 'absolute',
@@ -20,5 +20,3 @@ export const routeTransitionAnimations = trigger('slidePage', [
 		query(':enter', animateChild())
 	])
 ]);
-
-

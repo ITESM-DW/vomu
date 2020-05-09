@@ -32,7 +32,6 @@ export class AuthService {
 				this.authChanged.next(this.loggedIn);
 				return true;
 			}
-
 		}
 		return false;
 	}

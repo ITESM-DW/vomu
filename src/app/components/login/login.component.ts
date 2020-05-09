@@ -9,16 +9,8 @@ import { UserType } from 'src/app/modules/user/models/UserModel';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-	trigger,
-	state,
-	style,
-	animate,
-	transition,
-	group,
-	sequence,
-	// ...
-} from '@angular/animations';
+import { trigger, state, style, animate, transition, group, sequence, } from '@angular/animations';
+
 
 @Component({
 	selector: 'app-login',
@@ -31,23 +23,23 @@ import {
 			transition(':enter', [	 // :enter is alias to 'void => *'
 				style({opacity:0,height:0}),
 				sequence([
-			        animate('0.5s', style({
-			          height:"500px"
-			        })),
-			        animate('0.5s', style({
-			          opacity:1
-			        }))
-			      ])
+					animate('0.5s', style({
+						height:"500px"
+					})),
+					animate('0.5s', style({
+						opacity:1
+					}))
+				])
 			]),
 			transition(':leave', [	 // :leave is alias to '* => void'
 				sequence([
-			        animate('0s', style({
-			          opacity:0
-			        })),
-			        animate('5s', style({
-			          height:0
-			        }))
-			      ])
+					animate('0.5s', style({
+						opacity:0
+					})),
+					animate('0.5s', style({
+						height:0
+					}))
+				])
 			])
 		]),
 	],
@@ -97,13 +89,14 @@ export class LoginComponent implements OnInit {
 	onSubmit(form: NgForm) {
 		if (this.now === 'login') {
 			if (!this.authService.login(form.value.email, form.value.password)) {
-				// Login feedback
+				alert("Usuario o contraseña incorrectos"); 
 			} else {
 				this.router.navigateByUrl(`/student/profile`);
 			}
 		} else if (this.now === 'signup') {
 			let user;
-			if (form.value.type === 'professor') {
+			console.log(form.value.type);
+			if (form.value.type === 'Professor') {
 				user = new ProfessorModel(
 					this.userService.nextID(),
 					form.value.email,
@@ -114,7 +107,7 @@ export class LoginComponent implements OnInit {
 					form.value.description,
 					form.value.imgURL
 				);
-			} else if (form.value.type === 'student') {
+			} else if (form.value.type === 'Student') {
 				user = new StudentModel(
 					this.userService.nextID(),
 					form.value.email,
@@ -126,8 +119,8 @@ export class LoginComponent implements OnInit {
 					form.value.imgURL
 				);
 			}
-
 			this.userService.addUser(user);
+			alert("El usuario "+ form.value.email+" ha sido registrado!"); 
 			this.router.navigateByUrl('/login');
 		}
 	}
