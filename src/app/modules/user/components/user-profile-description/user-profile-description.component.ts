@@ -9,7 +9,7 @@ import { UserType } from '../../models/UserModel';
 	styleUrls: ['./user-profile-description.component.scss'],
 })
 export class UserProfileDescriptionComponent implements OnInit {
-	@Input() user: StudentModel | ProfessorModel;
+	@Input() user: (StudentModel | ProfessorModel);
 	userTypes = UserType;
 
 	constructor() {}

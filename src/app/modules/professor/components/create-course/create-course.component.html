@@ -55,4 +55,8 @@
 	<div id="values" class="mb-3" role="tablist" aria-multiselectable="true">
 		<app-subject *ngFor="let subjectElement of subjects" [subject]="subjectElement"></app-subject>
 	</div>
+	<div style="display: flex;">
+		<a class="button button-primary" href="/signup" role="button" [routerLink]="['/professor/profile']">Back to profile</a>
+		<a class="button button-primary" role="button">Create</a>
+	</div>
 </div>

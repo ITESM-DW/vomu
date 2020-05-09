@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { UserService } from './user.service';
+import { UserType } from './modules/user/models/UserModel';
 
 @Injectable({
 	providedIn: 'root'
@@ -20,6 +21,16 @@ export class AuthService {
 	}
 	getCurrentUser() {
 		return this.user;
+	}
+	getType(email: string): UserType
+	{
+		const users = this.userService.getUsers();
+		for (let i = 0; i < users.length; i++) {
+			if (users[i].email === email)
+			{
+				return users[i].type;
+			}
+		}
 	}
 	login(email: string, pwd: string): boolean {
 		const users = this.userService.getUsers();

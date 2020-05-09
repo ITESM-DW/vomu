@@ -65,7 +65,7 @@ import { Router } from '@angular/router';
 
 export class UserProfileComponent implements OnInit {
 	edit = false;
-	@Input() user: StudentModel | ProfessorModel;
+	@Input() user: (StudentModel | ProfessorModel);
 
 	constructor(private userService: UserService, private authService: AuthService, private router: Router) { }
 

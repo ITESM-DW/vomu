@@ -89,9 +89,15 @@ export class LoginComponent implements OnInit {
 	onSubmit(form: NgForm) {
 		if (this.now === 'login') {
 			if (!this.authService.login(form.value.email, form.value.password)) {
-				alert("Usuario o contraseña incorrectos"); 
+				alert("Error: Usuario o contraseña incorrectos."); 
 			} else {
-				this.router.navigateByUrl(`/student/profile`);
+				const type = this.authService.getType(form.value.email);
+				if(type=='student')
+					this.router.navigateByUrl(`/student/profile`);
+				else if(type=='professor')
+					this.router.navigateByUrl(`/professor/profile`);
+				else if(type==null)
+					alert("Error: Intenta de nuevo.")
 			}
 		} else if (this.now === 'signup') {
 			let user;
