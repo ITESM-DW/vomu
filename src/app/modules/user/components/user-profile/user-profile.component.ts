@@ -20,16 +20,16 @@ import { Router } from '@angular/router';
 		trigger('fadeInOut', [
 			transition(':enter', [
 					style({opacity:0}),
-			        animate('0.3s 0.3s', style({
-			          opacity:1,
-			          position: '*'
-			        }))
+					animate('0.3s 0.3s', style({
+						opacity:1,
+						position: '*'
+					}))
 			]),
 			transition(':leave', [
 					style({opacity:1, position: '*'}),
-			        animate('0.3s', style({
-			          opacity:0,
-			        }))
+					animate('0.3s', style({
+						opacity:0,
+					}))
 			])
 		]),
 	],
@@ -41,9 +41,9 @@ import { Router } from '@angular/router';
 					style({opacity:0, position: 'fixed'}),
 					stagger(100, [
 						animate('5s', style({
-				        	opacity:1,
-				        	position:'*'
-				        }))
+							opacity:1,
+							position:'*'
+						}))
 					])
 				])
 			]),
@@ -52,9 +52,9 @@ import { Router } from '@angular/router';
 					style({opacity:1, position:'*'}),
 					stagger(100, [
 						animate('0.5s', style({
-				        	opacity:0,
-				        	position: 'fixed'
-				        }))
+							opacity:0,
+							position: 'fixed'
+						}))
 					])
 				])
 			])
