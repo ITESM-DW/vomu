@@ -106,23 +106,25 @@ export class LoginComponent implements OnInit {
 				user = new ProfessorModel(
 					this.userService.nextID(),
 					form.value.email,
-					form.value.pwd,
 					form.value.name,
 					form.value.last,
+					form.value.pwd,
 					form.value.title,
 					form.value.description,
-					form.value.imgURL
+					form.value.imgURL,
+					[]
 				);
 			} else if (form.value.type === 'Student') {
 				user = new StudentModel(
 					this.userService.nextID(),
 					form.value.email,
-					form.value.pwd,
 					form.value.name,
 					form.value.last,
+					form.value.pwd,
 					form.value.title,
 					form.value.description,
-					form.value.imgURL
+					form.value.imgURL,
+					[],
 				);
 			}
 			this.userService.addUser(user);
