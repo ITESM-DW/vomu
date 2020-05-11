@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { CourseModel } from 'src/app/modules/professor/models/CourseModel';
 
 @Component({
 	selector: 'app-header',
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+	
+	@Input() input:{title:string, description: string};
 	constructor() {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		
+	}
 }
