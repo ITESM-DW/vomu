@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { trigger, state, style, animate, transition, group, sequence, query, stagger } from '@angular/animations';
 
 import { UserService } from 'src/app/user.service';
 import { AuthService } from 'src/app/auth.service';
@@ -11,15 +14,64 @@ import { Router } from '@angular/router';
 	selector: 'app-user-profile',
 	templateUrl: './user-profile.component.html',
 	styleUrls: ['./user-profile.component.scss'],
+
+	//Animations
+	animations: [
+		trigger('fadeInOut', [
+			transition(':enter', [
+					style({opacity:0}),
+					animate('0.3s 0.3s', style({
+						opacity:1,
+						position: '*'
+					}))
+			]),
+			transition(':leave', [
+					style({opacity:1, position: '*'}),
+					animate('0.3s', style({
+						opacity:0,
+					}))
+			])
+		]),
+	],
+
+	/*animations: [
+		trigger('fadeInOut', [
+			transition(':enter', [
+				query('div', [
+					style({opacity:0, position: 'fixed'}),
+					stagger(100, [
+						animate('5s', style({
+							opacity:1,
+							position:'*'
+						}))
+					])
+				])
+			]),
+			transition(':leave', [
+				query('div', [
+					style({opacity:1, position:'*'}),
+					stagger(100, [
+						animate('0.5s', style({
+							opacity:0,
+							position: 'fixed'
+						}))
+					])
+				])
+			])
+		]),
+	],*/
 })
+
+
 export class UserProfileComponent implements OnInit {
 	edit = false;
-	@Input() user: StudentModel | ProfessorModel;
+	@Input() user: (StudentModel | ProfessorModel);
 
 	constructor(private userService: UserService, private authService: AuthService, private router: Router) { }
 
 	ngOnInit(): void {
 	}
+
 	onEdit() {
 		this.edit = true;
 	}

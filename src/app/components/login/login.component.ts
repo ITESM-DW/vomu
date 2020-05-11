@@ -7,10 +7,42 @@ import { StudentModel } from 'src/app/modules/student/models/StudentModel';
 import { ProfessorModel } from 'src/app/modules/professor/models/ProfessorModel';
 import { UserType } from 'src/app/modules/user/models/UserModel';
 
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { trigger, state, style, animate, transition, group, sequence, } from '@angular/animations';
+
+
 @Component({
 	selector: 'app-login',
 	templateUrl: './login.component.html',
 	styleUrls: ['./login.component.scss'],
+
+	//Animations
+	animations: [
+		trigger('fadeInOut', [
+			transition(':enter', [	 // :enter is alias to 'void => *'
+				style({opacity:0,height:0}),
+				sequence([
+					animate('0.5s', style({
+						height:"500px"
+					})),
+					animate('0.5s', style({
+						opacity:1
+					}))
+				])
+			]),
+			transition(':leave', [	 // :leave is alias to '* => void'
+				sequence([
+					animate('0.5s', style({
+						opacity:0
+					})),
+					animate('0.5s', style({
+						height:0
+					}))
+				])
+			])
+		]),
+	],
 })
 export class LoginComponent implements OnInit {
 	register = false;
@@ -57,37 +89,46 @@ export class LoginComponent implements OnInit {
 	onSubmit(form: NgForm) {
 		if (this.now === 'login') {
 			if (!this.authService.login(form.value.email, form.value.password)) {
-				// Login feedback
+				alert("Error: Usuario o contraseña incorrectos."); 
 			} else {
-				this.router.navigateByUrl(`/student/profile`);
+				const type = this.authService.getType(form.value.email);
+				if(type=='student')
+					this.router.navigateByUrl(`/student/profile`);
+				else if(type=='professor')
+					this.router.navigateByUrl(`/professor/profile`);
+				else if(type==null)
+					alert("Error: Intenta de nuevo.")
 			}
 		} else if (this.now === 'signup') {
 			let user;
-			if (form.value.type === 'professor') {
+			console.log(form.value.type);
+			if (form.value.type === 'Professor') {
 				user = new ProfessorModel(
 					this.userService.nextID(),
 					form.value.email,
-					form.value.pwd,
 					form.value.name,
 					form.value.last,
+					form.value.pwd,
 					form.value.title,
 					form.value.description,
-					form.value.imgURL
+					form.value.imgURL,
+					[]
 				);
-			} else if (form.value.type === 'student') {
+			} else if (form.value.type === 'Student') {
 				user = new StudentModel(
 					this.userService.nextID(),
 					form.value.email,
-					form.value.pwd,
 					form.value.name,
 					form.value.last,
+					form.value.pwd,
 					form.value.title,
 					form.value.description,
-					form.value.imgURL
+					form.value.imgURL,
+					[],
 				);
 			}
-
 			this.userService.addUser(user);
+			alert("El usuario "+ form.value.email+" ha sido registrado!"); 
 			this.router.navigateByUrl('/login');
 		}
 	}

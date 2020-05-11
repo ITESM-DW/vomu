@@ -4,7 +4,7 @@
 		<img
 			width="80px"
 			class="logo"
-			src="src/assets/images/brain.png"
+			src="../../assets/images/brain.png"
 			alt="Vomu"
 		/>
 	</div>
@@ -35,7 +35,7 @@
 				<a [routerLink]="['student', 'profile']" routerLinkActive="router-link-active"  class="menu__options__item">Profile</a>
 			</li>
 			<li *ngIf="loggedin" class="active">
-				<a class="menu__options__item" (click)="onLogOut()">Log out</a>
+				<a class="menu__options__item" (click)="onLogOut()" [routerLink]="['/home']">Log out</a>
 			</li>
 		</ul>
 		<form *ngIf="loggedin" class="search">

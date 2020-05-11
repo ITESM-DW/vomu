@@ -1,6 +1,6 @@
 <div>
-    <app-user-profile></app-user-profile>
-    <button [routerLink]="['/professor/create']">Create New Course</button>
+    <app-user-profile [user]="user"></app-user-profile>
+    <a class="button button-primary" role="button" [routerLink]="['/professor/create']" style="margin: auto 10%;">Create a New Course</a>
 </div>
 
 <app-card-view></app-card-view>

@@ -37,7 +37,7 @@
 				<div class="login__field__invalid">Please fill out this field.</div>
 			</div>
 			<!--Components for registration-->
-			<div *ngIf="register === true">
+			<div *ngIf="register === true" [@fadeInOut]>
 				<div class="login__field">
 					<label for="pwd">Input your password again:</label>
 					<input
@@ -99,7 +99,7 @@
 						<input
 							type="text"
 							class="login__field__control"
-							id="description"
+							id="title"
 							placeholder="PhD., DBA, EdD, PsyD, etc."
 							name="title"
 							required

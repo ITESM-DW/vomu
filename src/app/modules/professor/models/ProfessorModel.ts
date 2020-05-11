@@ -12,15 +12,17 @@ export class ProfessorModel implements UserModel {
 	image: string;
 	courses: number[] = [];
 
-	constructor(id: number, email: string, password: string, name: string, last: string, title: string, description: string, image: string) {
+	constructor(id: number, email: string,  name: string, last: string, password: string, title: string, description: string, image: string, courses: number[]) {
 		// ID is Temporary
 		this.id = id;
 		this.email = email;
-		this.password = password;
 		this.name = name;
 		this.last = last;
+		this.password = password;
 		this.title = title;
 		this.description = description;
 		this.image = image;
+		this.courses = courses;
+		this.type = UserType.PROFESSOR;
 	}
 }
