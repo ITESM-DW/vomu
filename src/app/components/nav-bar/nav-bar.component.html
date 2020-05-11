@@ -24,22 +24,18 @@
 		<ul class="menu__options mr-auto">
 			<li class="active">
 				<a class="menu__options__item" [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a>
-				<!-- Rourting missing -->
 			</li>
 			<li *ngIf="!loggedin" class="active">
 				<a class="menu__options__item" [routerLink]="['/login']" routerLinkActive="router-link-active" >Log in</a>
-				<!-- Rourting missing -->
 			</li>
 			<li *ngIf="!loggedin" class="active">
 				<a class="menu__options__item" [routerLink]="['/signup']" routerLinkActive="router-link-active" >Sign up</a>
-				<!-- Rourting missing -->
 			</li>
 			<li *ngIf="loggedin" class="active">
 				<a [routerLink]="['student', 'profile']" routerLinkActive="router-link-active"  class="menu__options__item">Profile</a>
 			</li>
 			<li *ngIf="loggedin" class="active">
 				<a class="menu__options__item" (click)="onLogOut()">Log out</a>
-				<!-- Rourting missing -->
 			</li>
 		</ul>
 		<form *ngIf="loggedin" class="search">
@@ -50,7 +46,7 @@
 				aria-label="Search"
 			/>
 			<button class="button button-success" type="submit">Search</button>
-			<!-- Rourting missing -->
+			<!-- Routing missing -->
 		</form>
 	</div>
 </nav>

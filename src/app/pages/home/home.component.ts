@@ -23,8 +23,7 @@ export class HomeComponent implements OnInit {
 					`${professor.name} ${professor.last}`,
 					course.description,
 					course.imgURL,
-					//TODO(kevinwkt): change link to point to generic course page.
-					`/student/course/${course.id}`
+					`/course/${course.id}`,
 				)
 			);
 		});
