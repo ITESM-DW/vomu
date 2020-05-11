@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UserService } from '../../user.service';
-import { CourseService } from '../user/course.service';
+import { CourseService } from '../../course.service';
 import { UserType } from '../user/models/UserModel';
 import { StudentModel } from './models/StudentModel';
 

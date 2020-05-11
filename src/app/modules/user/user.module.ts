@@ -13,7 +13,7 @@ import { ChartsModule } from 'ng2-charts';
 
 import { AuthService } from '../../auth.service';
 import { UserService } from '../../user.service';
-import { CourseService } from './course.service';
+import { CourseService } from '../../course.service';
 import { RouterModule } from '@angular/router';
 
 
@@ -40,8 +40,5 @@ import { RouterModule } from '@angular/router';
 		CardViewComponent,
 		StatsComponent
 	],
-	providers: [
-		CourseService
-	]
 })
 export class UserModule { }

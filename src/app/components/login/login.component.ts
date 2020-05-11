@@ -17,27 +17,27 @@ import { trigger, state, style, animate, transition, group, sequence, } from '@a
 	templateUrl: './login.component.html',
 	styleUrls: ['./login.component.scss'],
 
-	//Animations
+	// Animations
 	animations: [
 		trigger('fadeInOut', [
 			transition(':enter', [	 // :enter is alias to 'void => *'
-				style({opacity:0,height:0}),
+				style({ opacity: 0, height: 0 }),
 				sequence([
 					animate('0.5s', style({
-						height:"500px"
+						height: '500px'
 					})),
 					animate('0.5s', style({
-						opacity:1
+						opacity: 1
 					}))
 				])
 			]),
 			transition(':leave', [	 // :leave is alias to '* => void'
 				sequence([
 					animate('0.5s', style({
-						opacity:0
+						opacity: 0
 					})),
 					animate('0.5s', style({
-						height:0
+						height: 0
 					}))
 				])
 			])
@@ -89,15 +89,16 @@ export class LoginComponent implements OnInit {
 	onSubmit(form: NgForm) {
 		if (this.now === 'login') {
 			if (!this.authService.login(form.value.email, form.value.password)) {
-				alert("Error: Usuario o contraseña incorrectos."); 
+				alert('Error: Usuario o contraseña incorrectos.');
 			} else {
-				const type = this.authService.getType(form.value.email);
-				if(type=='student')
+				const user = this.authService.getCurrentUserModel();
+				if (user instanceof StudentModel) {
 					this.router.navigateByUrl(`/student/profile`);
-				else if(type=='professor')
+				} else if (user instanceof ProfessorModel) {
 					this.router.navigateByUrl(`/professor/profile`);
-				else if(type==null)
-					alert("Error: Intenta de nuevo.")
+				} else if (user === null) {
+					alert('Error: Intenta de nuevo.');
+				}
 			}
 		} else if (this.now === 'signup') {
 			let user;
@@ -128,7 +129,7 @@ export class LoginComponent implements OnInit {
 				);
 			}
 			this.userService.addUser(user);
-			alert("El usuario "+ form.value.email+" ha sido registrado!"); 
+			alert('El usuario ' + form.value.email + ' ha sido registrado!');
 			this.router.navigateByUrl('/login');
 		}
 	}

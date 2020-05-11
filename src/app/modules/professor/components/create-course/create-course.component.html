@@ -1,62 +1,101 @@
-<div class="course-creation">
-	<!-- Title -->
-	<div class="course-creation--group">
-		<div class="course-creation--prepend">
-			<span class="course-creation--text" id="addon-wrapping">Title</span>
+<form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+	<div class="course-creation">
+		<!-- Title -->
+		<div class="course-creation--group">
+			<div class="course-creation--prepend">
+				<span class="course-creation--text" id="addon-wrapping">Course Title</span>
+			</div>
+			<input
+				type="text"
+				class="course-creation--control"
+				placeholder="Course title"
+				aria-label="Course title"
+				aria-describedby="addon-wrapping"
+				formControlName="title"
+			/>
 		</div>
-		<input
-			type="text"
-			class="course-creation--control"
-			placeholder="Username"
-			aria-label="Username"
-			aria-describedby="addon-wrapping"
-		/>
-	</div>
-	<!-- Description -->
-	<div class="course-creation--group">
-		<div class="course-creation--prepend">
-			<span class="course-creation--text">What will students learn?</span>
+		<!-- Description -->
+		<div class="course-creation--group">
+			<div class="course-creation--prepend">
+				<span class="course-creation--text">What will students learn?</span>
+			</div>
+			<textarea
+				class="course-creation--control"
+				aria-label="With textarea"
+				formControlName="description"
+			></textarea>
 		</div>
-		<textarea
-			class="course-creation--control"
-			aria-label="With textarea"
-		></textarea>
-	</div>
-	<!-- Requirements -->
-	<div class="course-creation--group">
-		<div class="course-creation--prepend">
-			<span class="course-creation--text"
-				>What are the minimum requirements?</span
-			>
+		<!-- Requirements
+		<div class="course-creation--group">
+			<div class="course-creation--prepend">
+				<span class="course-creation--text"
+					>What are the minimum requirements?</span
+				>
+			</div>
+			<textarea
+				class="course-creation--control"
+				aria-label="With textarea"
+			></textarea>
+		</div> -->
+		<!-- Profile picture -->
+		<div class="course-creation--group">
+			<div class="course-creation--prepend">
+				<span class="course-creation--text" id="addon-wrapping">Course image URL</span>
+			</div>
+			<input type="text" class="course-creation--control" placeholder="Course image URL" aria-label="Course image URL"
+				aria-describedby="addon-wrapping" formControlName="imgURL" />
 		</div>
-		<textarea
-			class="course-creation--control"
-			aria-label="With textarea"
-		></textarea>
-	</div>
-	<!-- Profile picture -->
-	<div class="course-creation--group">
-		<div class="custom-file">
-			<input type="file" class="custom-file-input" id="inputGroupFile02" />
-			<label
-				class="custom-file-label"
-				for="inputGroupFile02"
-				aria-describedby="inputGroupFileAddon02"
-				>Choose course image</label
-			>
+		<a (click)="addSubject()" class="button button-info">Add Subject</a>
+		<div formArrayName="subjects" id="values" class="mb-3" role="tablist" aria-multiselectable="true">
+			<!-- BEGINS SUBJECT -->
+			<div class="infoCard" *ngFor="let subject of subjects.controls; index as i" [formGroupName]="i">
+				<div class="infoCard__header" role="tab" id="learn">
+					<h5>
+						<!-- Title -->
+						<div class="course-creation--group">
+							<a data-toggle="collapse" [href]="'#subject'+i" data-parent="#values" aria-expanded="true"
+								aria-controls="learn">
+								<div class="course-creation--prepend">
+									<span class="course-creation--text" id="addon-wrapping">Subject</span>
+								</div>
+							</a>
+							<input formControlName="title" type="text" class="course-creation--control" placeholder="Subject" />
+							<div class="course-creation--append">
+								<a (click)="deleteSubject(i)" class="button button-danger">Delete</a>
+							</div>
+						</div>
+					</h5>
+				</div>
+				<div [id]="'subject' + i" class="infoCard__collapse" role="tabpanel">
+					<div class="infoCard__body">
+						<div class="course-creation--group">
+							<div class="course-creation--prepend">
+								<span class="course-creation--text">Description</span>
+							</div>
+							<textarea 
+							formControlName="description" 
+							class="course-creation--control"
+							aria-label="With textarea"></textarea>
+						</div>
+						<!-- Video URL -->
+						<div class="course-creation--group">
+							<div class="course-creation--prepend">
+								<span class="course-creation--text" id="addon-wrapping">Video URL</span>
+							</div>
+							<input 
+							type="text" 
+							class="course-creation--control" 
+							placeholder="https://youtube.com/somevideourl"
+							formControlName="videoURL" />
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="course-creation--append">
-			<span class="course-creation--text" id="inputGroupFileAddon02"
-				>Upload</span
-			>
+		<!-- END OF SUBJECT -->
+		<div style="display: flex;">
+			<a class="button button-primary" href="/signup" role="button" [routerLink]="['/professor/profile']">Back to profile</a>
+			<button type="submit" class="button button-primary" role="button">Create</button>
 		</div>
 	</div>
-	<a (click)="addSubject()" class="button button-info">Add Subject</a>
-	<div id="values" class="mb-3" role="tablist" aria-multiselectable="true">
-		<app-subject *ngFor="let subjectElement of subjects" [subject]="subjectElement"></app-subject>
-	</div>
-	<div style="display: flex;">
-		<a class="button button-primary" href="/signup" role="button" [routerLink]="['/professor/profile']">Back to profile</a>
-		<a class="button button-primary" role="button">Create</a>
-	</div>
-</div>
+</form>

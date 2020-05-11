@@ -1,9 +1,9 @@
 import { UserType } from './modules/user/models/UserModel';
-import { Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import { StudentModel } from './modules/student/models/StudentModel';
 import { ProfessorModel } from './modules/professor/models/ProfessorModel';
 
-@Injectable ({
+@Injectable({
 	providedIn: 'root'
 })
 
@@ -18,19 +18,19 @@ export class UserService {
 			'PhD.',
 			'urna convallis erat, eget tincidunt dui augue eu tellus. Phasellus',
 			'https://source.unsplash.com/collection/190727/400x400',
-			[{ course_id: 1, subject_id: 2 }, {course_id: 5, subject_id: 2}]
+			[{ course_id: 1, subject_id: 2 }, { course_id: 5, subject_id: 2 }]
 		),
 		new ProfessorModel(
 			1,
-			'risus@urnaVivamusmolestie.org',
+			'professor@gmail.com',
 			'Gareth',
 			'Monroe',
-			'LTD44JET4MU',
+			'password',
 			'PhD',
 			'vel, faucibus id, libero. Donec consectetuer mauris id sapien. Cras',
 			'https://source.unsplash.com/collection/190727/400x400',
 			[1],
-			
+
 		),
 		new ProfessorModel(
 			2,
@@ -41,7 +41,7 @@ export class UserService {
 			'PsyD',
 			'felis. Nulla tempor augue ac ipsum. Phasellus vitae mauris sit',
 			'https://source.unsplash.com/collection/190727/400x400',
-			 [2],
+			[2],
 		),
 		new ProfessorModel(
 			3,
@@ -63,7 +63,7 @@ export class UserService {
 			'PhD.',
 			'sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus',
 			'https://source.unsplash.com/collection/190727/400x400',
-			[{ course_id: 1, subject_id: 3 }, { course_id: 2, subject_id: 1 }, { course_id: 5, subject_id: 2 } ]
+			[{ course_id: 1, subject_id: 3 }, { course_id: 2, subject_id: 1 }, { course_id: 5, subject_id: 2 }]
 		),
 		new ProfessorModel(
 			5,
@@ -135,7 +135,11 @@ export class UserService {
 	getUser(id: number) {
 		const index = this.users.findIndex(u => u.id === id);
 		if (index > -1) {
-			return this.users[index];
+			if (this.users[index] instanceof StudentModel) {
+				return this.users[index] as StudentModel;
+			} else if (this.users[index] instanceof ProfessorModel) {
+				return this.users[index] as ProfessorModel;
+			}
 		}
 		return;
 	}
@@ -152,7 +156,7 @@ export class UserService {
 		this.users = this.users.filter(user => user.id !== id);
 	}
 
-	getUsers(): (StudentModel|ProfessorModel)[] {
+	getUsers(): (StudentModel | ProfessorModel)[] {
 		return this.users;
 	}
 

@@ -22,7 +22,6 @@ export class StudentModel implements UserModel {
 		this.title = title;
 		this.description = description;
 		this.image = image;
-		this.type = UserType.STUDENT,
 		this.followup = followup;
 	}
 }

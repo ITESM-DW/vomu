@@ -23,6 +23,5 @@ export class ProfessorModel implements UserModel {
 		this.description = description;
 		this.image = image;
 		this.courses = courses;
-		this.type = UserType.PROFESSOR;
 	}
 }

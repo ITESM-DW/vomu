@@ -10,7 +10,6 @@ export interface UserModel {
 	name: string;
 	last: string;
 	title: string;
-	type: UserType;
 	description: string;
 	image: string;
 }
