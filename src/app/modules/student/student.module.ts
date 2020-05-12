@@ -7,6 +7,7 @@ import { StudentCourseViewComponent } from './pages/student-course-view/student-
 import { StudentProfileComponent } from './pages/student-profile/student-profile.component';
 import { CourseViewDetailsComponent } from './components/course-view-details/course-view-details.component';
 import { StudentService } from './student.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
 	declarations: [
@@ -18,6 +19,7 @@ import { StudentService } from './student.service';
 	imports: [
 		CommonModule,
 		UserModule,
+		FormsModule,
 		StudentRoutingModule
 	],
 	exports: [

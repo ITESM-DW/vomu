@@ -20,7 +20,9 @@ export class StudentProfileComponent implements OnInit {
 	ngOnInit(): void {
 		if (this.authService.isAuth()) {
 			this.user = this.authService.getCurrentUserModel() as StudentModel; // TODO Get id with routing
-			console.log(this.user);
+			this.userService.userUpdated.subscribe(u => {
+				this.user = u as StudentModel;
+			});
 			let course;
 			console.log(this.courseService.getCoursesByUserId(this.user.id));
 			for (course of this.courseService.getCoursesByUserId(this.user.id)) {

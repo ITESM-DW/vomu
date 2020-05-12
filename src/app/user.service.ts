@@ -2,12 +2,14 @@ import { UserType } from './modules/user/models/UserModel';
 import { Injectable } from '@angular/core';
 import { StudentModel } from './modules/student/models/StudentModel';
 import { ProfessorModel } from './modules/professor/models/ProfessorModel';
+import { Subject } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
 })
 
 export class UserService {
+	userUpdated = new Subject<StudentModel | ProfessorModel>();
 	users: (StudentModel | ProfessorModel)[] = [
 		new StudentModel(
 			0,
@@ -148,6 +150,7 @@ export class UserService {
 		const index = this.users.findIndex(u => u.id === user.id);
 		if (index > -1) {
 			this.users[index] = user;
+			this.userUpdated.next(this.users[index]);
 		}
 		return;
 	}
