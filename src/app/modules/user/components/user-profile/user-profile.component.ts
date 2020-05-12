@@ -58,7 +58,7 @@ export class UserProfileComponent implements OnInit {
 		currentUser.last = form.value.last;
 		currentUser.title = form.value.title;
 		currentUser.description = form.value.description;
-		currentUser.image = form.value.image;
+		currentUser.image = form.value.imgURL;
 
 		this.userService.updateUser(currentUser);
 	}
