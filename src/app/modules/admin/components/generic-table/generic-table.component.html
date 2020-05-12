@@ -1,16 +1,16 @@
-<h1 class="header text-center">Search for users or professors</h1>
+<h1 class="header text-center" i18n>Search for users or professors</h1>
 <select class="types" (change)="filterUsers($event.target.value)">
-  <option value="student">Student</option>
-  <option value="professor">Professor</option>
+  <option value="student" i18n>Student</option>
+  <option value="professor" i18n>Professor</option>
 </select>
 <table class="generic-table">
   <thead class="generic-table__header">
     <tr>
       <th scope="generic-table__header-col">#</th>
-      <th scope="generic-table__header-col">First Name</th>
-      <th scope="generic-table__header-col">Last Name</th>
-      <th scope="generic-table__header-col">Email</th>
-      <th scope="generic-table__header-col">Delete</th>
+      <th scope="generic-table__header-col" i18n>First Name</th>
+      <th scope="generic-table__header-col" i18n>Last Name</th>
+      <th scope="generic-table__header-col" i18n>Email</th>
+      <th scope="generic-table__header-col" i18n>Delete</th>
     </tr>
   </thead>
   <tbody>

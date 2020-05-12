@@ -5,6 +5,11 @@
   "projects": {
     "vomu": {
       "projectType": "application",
+      "i18n": {
+        "locales": {
+          "es": "src/locale/messages.es.xlf"
+        }
+      },
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
@@ -39,6 +44,13 @@
             ]
           },
           "configurations": {
+            "es": {
+              "aot":true,
+              "i18nFile":"src/locale/messages.es.xlf",
+              "i18nFormat":"xlf",
+              "i18nLocale":"es",
+              "i18nMissingTranslation":"error"
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -77,6 +89,9 @@
           "configurations": {
             "production": {
               "browserTarget": "vomu:build:production"
+            },
+            "es":{
+              "browserTarget":"vomu:build:es"
             }
           }
         },
