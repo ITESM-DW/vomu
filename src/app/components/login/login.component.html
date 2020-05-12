@@ -9,7 +9,7 @@
 	<div class="login__body">
 		<form (ngSubmit)="onSubmit(f)" #f="ngForm">
 			<div class="login__field">
-				<label for="email">E-mail:</label>
+				<label for="email" i18n>Email</label>
 				<input
 					type="email"
 					class="login__field__control"
@@ -19,11 +19,11 @@
 					required
 					ngModel
 				/>
-				<div class="login__field__valid">Valid.</div>
-				<div class="login__field__invalid">Please fill out this field.</div>
+				<div class="login__field__valid" i18n>Valid.</div>
+				<div class="login__field__invalid" i18n>Please fill out this field.</div>
 			</div>
 			<div class="login__field">
-				<label for="password">Password:</label>
+				<label for="password" i18n>Password</label>
 				<input
 					type="password"
 					class="login__field__control"
@@ -33,14 +33,14 @@
 					required
 					ngModel
 				/>
-				<div class="login__field__valid">Valid.</div>
-				<div class="login__field__invalid">Please fill out this field.</div>
+				<div class="login__field__valid" i18n>Valid.</div>
+				<div class="login__field__invalid" i18n>Please fill out this field.</div>
 			</div>
 			<!--Components for registration-->
 			<div *ngIf="register === true" [@fadeInOut]>
 			<!-- <div *ngIf="register === true"> -->
 				<div class="login__field">
-					<label for="pwd">Input your password again:</label>
+					<label for="pwd" i18n>Input your password again</label>
 					<input
 						type="password"
 						class="login__field__control"
@@ -50,12 +50,12 @@
 						required
 						ngModel
 					/>
-					<div class="login__field__valid">Valid.</div>
-					<div class="login__field__invalid">Please fill out this field.</div>
+					<div class="login__field__valid" i18n>Valid.</div>
+					<div class="login__field__invalid" i18n>Please fill out this field.</div>
 				</div>
 				<div style="display: flex;">
 					<div class="login__field" style="width: 50%; margin: 0 1rem 0 0;">
-						<label for="fName">First name:</label>
+						<label for="fName" i18n>First name</label>
 						<input
 							type="text"
 							class="login__field__control"
@@ -65,11 +65,11 @@
 							required
 							ngModel
 						/>
-						<div class="login__field__valid">Valid.</div>
-						<div class="login__field__invalid">Please fill out this field.</div>
+						<div class="login__field__valid" i18n>Valid.</div>
+						<div class="login__field__invalid" i18n>Please fill out this field.</div>
 					</div>
 					<div class="login__field" style="width: 50%;">
-						<label for="lName">Last name:</label>
+						<label for="lName" i18n>Last name</label>
 						<input
 							type="text"
 							class="login__field__control"
@@ -79,13 +79,13 @@
 							required
 							ngModel
 						/>
-						<div class="login__field__valid">Valid.</div>
-						<div class="login__field__invalid">Please fill out this field.</div>
+						<div class="login__field__valid" i18n>Valid.</div>
+						<div class="login__field__invalid" i18n>Please fill out this field.</div>
 					</div>
 					
 				</div>
 				<div class="login__field">
-					<label for="role">Choose your role:</label>
+					<label for="role" i18n>Choose your role</label>
 					<select ngModel #device name="type" id="role" (change)="onChange($event, device
 					.value)">
 						<option></option>
@@ -96,7 +96,7 @@
 				</div>
 				<div>
 					<div class="login__field">
-						<label for="description">Add your title:</label>
+						<label for="description" i18n>Add your title</label>
 						<input
 							type="text"
 							class="login__field__control"
@@ -106,12 +106,12 @@
 							required
 							ngModel
 						/>
-						<div class="login__field__valid">Valid.</div>
-						<div class="login__field__invalid">Please fill out this field.</div>
+						<div class="login__field__valid" i18n>Valid.</div>
+						<div class="login__field__invalid" i18n>Please fill out this field.</div>
 					</div>
 				</div>
 				<div class="login__field">
-					<label for="description">Add a brief description about your career:</label>
+					<label for="description" i18n>Add a brief description about your career</label>
 					<input
 						type="text"
 						class="login__field__control"
@@ -121,11 +121,11 @@
 						required
 						ngModel
 					/>
-					<div class="login__field__valid">Valid.</div>
-					<div class="login__field__invalid">Please fill out this field.</div>
+					<div class="login__field__valid" i18n>Valid.</div>
+					<div class="login__field__invalid" i18n>Please fill out this field.</div>
 				</div>
 				<div class="login__field">
-					<label for="picture">Profile Picture (URL):</label>
+					<label for="picture" i18n>Profile Picture (URL)</label>
 					<input
 						type="url"
 						class="login__field__control"
@@ -134,8 +134,8 @@
 						required
 						name="imgURL"
 						ngModel />
-					<div class="login__field__valid">Valid.</div>
-					<div class="login__field__invalid">Please fill out this field.</div>
+					<div class="login__field__valid" i18n>Valid.</div>
+					<div class="login__field__invalid" i18n>Please fill out this field.</div>
 				</div>
 				<!-- <div class="input-group mb-3">
 					<div class="custom-file">
@@ -154,18 +154,15 @@
 			</div>
 			<!--Components for registration end-->
 			<div class="login__field login__checkbox">
-				<label class="login__checkbox__label">
+				<label class="login__checkbox__label" i18n>
 					<input
 						class="login__checkbox__check"
 						type="checkbox"
 						name="remember"
 						required
+						
 					/>
-					I agree on blabla.
-					<div class="login__field__valid">Valid.</div>
-					<div class="login__field__invalid">
-						Check this checkbox to continue.
-					</div>
+					I agree on terms and conditions.
 				</label>
 			</div>
 			<button type="submit" class="login__main-btn" style="margin: 10px;">

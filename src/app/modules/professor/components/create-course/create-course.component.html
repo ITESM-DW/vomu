@@ -3,7 +3,7 @@
 		<!-- Title -->
 		<div class="course-creation--group">
 			<div class="course-creation--prepend">
-				<span class="course-creation--text" id="addon-wrapping">Course Title</span>
+				<span class="course-creation--text" id="addon-wrapping" i18n>Course Title</span>
 			</div>
 			<input
 				type="text"
@@ -17,7 +17,7 @@
 		<!-- Description -->
 		<div class="course-creation--group">
 			<div class="course-creation--prepend">
-				<span class="course-creation--text">What will students learn?</span>
+				<span class="course-creation--text" i18n>What will students learn?</span>
 			</div>
 			<textarea
 				class="course-creation--control"
@@ -40,12 +40,12 @@
 		<!-- Profile picture -->
 		<div class="course-creation--group">
 			<div class="course-creation--prepend">
-				<span class="course-creation--text" id="addon-wrapping">Course image URL</span>
+				<span class="course-creation--text" id="addon-wrapping" i18n>Course image URL</span>
 			</div>
 			<input type="text" class="course-creation--control" placeholder="Course image URL" aria-label="Course image URL"
 				aria-describedby="addon-wrapping" formControlName="imgURL" />
 		</div>
-		<a (click)="addSubject()" class="button button-info">Add Subject</a>
+		<a (click)="addSubject()" class="button button-info" i18n>Add Subject</a>
 		<div formArrayName="subjects" id="values" class="mb-3" role="tablist" aria-multiselectable="true">
 			<!-- BEGINS SUBJECT -->
 			<div class="infoCard" *ngFor="let subject of subjects.controls; index as i" [formGroupName]="i">
@@ -56,12 +56,12 @@
 							<a data-toggle="collapse" [href]="'#subject'+i" data-parent="#values" aria-expanded="true"
 								aria-controls="learn">
 								<div class="course-creation--prepend">
-									<span class="course-creation--text" id="addon-wrapping">Subject</span>
+									<span class="course-creation--text" id="addon-wrapping" i18n>Subject</span>
 								</div>
 							</a>
 							<input formControlName="title" type="text" class="course-creation--control" placeholder="Subject" />
 							<div class="course-creation--append">
-								<a (click)="deleteSubject(i)" class="button button-danger">Delete</a>
+								<a (click)="deleteSubject(i)" class="button button-danger" i18n>Delete</a>
 							</div>
 						</div>
 					</h5>
@@ -70,7 +70,7 @@
 					<div class="infoCard__body">
 						<div class="course-creation--group">
 							<div class="course-creation--prepend">
-								<span class="course-creation--text">Description</span>
+								<span class="course-creation--text" i18n>Description</span>
 							</div>
 							<textarea 
 							formControlName="description" 
@@ -80,7 +80,7 @@
 						<!-- Video URL -->
 						<div class="course-creation--group">
 							<div class="course-creation--prepend">
-								<span class="course-creation--text" id="addon-wrapping">Video URL</span>
+								<span class="course-creation--text" id="addon-wrapping" i18n>Video URL</span>
 							</div>
 							<input 
 							type="text" 
@@ -94,8 +94,8 @@
 		</div>
 		<!-- END OF SUBJECT -->
 		<div style="display: flex;">
-			<a class="button button-primary" href="/signup" role="button" [routerLink]="['/professor/profile']">Back to profile</a>
-			<button type="submit" class="button button-primary" role="button">Create</button>
+			<a class="button button-primary" href="/signup" role="button" [routerLink]="['/professor/profile']" i18n>Back to profile</a>
+			<button type="submit" class="button button-primary" role="button" i18n>Create</button>
 		</div>
 	</div>
 </form>

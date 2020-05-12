@@ -23,19 +23,19 @@
 	<div class="collapse navbar-collapse" id="menu">
 		<ul class="menu__options mr-auto">
 			<li class="active">
-				<a class="menu__options__item" [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a>
+				<a class="menu__options__item" [routerLink]="['/home']" routerLinkActive="router-link-active" i18n>Home</a>
 			</li>
 			<li *ngIf="!loggedin" class="active">
-				<a class="menu__options__item" [routerLink]="['/login']" routerLinkActive="router-link-active" >Log in</a>
+				<a class="menu__options__item" [routerLink]="['/login']" routerLinkActive="router-link-active" i18n>Log in</a>
 			</li>
 			<li *ngIf="!loggedin" class="active">
-				<a class="menu__options__item" [routerLink]="['/signup']" routerLinkActive="router-link-active" >Sign up</a>
+				<a class="menu__options__item" [routerLink]="['/signup']" routerLinkActive="router-link-active" i18n>Sign up</a>
 			</li>
 			<li *ngIf="loggedin" class="active">
-				<a [routerLink]="[type, 'profile']" routerLinkActive="router-link-active"  class="menu__options__item">Profile</a>
+				<a [routerLink]="[type, 'profile']" routerLinkActive="router-link-active"  class="menu__options__item" i18n>Profile</a>
 			</li>
 			<li *ngIf="loggedin" class="active">
-				<a class="menu__options__item" (click)="onLogOut()" [routerLink]="['/home']">Log out</a>
+				<a class="menu__options__item" (click)="onLogOut()" [routerLink]="['/home']" i18n>Log out</a>
 			</li>
 		</ul>
 		<form *ngIf="loggedin" class="search">
@@ -45,7 +45,7 @@
 				placeholder="Search"
 				aria-label="Search"
 			/>
-			<button class="button button-success" type="submit">Search</button>
+			<button class="button button-success" type="submit" i18n>Search</button>
 		</form>
 	</div>
 </nav>

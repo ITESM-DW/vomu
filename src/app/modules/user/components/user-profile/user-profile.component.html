@@ -4,14 +4,14 @@
 	</div>
 	<div *ngIf="!edit" [@fadeInOut]>
 		<app-user-profile-description [user]="user"></app-user-profile-description>
-		<a class="button button-primary" (click)="onEdit()">Edit</a>
+		<a class="button button-primary" (click)="onEdit()" i18n>Edit</a>
 	</div>
 	<div *ngIf="edit" [@fadeInOut]>
 		<form (ngSubmit)="onSave(form)" #form="ngForm" class="container-fluid">
 			<!-- First Name -->
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
-					<span class="input-group-text" id="addon-wrapping">Name</span>
+					<span class="input-group-text" id="addon-wrapping" i18n>Name</span>
 				</div>
 				<input 
 					[ngModel]="user.name" 
@@ -23,7 +23,7 @@
 			<!-- Last Name -->
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
-					<span class="input-group-text" id="addon-wrapping">Last name</span>
+					<span class="input-group-text" id="addon-wrapping" i18n>Last name</span>
 				</div>
 				<input 
 					[ngModel]="user.last" 
@@ -35,7 +35,7 @@
 			<!-- Username -->
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
-					<span class="input-group-text" id="addon-wrapping">Email</span>
+					<span class="input-group-text" id="addon-wrapping" i18n>Email</span>
 				</div>
 				<input 
 					[ngModel]="user.email" 
@@ -48,7 +48,7 @@
 			<!-- Title -->
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
-					<span class="input-group-text" id="addon-wrapping">Title</span>
+					<span class="input-group-text" id="addon-wrapping" i18n>Title</span>
 				</div>
 				<input 
 					[ngModel]="user.title" 
@@ -60,7 +60,7 @@
 			<!-- Description -->
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
-					<span class="input-group-text">Description</span>
+					<span class="input-group-text" i18n>Description</span>
 				</div>
 				<textarea
 					[ngModel]="user.description"
@@ -72,7 +72,7 @@
 			<!-- Profile picture -->
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
-					<span class="input-group-text" id="addon-wrapping">Image URL</span>
+					<span class="input-group-text" id="addon-wrapping" i18n>Image URL</span>
 				</div>
 				<input 
 					[ngModel]="user.image" 
@@ -80,7 +80,7 @@
 					class="form-control" placeholder="Your profile image URL"
 					aria-label="Image URL" name="imgURL" aria-describedby="addon-wrapping" />
 			</div>
-			<button type="submit" class="button button-primary">Save</button>
+			<button type="submit" class="button button-primary" i18n>Save</button>
 		</form>
 	</div>
 </div>
