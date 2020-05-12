@@ -9,12 +9,12 @@ import { AuthService } from 'src/app/auth.service';
 import { StudentModel } from 'src/app/modules/student/models/StudentModel';
 import { ProfessorModel } from 'src/app/modules/professor/models/ProfessorModel';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
 	selector: 'app-user-profile',
 	templateUrl: './user-profile.component.html',
 	styleUrls: ['./user-profile.component.scss'],
-
 	//Animations
 	animations: [
 		trigger('fadeInOut', [
@@ -33,33 +33,6 @@ import { Router } from '@angular/router';
 			])
 		]),
 	],
-
-	/*animations: [
-		trigger('fadeInOut', [
-			transition(':enter', [
-				query('div', [
-					style({opacity:0, position: 'fixed'}),
-					stagger(100, [
-						animate('5s', style({
-							opacity:1,
-							position:'*'
-						}))
-					])
-				])
-			]),
-			transition(':leave', [
-				query('div', [
-					style({opacity:1, position:'*'}),
-					stagger(100, [
-						animate('0.5s', style({
-							opacity:0,
-							position: 'fixed'
-						}))
-					])
-				])
-			])
-		]),
-	],*/
 })
 
 
@@ -76,7 +49,17 @@ export class UserProfileComponent implements OnInit {
 		this.edit = true;
 	}
 
-	onSave() {
+	onSave(form: NgForm) {
 		this.edit = false;
+		console.log(form.value);
+		const currentUser = this.authService.getCurrentUserModel();
+
+		currentUser.name = form.value.name;
+		currentUser.last = form.value.last;
+		currentUser.title = form.value.title;
+		currentUser.description = form.value.description;
+		currentUser.image = form.value.image;
+
+		this.userService.updateUser(currentUser);
 	}
 }

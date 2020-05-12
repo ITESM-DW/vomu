@@ -2,25 +2,85 @@
 	<div class="userprofile__picture">
 		<img class="userprofile__picture__img" [src]="user.image" alt="" />
 	</div>
-
-	<!--<div *ngIf="!edit; else profileedit" [@fadeInOut]>
-		<app-user-profile-description [user]="user"></app-user-profile-description>
-		<a class="button button-primary" (click)="onEdit()">Edit</a>
-	</div>
-	<ng-template #profileedit>
-		<form class="container-fluid">
-			<app-user-profile-edit [user]="user" ></app-user-profile-edit>
-		</form>
-		<a class="button button-primary" (click)="onSave()">Save</a>
-	</ng-template>-->
 	<div *ngIf="!edit" [@fadeInOut]>
 		<app-user-profile-description [user]="user"></app-user-profile-description>
 		<a class="button button-primary" (click)="onEdit()">Edit</a>
 	</div>
 	<div *ngIf="edit" [@fadeInOut]>
-		<form class="container-fluid">
-			<app-user-profile-edit [user]="user" ></app-user-profile-edit>
+		<form (ngSubmit)="onSave(form)" #form="ngForm" class="container-fluid">
+			<!-- First Name -->
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="addon-wrapping">Name</span>
+				</div>
+				<input 
+					[ngModel]="user.name" 
+					type="text" 
+					class="form-control" 
+					placeholder="Name" aria-label="name"
+					aria-describedby="addon-wrapping" name="name" ngModel />
+			</div>
+			<!-- Last Name -->
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="addon-wrapping">Last name</span>
+				</div>
+				<input 
+					[ngModel]="user.last" 
+					type="text" 
+					class="form-control" 
+					placeholder="Last name" aria-label="Last name"
+					aria-describedby="addon-wrapping" name="last" />
+			</div>
+			<!-- Username -->
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="addon-wrapping">Email</span>
+				</div>
+				<input 
+					[ngModel]="user.email" 
+					type="text" 
+					class="form-control" 
+					placeholder="Email" 
+					aria-label="Email"
+					aria-describedby="addon-wrapping" name="email" email />
+			</div>
+			<!-- Title -->
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="addon-wrapping">Title</span>
+				</div>
+				<input 
+					[ngModel]="user.title" 
+					type="text" 
+					class="form-control" 
+					placeholder="Your professional title"
+					aria-label="title" aria-describedby="addon-wrapping" name="title" />
+			</div>
+			<!-- Description -->
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text">Description</span>
+				</div>
+				<textarea
+					[ngModel]="user.description"
+					class="form-control"
+					aria-label="With textarea" name="description">
+					{{ user.description }}
+				</textarea>
+			</div>
+			<!-- Profile picture -->
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="addon-wrapping">Image URL</span>
+				</div>
+				<input 
+					[ngModel]="user.image" 
+					type="text" 
+					class="form-control" placeholder="Your profile image URL"
+					aria-label="Image URL" name="imgURL" aria-describedby="addon-wrapping" />
+			</div>
+			<button type="submit" class="button button-primary">Save</button>
 		</form>
-		<a class="button button-primary" (click)="onSave()">Save</a>
 	</div>
 </div>
