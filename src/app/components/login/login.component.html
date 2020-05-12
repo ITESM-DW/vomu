@@ -7,7 +7,7 @@
 		/>
 	</div>
 	<div class="login__body">
-		<form (ngSubmit)="onSubmit(f)" #f="ngForm" a-form class="was-validated">
+		<form (ngSubmit)="onSubmit(f)" #f="ngForm">
 			<div class="login__field">
 				<label for="email">E-mail:</label>
 				<input
@@ -38,6 +38,7 @@
 			</div>
 			<!--Components for registration-->
 			<div *ngIf="register === true" [@fadeInOut]>
+			<!-- <div *ngIf="register === true"> -->
 				<div class="login__field">
 					<label for="pwd">Input your password again:</label>
 					<input

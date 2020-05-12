@@ -99,16 +99,7 @@ export class StatsComponent implements OnInit {
 			options: {
 				responsive: true,
 			},
-		},
-		{
-			title: 'User Details',
-			type: 'doughnut',
-			data: [
-				[315, 33],
-				[33, 315],
-			],
-			labels: ['Student', 'Teacher'],
-		},
+		}
 	];
 
 	constructor(private renderer: Renderer2) {}

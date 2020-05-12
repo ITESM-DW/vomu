@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { UserService } from './user.service';
-import { UserType } from './modules/user/models/UserModel';
+import { StudentModel } from './modules/student/models/StudentModel';
+import { ProfessorModel } from './modules/professor/models/ProfessorModel';
 
 @Injectable({
 	providedIn: 'root'
@@ -16,28 +17,21 @@ export class AuthService {
 	constructor(private userService: UserService) { }
 
 	isAuth() {
-		console.log(this.loggedIn);
+		this.authChanged.next(this.loggedIn);
 		return this.loggedIn;
 	}
-	getCurrentUser() {
+	getCurrentUser(): number {
 		return this.user;
 	}
-	getType(email: string): UserType
-	{
-		const users = this.userService.getUsers();
-		for (let i = 0; i < users.length; i++) {
-			if (users[i].email === email)
-			{
-				return users[i].type;
-			}
+	getCurrentUserModel(): StudentModel | ProfessorModel {
+		if (this.isAuth) {
+			return this.userService.getUser(this.user);
 		}
 	}
 	login(email: string, pwd: string): boolean {
 		const users = this.userService.getUsers();
-		console.log(users);
 		for (let i = 0; i < users.length; i++) {
 			if (users[i].email === email && users[i].password === pwd) {
-				console.log(users[i]);
 				this.loggedIn = true;
 				this.user = i;
 				this.authChanged.next(this.loggedIn);

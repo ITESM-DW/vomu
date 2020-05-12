@@ -32,7 +32,7 @@
 				<a class="menu__options__item" [routerLink]="['/signup']" routerLinkActive="router-link-active" >Sign up</a>
 			</li>
 			<li *ngIf="loggedin" class="active">
-				<a [routerLink]="['student', 'profile']" routerLinkActive="router-link-active"  class="menu__options__item">Profile</a>
+				<a [routerLink]="[type, 'profile']" routerLinkActive="router-link-active"  class="menu__options__item">Profile</a>
 			</li>
 			<li *ngIf="loggedin" class="active">
 				<a class="menu__options__item" (click)="onLogOut()" [routerLink]="['/home']">Log out</a>
@@ -46,7 +46,6 @@
 				aria-label="Search"
 			/>
 			<button class="button button-success" type="submit">Search</button>
-			<!-- Routing missing -->
 		</form>
 	</div>
 </nav>

@@ -21,6 +21,7 @@ import { AuthService } from './auth.service';
 import { UserService } from './user.service';
 import { GenericCourseViewComponent } from './pages/generic-course-view/generic-course-view.component';
 import { GeneralCourseViewComponent } from './components/general-course-view/general-course-view.component';
+import { CourseService } from './course.service';
 
 @NgModule({
 	declarations: [
@@ -45,6 +46,6 @@ import { GeneralCourseViewComponent } from './components/general-course-view/gen
 		BrowserAnimationsModule,
 	],
 	bootstrap: [AppComponent],
-	providers: [AuthService, UserService]
+	providers: [AuthService, UserService, CourseService]
 })
 export class AppModule {}

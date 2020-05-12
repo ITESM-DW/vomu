@@ -1,32 +1,65 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { CourseModel } from '../../models/CourseModel';
+import { CourseService } from 'src/app/course.service';
+import { AuthService } from 'src/app/auth.service';
+import { Router } from '@angular/router';
+import { FormGroup, FormControl, FormArray } from '@angular/forms';
 import { SubjectModel } from '../../models/SubjectModel';
-
 @Component({
 	selector: 'app-create-course',
 	templateUrl: './create-course.component.html',
 	styleUrls: ['./create-course.component.scss'],
 })
 export class CreateCourseComponent implements OnInit {
-	subjects: SubjectModel[] = [
-		{
-			id: 0,
-			title: 'Officia pariatur adipisicing est nisi elit eiusmod.',
-			description: `Laboris est ad mollit id. Qui labore aute veniam labore reprehenderit 
-				laborum ullamco. Adipisicing nisi in ipsum commodo sint laborum pariatur ad consectetur.`,
-			videoURL: 'url'
-		}
-	];
-	constructor() { }
+	@Input() course: CourseModel;
+	courseForm: FormGroup;
+	subjects: FormArray;
+
+	constructor(private courseService: CourseService, private authService: AuthService, private router: Router) { }
 
 	ngOnInit(): void {
+		if (this.authService.isAuth()) {
+			this.courseForm = new FormGroup({
+				title: new FormControl(null),
+				description: new FormControl(null),
+				imgURL: new FormControl(null),
+				subjects: new FormArray([])
+			});
+
+			this.subjects = this.courseForm.get('subjects') as FormArray;
+		} else {
+			this.router.navigateByUrl('/');
+		}
+	}
+
+	onSubmit() {
+		const subjectModels = [];
+		this.courseForm.value.subjects.forEach((s, i) => {
+			subjectModels.push(new SubjectModel(i, s.title, s.description, s.videoURL));
+		});
+		const values = this.courseForm.value;
+		const course = new CourseModel(
+			this.courseService.courses[this.courseService.courses.length - 1].id + 1,
+			values.title,
+			values.description,
+			values.imgURL,
+			subjectModels,
+			[],
+			this.authService.getCurrentUser()
+		);
+		this.courseService.addCourse(course);
 	}
 
 	addSubject() {
-		this.subjects.push({
-			id: this.subjects.length,
-			title: '',
-			description: '',
-			videoURL: ''
+		const subject = new FormGroup({
+			title: new FormControl(null),
+			description: new FormControl(null),
+			videoURL: new FormControl(null)
 		});
+		this.subjects.push(subject);
+	}
+
+	deleteSubject(index: number) {
+		this.subjects.removeAt(index);
 	}
 }

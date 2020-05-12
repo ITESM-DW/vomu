@@ -5,7 +5,8 @@ import { ProfessorDashboardComponent } from './pages/professor-dashboard/profess
 
 const routes: Routes = [
 	{ path: 'create', component: CreateCourseComponent, data: { animationState: 'CreateCourse' }},
-	{ path: 'profile', component: ProfessorDashboardComponent, data: { animationState: 'ProfessorDashboard' }}
+	{ path: 'profile', component: ProfessorDashboardComponent, data: { animationState: 'ProfessorDashboard' }},
+	{ path: 'course/:id/edit', component: CreateCourseComponent, data: { animationState: 'CreateCourse' }}
 ];
 
 @NgModule({

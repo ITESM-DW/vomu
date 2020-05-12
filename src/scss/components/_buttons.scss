@@ -1,8 +1,9 @@
 .button {
 	@extend .btn;
+	color: $button-color !important;
+
 	&-primary {
 		@extend .btn-primary;
-		margin-right: 1rem;
 	}
 	&-fail {
 		@extend .btn-danger;

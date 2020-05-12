@@ -11,8 +11,8 @@ import { routeTransitionAnimations } from './route-transition-animations';
 export class AppComponent {
 	title = 'vomu';
 	prepareRoute(outlet: RouterOutlet) {
-		return outlet && 
-			outlet.activatedRouteData && 
-			outlet.activatedRouteData['animationState'];
+		return outlet &&
+			outlet.activatedRouteData &&
+			outlet.activatedRouteData.animationState;
 	}
 }

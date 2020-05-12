@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GenericCardModel } from '../../models/GenericCardModel';
-import { CourseService } from '../../course.service';
+import { CourseService } from '../../../../course.service';
 import { UserService } from '../../../../user.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
