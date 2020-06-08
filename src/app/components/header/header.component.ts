@@ -7,11 +7,11 @@ import { CourseModel } from 'src/app/modules/professor/models/CourseModel';
 	styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-	
-	@Input() input:{title:string, description: string};
+
+	@Input() input: {title: string, description: string};
 	constructor() {}
 
 	ngOnInit(): void {
-		
+
 	}
 }

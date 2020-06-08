@@ -22,7 +22,7 @@ export class ProfessorDashboardComponent implements OnInit {
 			this.user = this.userService.getUser(this.authService.getCurrentUser()) as ProfessorModel;
 			this.userService.userUpdated.subscribe(u => {
 				this.user = u as ProfessorModel;
-			})
+			});
 			this.courseService.getCoursesByUserId(this.user.id).forEach(course => {
 				this.courses.push(
 					new GenericCardModel(

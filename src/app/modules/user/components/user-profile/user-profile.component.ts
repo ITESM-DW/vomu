@@ -15,20 +15,20 @@ import { NgForm } from '@angular/forms';
 	selector: 'app-user-profile',
 	templateUrl: './user-profile.component.html',
 	styleUrls: ['./user-profile.component.scss'],
-	//Animations
+	// Animations
 	animations: [
 		trigger('fadeInOut', [
 			transition(':enter', [
-					style({opacity:0}),
+					style({opacity: 0}),
 					animate('0.3s 0.3s', style({
-						opacity:1,
+						opacity: 1,
 						position: '*'
 					}))
 			]),
 			transition(':leave', [
-					style({opacity:1, position: '*'}),
+					style({opacity: 1, position: '*'}),
 					animate('0.3s', style({
-						opacity:0,
+						opacity: 0,
 					}))
 			])
 		]),
