@@ -78,15 +78,31 @@
 							aria-label="With textarea"></textarea>
 						</div>
 						<!-- Video URL -->
-						<div class="course-creation--group">
-							<div class="course-creation--prepend">
-								<span class="course-creation--text" id="addon-wrapping" i18n>Video URL</span>
+						<button (click)="authenticate().then(loadClient.bind(this))" class="button button-primary">Load a Video from your YouTube profile</button>
+						<div *ngIf="showYTSearch === true" >
+							<div class="course-creation--group">
+								<div class="course-creation--prepend">
+									<span class="course-creation--text" id="addon-wrapping" i18n>Keyword</span>
+								</div>
+								<input 
+								type="text" 
+								class="course-creation--control" 
+								placeholder="Search for mathematics or physics"
+								formControlName="keywordVideo" />
+								<button [id]="'button' + i" (click)="execute(this.i)" class="button button-primary">Search</button>
 							</div>
-							<input 
-							type="text" 
-							class="course-creation--control" 
-							placeholder="https://youtube.com/somevideourl"
-							formControlName="videoURL" />
+							<div *ngIf="videos[i]" >
+								<div>
+									<!--{{i}}-->
+									<input (click) = "selectVideo(this.i,0)" id="0" type="radio" value="none" name="'video_'+{{i}}">
+									<label for="male">Don't load video</label>
+								</div>
+								<div *ngFor="let video of videos[i]">
+									<!--{{ video | json }} {{i}}-->
+									<input (click) = "selectVideo(this.i,this.video.id)" id={{video.id}} type="radio" value={{video.id}} name="'video_'+{{i}}">
+									<label for={{video.id}}>{{video.name}}</label>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -99,3 +115,4 @@
 		</div>
 	</div>
 </form>
+<!--<script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>-->

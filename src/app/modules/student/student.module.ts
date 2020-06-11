@@ -8,6 +8,7 @@ import { StudentProfileComponent } from './pages/student-profile/student-profile
 import { CourseViewDetailsComponent } from './components/course-view-details/course-view-details.component';
 import { StudentService } from './student.service';
 import { FormsModule } from '@angular/forms';
+import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 
 @NgModule({
 	declarations: [
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 	],
 	imports: [
 		CommonModule,
+		NgxYoutubePlayerModule.forRoot(),
 		UserModule,
 		FormsModule,
 		StudentRoutingModule
