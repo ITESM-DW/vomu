@@ -6,8 +6,6 @@ import { Router } from '@angular/router';
 import { FormGroup, FormControl, FormArray } from '@angular/forms';
 import { SubjectModel } from '../../models/SubjectModel';
 
-//const { GOOGLE_API_KEY = "" } = process.env; 
-
 interface Video {
 	id: String;
 	name: String;
@@ -30,14 +28,14 @@ export class CreateCourseComponent implements OnInit {
 	loadingVideo: Promise<Object>;
 	selectedOption: string[];
 
-	constructor(private courseService: CourseService, private authService: AuthService, private router: Router) { }
-
 	init() {
 		var tag = document.createElement('script');
 		tag.src = 'https://apis.google.com/js/api.js';
 		var firstScriptTag = document.getElementsByTagName('script')[0];
 		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 	}
+
+	constructor(private courseService: CourseService, private authService: AuthService, private router: Router) { }
 
 	ngOnInit(): void {
 		this.videos = [];
@@ -103,7 +101,7 @@ export class CreateCourseComponent implements OnInit {
 	async authenticate() {
 		try {
 			gapi.load("client:auth2", function() {
-				gapi.auth2.init({client_id: "CLIENT_ID"});
+				gapi.auth2.init({client_id: "314802327156-u3a9dtapvsdjo5vjpv7nfqf56vo75jg1.apps.googleusercontent.com"});
 			});
 			var res = await gapi.auth2.getAuthInstance()
 			.signIn({scope: "https://www.googleapis.com/auth/youtube.force-ssl"});
@@ -113,7 +111,7 @@ export class CreateCourseComponent implements OnInit {
 			console.error("Error signing in", error);
 		}
 		/*gapi.load("client:auth2", function() {
-			gapi.auth2.init({client_id: "CLIENT_ID"});
+			gapi.auth2.init({client_id: "314802327156-u3a9dtapvsdjo5vjpv7nfqf56vo75jg1.apps.googleusercontent.com"});
 		});
 		return gapi.auth2.getAuthInstance()
 			.signIn({scope: "https://www.googleapis.com/auth/youtube.force-ssl"})
