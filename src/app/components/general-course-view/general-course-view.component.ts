@@ -19,13 +19,9 @@ export class GeneralCourseViewComponent implements OnInit {
 
 	async ngOnInit(): Promise<void> {
 		this.loggedIn = this.authService.loggedIn;
-		console.error('i used to rule the world')
 		const courseId = String(this.route.snapshot.paramMap.get('course_id'));
-		console.error('sieze the rise when i gave the world')
-		console.error(courseId)
 
 		this.course = (await this.courseService.getCourse(courseId)) as CourseModel;
-		console.error(this.course)
 	}
 
 }

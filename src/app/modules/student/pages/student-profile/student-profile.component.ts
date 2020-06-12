@@ -19,54 +19,44 @@ export class StudentProfileComponent implements OnInit {
 
 	async ngOnInit(): Promise<void> {
 		try {
-		if (await this.authService.isAuth) {
-			console.error('she wears short skirts')
-			try {
-				console.error('5')
-			this.user = (await this.authService.getCurrentUserModel()) as StudentModel; // TODO Get id with routing
-			console.error(this.user)
-			}catch(error) {
-				console.error('i dont think you trust')
-				throw error;
-			}
-			console.error('I wear sneakers')
-			try {
-			this.userService.userUpdated.subscribe(u => {
-				console.error('updating user')
-				this.user = u as StudentModel;
-			});
-			} catch(error) {
-				console.error('in my')
-				throw error;
-			}
-			console.error('shes cheer captian')
-			let course;
-			try {
-				console.error('dear god')
-			const userCourses = await this.courseService.getCoursesByUserId(this.user._id);
-				console.error('the only thing i ask of you')
+			if (await this.authService.isAuth) {
+				try {
+					this.user = (await this.authService.getCurrentUserModel()) as StudentModel; // TODO Get id with routing
+				} catch (error) {
+					throw error;
+				}
+				try {
+					this.userService.userUpdated.subscribe(u => {
+						this.user = u as StudentModel;
+					});
+				} catch (error) {
+					throw error;
+				}
+				try {
+					const userCourses = await this.courseService.getCoursesByUserId(this.user._id);
 
-			for (let i = 0; i < userCourses.length; i++) {
-				const professor = await this.userService.getUser(userCourses[i].professor);
-				this.courses.push(
-					new GenericCardModel(
-						userCourses[i].title,
-						`${professor.name} ${professor.last}`,
-						userCourses[i].description, userCourses[i].imgURL,
-						`/student/course/${userCourses[i]._id}/${this.user.followup.find(c => c.course_id === userCourses[i]._id).subject_id}`
-					)
-				)
+					// tslint:disable-next-line: prefer-for-of
+					for (let i = 0; i < userCourses.length; i++) {
+						const professor = await this.userService.getUser(userCourses[i].professor);
+						this.courses.push(
+							new GenericCardModel(
+								userCourses[i].title,
+								`${professor.name} ${professor.last}`,
+								userCourses[i].description, userCourses[i].imgURL,
+								`/student/course/${userCourses[i]._id}/${this.user.followup.find(c => c.course_id === userCourses[i]._id).subject_id}`
+							)
+						);
+					}
+				} catch (error) {
+					console.error('self righteous suicide');
+					throw error;
+				}
+			} else {
+				this.router.navigateByUrl('/');
 			}
-			} catch (error) {
-				console.error('self righteous suicide')
-				throw error;
-			}
-		} else {
-			this.router.navigateByUrl('/');
+		} catch (error) {
+			console.error('chop suey');
 		}
-	} catch (error) {
-		console.error('chop suey')
-	}
 	}
 
 }

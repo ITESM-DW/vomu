@@ -1,8 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GenericCardModel } from '../../models/GenericCardModel';
-import { CourseService } from '../../../../course.service';
-import { UserService } from '../../../../user.service';
-import { Router, ActivatedRoute } from '@angular/router';
 
 // Import models.
 
@@ -14,9 +11,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class CardViewComponent implements OnInit {
 	@Input() cardDetails: GenericCardModel[] = [];
 
-	p: number = 1;
+	p = 1;
 
-	constructor() {}
+	constructor() { }
 
 	ngOnInit(): void {
 	}

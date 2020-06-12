@@ -1,6 +1,6 @@
 <div class="userprofile">
 	<div class="userprofile__picture">
-		<img class="userprofile__picture__img" [src]="user.image" alt="" />
+		<img class="userprofile__picture__img" [src]="user ? user.image : ''" alt="" />
 	</div>
 	<div *ngIf="!edit" [@fadeInOut]>
 		<app-user-profile-description [user]="user"></app-user-profile-description>
@@ -14,7 +14,7 @@
 					<span class="input-group-text" id="addon-wrapping" i18n>Name</span>
 				</div>
 				<input 
-					[ngModel]="user.name" 
+					[ngModel]="user ? user.name : ''" 
 					type="text" 
 					class="form-control" 
 					placeholder="Name" aria-label="name"

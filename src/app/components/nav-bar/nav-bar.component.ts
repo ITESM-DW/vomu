@@ -25,8 +25,6 @@ export class NavBarComponent implements OnInit, OnDestroy {
 		}
 		this.authChangedSub = await this.authService.authChanged.subscribe(async status => {
 			this.loggedin = status;
-			console.error('when you were here before')
-			console.error('2')
 			const currentUser = await this.authService.getCurrentUserModel();
 			console.log(currentUser.type);
 			this.type = currentUser.type;

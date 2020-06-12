@@ -1,8 +1,8 @@
 <div class="userprofile__info">
-	<h4 class="userprofile__info__username">{{ user.name + ' ' + user.last }}</h4>
-	<h4 class="userprofile__info__username">{{ user.email }}</h4>
-	<h6 class="userprofile__info__title">{{ user.type }}</h6>
+	<h4 class="userprofile__info__username">{{ user ? (user.name + ' ' + user.last) : '' }}</h4>
+	<h4 class="userprofile__info__username">{{ user ? user.email : '' }}</h4>
+	<h6 class="userprofile__info__title">{{ user ? user.type : '' }}</h6>
 	<div class="userprofile__info__description">
-		<p>{{ user.description }}</p>
+		<p>{{ user ? user.description : '' }}</p>
 	</div>
 </div>

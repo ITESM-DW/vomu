@@ -1,8 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { trigger, state, style, animate, transition, group, sequence, query, stagger } from '@angular/animations';
+import { trigger, style, animate, transition } from '@angular/animations';
 
 import { UserService } from 'src/app/user.service';
 import { AuthService } from 'src/app/auth.service';
@@ -19,17 +17,17 @@ import { NgForm } from '@angular/forms';
 	animations: [
 		trigger('fadeInOut', [
 			transition(':enter', [
-					style({opacity: 0}),
-					animate('0.3s 0.3s', style({
-						opacity: 1,
-						position: '*'
-					}))
+				style({ opacity: 0 }),
+				animate('0.3s 0.3s', style({
+					opacity: 1,
+					position: '*'
+				}))
 			]),
 			transition(':leave', [
-					style({opacity: 1, position: '*'}),
-					animate('0.3s', style({
-						opacity: 0,
-					}))
+				style({ opacity: 1, position: '*' }),
+				animate('0.3s', style({
+					opacity: 0,
+				}))
 			])
 		]),
 	],
@@ -52,18 +50,17 @@ export class UserProfileComponent implements OnInit {
 	async onSave(form: NgForm) {
 		this.edit = false;
 		console.log(form.value);
-				console.error('6')
 		const currentUser = await this.authService.getCurrentUserModel();
 
-		console.error('i kissed a girl')
-		
+		console.error('i kissed a girl');
+
 		currentUser.name = form.value.name;
 		currentUser.last = form.value.last;
 		currentUser.title = form.value.title;
 		currentUser.description = form.value.description;
 		currentUser.image = form.value.imgURL;
-		console.error('and i liked it')
-		console.error(currentUser)
+		console.error('and i liked it');
+		console.error(currentUser);
 
 		this.userService.updateUser(currentUser);
 	}

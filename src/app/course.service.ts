@@ -7,7 +7,7 @@ import { StudentModel } from './modules/student/models/StudentModel';
 import { ProfessorModel } from './modules/professor/models/ProfessorModel';
 import { AuthService } from './auth.service';
 import { HttpClient, HttpHeaders, HttpResponse, HttpErrorResponse } from '@angular/common/http';
-import { baseUrl } from "./../environments/environment";
+import { baseUrl } from './../environments/environment';
 import axios from 'axios';
 
 @Injectable({
@@ -23,7 +23,7 @@ export class CourseService {
 	async addCourse(course: Record<string, unknown>) {
 		try {
 			const config = {
-				headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+				headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
 			};
 			await axios.post(`${baseUrl}courses/`, course, config);
 			this.courseChanged.next(this.courses);
@@ -103,6 +103,6 @@ export class CourseService {
 	}
 
 	async getCourseStudents(id: string): Promise<StudentModel[]> {
-		return Promise.all((await this.getCourse(id)).students.map(id => this.userService.getUser(id) as Promise<StudentModel>));
+		return Promise.all((await this.getCourse(id)).students.map(uid => this.userService.getUser(uid) as Promise<StudentModel>));
 	}
 }

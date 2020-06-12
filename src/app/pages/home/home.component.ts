@@ -18,9 +18,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 	constructor(private courseService: CourseService, private userService: UserService, private authService: AuthService) {
 	}
-	ngOnDestroy(): void {
-		this.courseChangedSub.unsubscribe();
-	}
 
 	async ngOnInit(): Promise<void> {
 		const allCourses = await this.courseService.getAllCourses();
@@ -54,4 +51,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 		});
 	}
 
+	ngOnDestroy(): void {
+		this.courseChangedSub.unsubscribe();
+	}
 }

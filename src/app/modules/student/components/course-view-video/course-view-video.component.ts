@@ -10,16 +10,14 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class CourseViewVideoComponent implements OnInit {
 	@Input() videoLink = 'https://www.youtube.com/embed/zpOULjyy-n8?rel=0';
-	//videoResource: SafeResourceUrl;
 
 	player: YT.Player;
-	id: string = 'Sv6dMFF_yts';
+	id = 'Sv6dMFF_yts';
 
-	constructor(private sanitizer: DomSanitizer) {}
+	constructor(private sanitizer: DomSanitizer) { }
 
 
 	ngOnInit(): void {
-		//this.videoResource = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoLink);
 	}
 
 	savePlayer(player) {
@@ -28,5 +26,5 @@ export class CourseViewVideoComponent implements OnInit {
 	}
 	onStateChange(event) {
 		console.log('player state', event.data);
-	}	
+	}
 }

@@ -18,8 +18,6 @@ export class StudentCourseViewComponent implements OnInit {
 	constructor(private authService: AuthService, private courseService: CourseService, private route: ActivatedRoute, private router: Router) { }
 
 	async ngOnInit(): Promise<void> {
-		let error = false;
-		console.error('here we go again');
 		if (await this.authService.isAuth) {
 			const courseId = String(this.route.snapshot.paramMap.get('course_id'));
 			const subjectId = String(this.route.snapshot.paramMap.get('subject_id'));
