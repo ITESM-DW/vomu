@@ -39,9 +39,19 @@ export class AuthService {
 
 	constructor(private userService: UserService, private http: HttpClient) { }
 
-	isAuth() {
-		this.authChanged.next(this.loggedIn);
-		return this.loggedIn;
+	async isAuth() {
+		const token = localStorage.getItem('token');
+		if (token) {
+			const { data } = await axios.get(`${baseUrl}users/auth`, {
+				headers: {
+					Authorization: `Bearer ${token}`
+				}
+			});
+			return data.message;
+		} else {
+			return false;
+		}
+		
 	}
 
 	async getCurrentUserModel(): Promise<StudentModel | ProfessorModel> {

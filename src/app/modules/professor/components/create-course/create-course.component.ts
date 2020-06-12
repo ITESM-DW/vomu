@@ -18,8 +18,8 @@ export class CreateCourseComponent implements OnInit {
 
 	constructor(private courseService: CourseService, private authService: AuthService, private router: Router) { }
 
-	ngOnInit(): void {
-		if (this.authService.isAuth()) {
+	async ngOnInit(): Promise<void> {
+		if (await this.authService.isAuth()) {
 			this.courseForm = new FormGroup({
 				title: new FormControl(null),
 				description: new FormControl(null),

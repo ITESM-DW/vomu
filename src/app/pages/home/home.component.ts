@@ -23,7 +23,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 	}
 
 	async ngOnInit(): Promise<void> {
-		this.authService.isAuth();
 		const allCourses = await this.courseService.getAllCourses();
 		allCourses.forEach(async course => {
 			const professor = (await this.userService.getUser(course.professor) as ProfessorModel);

@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "../vomu-backend"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+}

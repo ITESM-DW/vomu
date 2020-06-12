@@ -19,7 +19,7 @@ export class StudentProfileComponent implements OnInit {
 
 	async ngOnInit(): Promise<void> {
 		try {
-		if (this.authService.isAuth) {
+		if (await this.authService.isAuth) {
 			console.error('she wears short skirts')
 			try {
 				console.error('5')

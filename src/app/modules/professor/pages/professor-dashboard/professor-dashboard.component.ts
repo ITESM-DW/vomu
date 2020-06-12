@@ -18,7 +18,7 @@ export class ProfessorDashboardComponent implements OnInit {
 	constructor(private authService: AuthService, private userService: UserService, private courseService: CourseService, private router: Router) { }
 
 	async ngOnInit(): Promise<void> {
-		if (this.authService.isAuth()) {
+		if (await this.authService.isAuth()) {
 			this.user = await this.userService.getCurrentUser() as ProfessorModel;
 			this.userService.userUpdated.subscribe(u => {
 				this.user = u as ProfessorModel;

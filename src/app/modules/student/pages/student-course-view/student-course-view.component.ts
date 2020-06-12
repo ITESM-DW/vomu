@@ -19,30 +19,17 @@ export class StudentCourseViewComponent implements OnInit {
 
 	async ngOnInit(): Promise<void> {
 		let error = false;
-		console.error('here we go again')
-		if (this.authService.isAuth) {
+		console.error('here we go again');
+		if (await this.authService.isAuth) {
 			const courseId = String(this.route.snapshot.paramMap.get('course_id'));
 			const subjectId = String(this.route.snapshot.paramMap.get('subject_id'));
-			console.error(courseId)
-			console.error(subjectId)
-				console.error('4')
-			this.user = (await this.authService.getCurrentUserModel()) as StudentModel;
 
-			const studentCourses = await this.courseService.getCourseStudents(courseId)
-			for(let i = 0; studentCourses.length; i++) {
-				this.course = (await this.courseService.getCourse(courseId)) as CourseModel;
-				this.subject = (await this.course.subjects).filter(s => s._id === subjectId)[0];
-			}
-			console.error(studentCourses)
-			if (studentCourses.length < 0) {
-				error = true;
-			}
+			this.course = await this.courseService.getCourse(courseId);
+			this.subject = this.course.subjects.filter(s => s._id === subjectId)[0];
+			console.log(this.subject);
 		} else {
-			error = true;
+				this.router.navigateByUrl('/');
+			}
 		}
-		if (error) {
-			this.router.navigateByUrl('/');
-		}
-	}
 
-}
+	}
