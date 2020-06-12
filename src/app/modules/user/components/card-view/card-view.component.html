@@ -1,6 +1,35 @@
+<style>
+	.my-pagination /deep/ .ngx-pagination .current, .btn-info {
+	background: #30475e !important;
+	border: transparent !important;
+	border-radius: 20px !important;
+	color: aliceblue;
+	}
+
+	.my-pagination /deep/ .ngx-pagination a:hover, .ngx-pagination button:hover {
+		color: white;
+		background: transparent;
+		opacity: 70%;
+		border-radius: 3px;
+		padding-left: 9px;
+		padding-right: 9px;
+		text-decoration: none;
+	}
+
+	.my-pagination /deep/ .ngx-pagination a, button {
+		color: white;
+		border-radius: 3px;
+		padding-left: 9px;
+		padding-right: 9px;
+		text-decoration: none;
+	}
+</style>
 <div class="card-view">
 	<app-generic-card
-		*ngFor="let cardDetail of cardDetails"
+		*ngFor="let cardDetail of cardDetails | paginate: { itemsPerPage: 3, currentPage:p}"
 		[cardDetail]="cardDetail"
 	></app-generic-card>
+</div>
+<div class="pagination-navigation" *ngIf="cardDetails.length > 3">
+	<pagination-controls class="my-pagination"  (pageChange)="p =  $event"></pagination-controls>
 </div>

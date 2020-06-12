@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { StudentModel } from './modules/student/models/StudentModel';
 import { ProfessorModel } from './modules/professor/models/ProfessorModel';
 import { Subject } from 'rxjs';
-import { HttpClient, HttpHeaders, HttpResponse, HttpErrorResponse} from '@angular/common/http';
 import { baseUrl } from "./../environments/environment";
 import  axios from 'axios';
 
