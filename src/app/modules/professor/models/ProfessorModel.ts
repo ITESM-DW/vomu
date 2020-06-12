@@ -1,7 +1,7 @@
 import { UserModel, UserType } from '../../user/models/UserModel';
 
 export class ProfessorModel implements UserModel {
-	id: number;
+	id?: string;
 	email: string;
 	password: string;
 	name: string;
@@ -12,9 +12,7 @@ export class ProfessorModel implements UserModel {
 	image: string;
 	courses: number[] = [];
 
-	constructor(id: number, email: string,  name: string, last: string, password: string, title: string, description: string, image: string, courses: number[]) {
-		// ID is Temporary
-		this.id = id;
+	constructor(email: string,  name: string, last: string, password: string, title: string, description: string, image: string, courses: number[]) {
 		this.email = email;
 		this.name = name;
 		this.last = last;

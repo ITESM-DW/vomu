@@ -4,7 +4,7 @@ export enum UserType {
 }
 
 export interface UserModel {
-	id: number;
+	id?: string;
 	email: string;
 	password: string;
 	name: string;

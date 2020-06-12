@@ -5,6 +5,7 @@ import { AuthService } from 'src/app/auth.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, FormArray } from '@angular/forms';
 import { SubjectModel } from '../../models/SubjectModel';
+import { StudentModel } from 'src/app/modules/student/models/StudentModel';
 @Component({
 	selector: 'app-create-course',
 	templateUrl: './create-course.component.html',
@@ -32,7 +33,7 @@ export class CreateCourseComponent implements OnInit {
 		}
 	}
 
-	onSubmit() {
+	async onSubmit() {
 		const subjectModels = [];
 		this.courseForm.value.subjects.forEach((s, i) => {
 			subjectModels.push(new SubjectModel(i, s.title, s.description, s.videoURL));
@@ -45,7 +46,7 @@ export class CreateCourseComponent implements OnInit {
 			values.imgURL,
 			subjectModels,
 			[],
-			this.authService.getCurrentUser()
+			(await this.authService.getCurrentUserModel() as StudentModel).id,
 		);
 		this.courseService.addCourse(course);
 	}

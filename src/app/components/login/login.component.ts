@@ -86,17 +86,17 @@ export class LoginComponent implements OnInit {
 			}
 		});
 	}
-	onSubmit(form: NgForm) {
+	async onSubmit(form: NgForm) {
 		if (this.now === 'login') {
-			if (!this.authService.login(form.value.email, form.value.password)) {
+			if (!(await this.authService.login(form.value.email, form.value.password))) {
 				alert('Error: Usuario o contraseña incorrectos.');
 			} else {
-				const user = this.authService.getCurrentUserModel();
+				const user = await this.authService.getCurrentUserModel();
 				if (user instanceof StudentModel) {
 					this.router.navigateByUrl(`/student/profile`);
 				} else if (user instanceof ProfessorModel) {
 					this.router.navigateByUrl(`/professor/profile`);
-				} else if (user === null) {
+				} else {
 					alert('Error: Intenta de nuevo.');
 				}
 			}
@@ -105,7 +105,6 @@ export class LoginComponent implements OnInit {
 			console.log(form.value.type);
 			if (form.value.type === 'Professor') {
 				user = new ProfessorModel(
-					this.userService.nextID(),
 					form.value.email,
 					form.value.name,
 					form.value.last,
@@ -117,7 +116,6 @@ export class LoginComponent implements OnInit {
 				);
 			} else if (form.value.type === 'Student') {
 				user = new StudentModel(
-					this.userService.nextID(),
 					form.value.email,
 					form.value.name,
 					form.value.last,

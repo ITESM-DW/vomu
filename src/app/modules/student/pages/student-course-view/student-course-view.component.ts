@@ -4,6 +4,7 @@ import { CourseService } from 'src/app/course.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CourseModel } from 'src/app/modules/professor/models/CourseModel';
 import { SubjectModel } from 'src/app/modules/professor/models/SubjectModel';
+import { StudentModel } from '../../models/StudentModel';
 
 @Component({
 	selector: 'app-student-course-view',
@@ -13,19 +14,19 @@ import { SubjectModel } from 'src/app/modules/professor/models/SubjectModel';
 export class StudentCourseViewComponent implements OnInit {
 	course: CourseModel;
 	subject: SubjectModel;
-	user: number;
+	user: StudentModel;
 	constructor(private authService: AuthService, private courseService: CourseService, private route: ActivatedRoute, private router: Router) { }
 
-	ngOnInit(): void {
+	async ngOnInit(): Promise<void> {
 		let error = false;
 		if (this.authService.isAuth) {
-			const courseId = Number(this.route.snapshot.paramMap.get('course_id'));
-			const subjectId = Number(this.route.snapshot.paramMap.get('subject_id'));
-			this.user = this.authService.getCurrentUser();
+			const courseId = String(this.route.snapshot.paramMap.get('course_id'));
+			const subjectId = String(this.route.snapshot.paramMap.get('subject_id'));
+			this.user = (await this.authService.getCurrentUserModel()) as StudentModel;
 
-			if (this.courseService.getCourseStudents(courseId).indexOf(this.user) > -1) {
-				this.course = this.courseService.getCourse(courseId);
-				this.subject = this.course.subjects.filter(s => s.id === subjectId)[0];
+			if ((await this.courseService.getCourseStudents(courseId)).indexOf(this.user) > -1) {
+				this.course = (await this.courseService.getCourse(courseId)) as CourseModel;
+				this.subject = (await this.course.subjects).filter(s => s.id === subjectId)[0];
 			} else {
 				error = true;
 			}

@@ -3,6 +3,8 @@ import { CourseService } from 'src/app/course.service';
 import { UserService } from 'src/app/user.service';
 import { GenericCardModel } from 'src/app/modules/user/models/GenericCardModel';
 import { Subscription } from 'rxjs';
+import { ProfessorModel } from 'src/app/modules/professor/models/ProfessorModel';
+import { async } from '@angular/core/testing';
 
 @Component({
 	selector: 'app-home',
@@ -19,9 +21,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 		this.courseChangedSub.unsubscribe();
 	}
 
-	ngOnInit(): void {
-		this.courseService.getAllCourses().forEach(course => {
-			const professor = this.userService.getUser(course.professor);
+	async ngOnInit(): Promise<void> {
+		const allCourses = await this.courseService.getAllCourses();
+		allCourses.forEach(async course => {
+			const professor = (await this.userService.getUser(course.professor) as ProfessorModel);
 			this.courses.push(
 				new GenericCardModel(
 					course.title,
@@ -35,8 +38,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 		this.courseChangedSub = this.courseService.courseChanged.subscribe(courses => {
 			console.log('Courses home subscription executed');
 			this.courses = [];
-			courses.forEach(course => {
-				const professor = this.userService.getUser(course.professor);
+			courses.forEach(async course => {
+				const professor = (await this.userService.getUser(course.professor) as ProfessorModel);
 				this.courses.push(
 					new GenericCardModel(
 						course.title,

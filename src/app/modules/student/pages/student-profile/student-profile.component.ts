@@ -17,22 +17,26 @@ export class StudentProfileComponent implements OnInit {
 
 	constructor(private authService: AuthService, private userService: UserService, private courseService: CourseService, private router: Router) { }
 
-	ngOnInit(): void {
+	async ngOnInit(): Promise<void> {
 		if (this.authService.isAuth()) {
-			this.user = this.authService.getCurrentUserModel() as StudentModel; // TODO Get id with routing
+			console.error('1')
+			this.user = await this.authService.getCurrentUserModel() as StudentModel; // TODO Get id with routing
+			console.error('2')
+			console.error(this.user)
 			this.userService.userUpdated.subscribe(u => {
 				this.user = u as StudentModel;
 			});
+			console.error('3')
 			let course;
-			console.log(this.courseService.getCoursesByUserId(this.user.id));
-			for (course of this.courseService.getCoursesByUserId(this.user.id)) {
-				const professor = this.userService.getUser(course.professor);
+			const userCourses = await this.courseService.getCoursesByUserId(this.user.id);
+			for (course of userCourses) {
+				const professor = await this.userService.getUser(course.professor);
 				this.courses.push(
 					new GenericCardModel(
 						course.title,
 						`${professor.name} ${professor.last}`,
 						course.description, course.imgURL,
-						`/student/course/${course.id}/${this.user.followup.find(c => c.course_id === course.id).subject_id}`
+						`/student/course/${course.id}/${this.user.followup.find(c => c.course_id === course._id).subject_id}`
 					)
 				);
 

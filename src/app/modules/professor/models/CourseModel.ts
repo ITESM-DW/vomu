@@ -1,16 +1,16 @@
 import { SubjectModel } from './SubjectModel';
 
 export class CourseModel {
-	id: number;
+	id: string;
 	title: string;
 	description: string;
 	imgURL: string;
 	subjects: SubjectModel[];
-	students: number[];
-	professor: number;
+	students: string[];
+	professor: string;
 
 	// TODO Remove id (database) and students (default empty)
-	constructor(id: number, title: string, description: string, imgURL: string, subjects: SubjectModel[], students: number[], professor: number) {
+	constructor(id: string, title: string, description: string, imgURL: string, subjects: SubjectModel[], students: string[], professor: string) {
 		this.id = id;
 		this.title = title;
 		this.description = description;

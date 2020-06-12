@@ -13,10 +13,13 @@ export class GeneralCourseViewComponent implements OnInit {
 	constructor(private courseService: CourseService, private route: ActivatedRoute) {
 	}
 
-	ngOnInit(): void {
-		const courseId = Number(this.route.snapshot.paramMap.get('course_id'));
+	async ngOnInit(): Promise<void> {
+		console.error('1')
+		const courseId = String(this.route.snapshot.paramMap.get('course_id'));
+		console.error(courseId)
+		console.error('2')
 
-		this.course = this.courseService.getCourse(courseId);
+		this.course = (await this.courseService.getCourse(courseId)) as CourseModel;
 	}
 
 }

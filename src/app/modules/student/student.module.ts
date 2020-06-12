@@ -8,6 +8,7 @@ import { StudentProfileComponent } from './pages/student-profile/student-profile
 import { CourseViewDetailsComponent } from './components/course-view-details/course-view-details.component';
 import { StudentService } from './student.service';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
 	declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
 		CommonModule,
 		UserModule,
 		FormsModule,
-		StudentRoutingModule
+		StudentRoutingModule,
+		HttpClientModule
 	],
 	exports: [
 		StudentCourseViewComponent,

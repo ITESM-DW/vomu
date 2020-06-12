@@ -49,10 +49,10 @@ export class UserProfileComponent implements OnInit {
 		this.edit = true;
 	}
 
-	onSave(form: NgForm) {
+	async onSave(form: NgForm) {
 		this.edit = false;
 		console.log(form.value);
-		const currentUser = this.authService.getCurrentUserModel();
+		const currentUser = await this.authService.getCurrentUserModel();
 
 		currentUser.name = form.value.name;
 		currentUser.last = form.value.last;

@@ -17,9 +17,9 @@ export class GenericTableComponent implements OnInit {
 
 	constructor(private userService: UserService) { }
 
-	ngOnInit(): void {
+	async ngOnInit(): Promise<void> {
 	// Initial fetch all users and filter by default(STUDENT).
-	this.fetchedUsers = this.userService.getUsers();
+	this.fetchedUsers = await this.userService.getUsers();
 	this.visualUsers = this.fetchedUsers.filter((user) => user.type === UserType.STUDENT);
 
 	// Base filter type as student.
@@ -35,11 +35,11 @@ export class GenericTableComponent implements OnInit {
 		this.currentFilter = filterVal;
 	}
 
-	deleteUser(user: StudentModel | ProfessorModel): void {
-		this.userService.deleteUser(user.id);
+	async deleteUser(user: StudentModel | ProfessorModel): Promise<void> {
+		await this.userService.deleteUser(user.id);
 
 		// TODO(kevinwkt): subscribe to delete but refresh for now.
-		this.fetchedUsers = this.userService.getUsers();
+		this.fetchedUsers = await this.userService.getUsers();
 		this.filterUsers(this.currentFilter);
 	}
 }
