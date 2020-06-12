@@ -20,7 +20,7 @@ export class UserService {
 			'PhD.',
 			'urna convallis erat, eget tincidunt dui augue eu tellus. Phasellus',
 			'https://source.unsplash.com/collection/190727/400x400',
-			[{ course_id: 1, subject_id: 2 }, { course_id: 5, subject_id: 2 }]
+			[{ course_id: 1, subject_id: 2 }, { course_id: 2, subject_id: 1 }, { course_id: 3, subject_id: 1 }, { course_id: 4, subject_id: 1 }, { course_id: 5, subject_id: 2 }]
 		),
 		new ProfessorModel(
 			1,

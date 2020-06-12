@@ -14,6 +14,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class CardViewComponent implements OnInit {
 	@Input() cardDetails: GenericCardModel[] = [];
 
+	p: number = 1;
+
 	constructor() {}
 
 	ngOnInit(): void {

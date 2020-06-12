@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { UserProfileDescriptionComponent } from './components/user-profile-description/user-profile-description.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
@@ -27,7 +28,8 @@ import { FormsModule } from '@angular/forms';
 		CommonModule,
 		ChartsModule,
 		RouterModule,
-		FormsModule
+		FormsModule,
+		NgxPaginationModule,
 	],
 	exports: [
 		UserProfileDescriptionComponent,

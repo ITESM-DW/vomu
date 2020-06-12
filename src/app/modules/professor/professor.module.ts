@@ -5,6 +5,7 @@ import { ProfessorRoutingModule } from './professor-routing.module';
 import { CreateCourseComponent } from './components/create-course/create-course.component';
 import { ProfessorDashboardComponent } from './pages/professor-dashboard/professor-dashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
 	declarations: [
@@ -15,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 		CommonModule,
 		UserModule,
 		ReactiveFormsModule,
-		ProfessorRoutingModule
+		ProfessorRoutingModule,
+		NgxPaginationModule,
 	],
 	exports: [
 		ProfessorDashboardComponent,
