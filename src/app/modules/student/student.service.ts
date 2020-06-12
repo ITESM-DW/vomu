@@ -17,13 +17,13 @@ export class StudentService {
 	constructor(public userService: UserService, public courseService: CourseService) { }
 
 	async getStudent(id: string): Promise<StudentModel> {
-		return await this.userService.getCurrentUser() as StudentModel;
+		return (await this.userService.getCurrentUser()) as StudentModel;
 	}
 
 	async registerCourse(studentId: string, courseId: string) {
 		try {
-		const course = await this.courseService.getCourse(courseId);
-		const user = await this.userService.getCurrentUser() as StudentModel;
+		const course = (await this.courseService.getCourse(courseId)) as CourseModel;
+		const user = (await this.userService.getCurrentUser()) as StudentModel;
 		course.students.push(studentId);
 		user.followup.push({course_id: courseId, subject_id: "1"});
 

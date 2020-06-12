@@ -15,7 +15,7 @@ import  axios from 'axios';
 export class AuthService {
 	user: StudentModel | ProfessorModel;
 	authChanged = new Subject<boolean>();
-	loggedIn = false;
+	loggedIn = true;
 	// endpointLogin: `${baseUrl}users/login`;
 	// endpointAllUsers:"http://localhost:5000/api/users";
 
@@ -43,16 +43,20 @@ export class AuthService {
 		this.authChanged.next(this.loggedIn);
 		return this.loggedIn;
 	}
+
 	async getCurrentUserModel(): Promise<StudentModel | ProfessorModel> {
-		if (this.isAuth) {
-			console.error('1.1')
+		if (this.user) {
+			console.error('returning existing');
+			console.error(this.user);
+			return this.user;
+		} else {
+			console.error('fetching');
 			const user = await this.userService.getCurrentUser();
-			console.error('1.2')
 			this.user = user;
-			console.error('1.3')
-			return user;
+			return this.user;
 		}
 	}
+
 	async login(email: string, password: string): Promise<boolean> {
 		//Before
 		// const users = this.userService.getUsers();
@@ -103,18 +107,6 @@ export class AuthService {
 			// console.log(res.data);
 			return true;
 		} catch (error) {
-			console.log(error);
-			return false;
-		}
-	}
-	async getCurrentUserRequest(): Promise<any>{
-		try {
-			const config = {
-				headers: { Authorization: `Bearer ${localStorage.getItem("token")}`}
-			};
-			let res = await axios.get(`${baseUrl}users/profile`,config);
-			return res;
-		} catch(error){
 			console.log(error);
 			return false;
 		}

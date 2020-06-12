@@ -39,14 +39,14 @@ export class CreateCourseComponent implements OnInit {
 			subjectModels.push(new SubjectModel(i, s.title, s.description, s.videoURL));
 		});
 		const values = this.courseForm.value;
+				console.error('3')
 		const course = new CourseModel(
-			this.courseService.courses[this.courseService.courses.length - 1].id + 1,
 			values.title,
 			values.description,
 			values.imgURL,
 			subjectModels,
 			[],
-			(await this.authService.getCurrentUserModel() as StudentModel).id,
+			(await this.authService.getCurrentUserModel() as StudentModel)._id,
 		);
 		this.courseService.addCourse(course);
 	}

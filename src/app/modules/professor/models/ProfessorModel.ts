@@ -1,7 +1,7 @@
 import { UserModel, UserType } from '../../user/models/UserModel';
 
 export class ProfessorModel implements UserModel {
-	id?: string;
+	_id?: string;
 	email: string;
 	password: string;
 	name: string;

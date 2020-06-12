@@ -91,6 +91,7 @@ export class LoginComponent implements OnInit {
 			if (!(await this.authService.login(form.value.email, form.value.password))) {
 				alert('Error: Usuario o contraseña incorrectos.');
 			} else {
+				console.error('1')
 				const user = await this.authService.getCurrentUserModel();
 				if (user instanceof StudentModel) {
 					this.router.navigateByUrl(`/student/profile`);

@@ -36,7 +36,7 @@ export class GenericTableComponent implements OnInit {
 	}
 
 	async deleteUser(user: StudentModel | ProfessorModel): Promise<void> {
-		await this.userService.deleteUser(user.id);
+		await this.userService.deleteUser(user._id);
 
 		// TODO(kevinwkt): subscribe to delete but refresh for now.
 		this.fetchedUsers = await this.userService.getUsers();

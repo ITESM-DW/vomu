@@ -35,7 +35,8 @@ export class CourseService {
 
 	async getCourse(id: string): Promise<CourseModel> {
 		try{
-			return await axios.get(`${baseUrl}courses/${id}`)
+			const { data: course } = await axios.get(`${baseUrl}courses/${id}`)
+			return course;
 		} catch(error){
 			console.error(error);
 		}
@@ -54,8 +55,11 @@ export class CourseService {
 		}
 	}
 
-	updateCourse(course: CourseModel): boolean {
-		return true;
+	async updateCourse(course: CourseModel): Promise<boolean> {
+		return false;
+		// try{
+		// 	await axios.
+		// }
 		// const index = this.courses.findIndex(c => c.id === course.id);
 		// if (index > -1) {
 		// 	this.courses[index] = course;

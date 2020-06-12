@@ -23,14 +23,14 @@ export class ProfessorDashboardComponent implements OnInit {
 			this.userService.userUpdated.subscribe(u => {
 				this.user = u as ProfessorModel;
 			});
-			(await this.courseService.getCoursesByUserId(this.user.id)).forEach(course => {
+			(await this.courseService.getCoursesByUserId(this.user._id)).forEach(course => {
 				this.courses.push(
 					new GenericCardModel(
 						course.title,
 						`${this.user.name} ${this.user.last}`,
 						course.description, course.imgURL,
-						`/course/${course.id}`,
-						`/professor/course/${course.id}/edit`
+						`/course/${course._id}`,
+						`/professor/course/${course._id}/edit`
 					)
 				);
 			});

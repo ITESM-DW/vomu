@@ -18,32 +18,55 @@ export class StudentProfileComponent implements OnInit {
 	constructor(private authService: AuthService, private userService: UserService, private courseService: CourseService, private router: Router) { }
 
 	async ngOnInit(): Promise<void> {
-		if (this.authService.isAuth()) {
-			console.error('1')
-			this.user = await this.authService.getCurrentUserModel() as StudentModel; // TODO Get id with routing
-			console.error('2')
+		try {
+		if (this.authService.isAuth) {
+			console.error('she wears short skirts')
+			try {
+				console.error('5')
+			this.user = (await this.authService.getCurrentUserModel()) as StudentModel; // TODO Get id with routing
 			console.error(this.user)
+			}catch(error) {
+				console.error('i dont think you trust')
+				throw error;
+			}
+			console.error('I wear sneakers')
+			try {
 			this.userService.userUpdated.subscribe(u => {
+				console.error('updating user')
 				this.user = u as StudentModel;
 			});
-			console.error('3')
+			} catch(error) {
+				console.error('in my')
+				throw error;
+			}
+			console.error('shes cheer captian')
 			let course;
-			const userCourses = await this.courseService.getCoursesByUserId(this.user.id);
-			for (course of userCourses) {
-				const professor = await this.userService.getUser(course.professor);
+			try {
+				console.error('dear god')
+			const userCourses = await this.courseService.getCoursesByUserId(this.user._id);
+				console.error('the only thing i ask of you')
+
+			for (let i = 0; i < userCourses.length; i++) {
+				const professor = await this.userService.getUser(userCourses[i].professor);
 				this.courses.push(
 					new GenericCardModel(
-						course.title,
+						userCourses[i].title,
 						`${professor.name} ${professor.last}`,
-						course.description, course.imgURL,
-						`/student/course/${course.id}/${this.user.followup.find(c => c.course_id === course._id).subject_id}`
+						userCourses[i].description, userCourses[i].imgURL,
+						`/student/course/${userCourses[i]._id}/${this.user.followup.find(c => c.course_id === userCourses[i]._id).subject_id}`
 					)
-				);
-
+				)
+			}
+			} catch (error) {
+				console.error('self righteous suicide')
+				throw error;
 			}
 		} else {
 			this.router.navigateByUrl('/');
 		}
+	} catch (error) {
+		console.error('chop suey')
+	}
 	}
 
 }

@@ -52,13 +52,18 @@ export class UserProfileComponent implements OnInit {
 	async onSave(form: NgForm) {
 		this.edit = false;
 		console.log(form.value);
+				console.error('6')
 		const currentUser = await this.authService.getCurrentUserModel();
 
+		console.error('i kissed a girl')
+		
 		currentUser.name = form.value.name;
 		currentUser.last = form.value.last;
 		currentUser.title = form.value.title;
 		currentUser.description = form.value.description;
 		currentUser.image = form.value.imgURL;
+		console.error('and i liked it')
+		console.error(currentUser)
 
 		this.userService.updateUser(currentUser);
 	}

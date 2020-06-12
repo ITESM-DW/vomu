@@ -25,39 +25,43 @@ export class UserService {
 
 	async getCurrentUser(): Promise<StudentModel | ProfessorModel>{
 		try {
-			console.error('2.1')
 			const config = {
 				headers: { Authorization: `Bearer ${localStorage.getItem("token")}`}
 			};
-			console.error('2.2')
-			const res = await axios.get(`${baseUrl}users/profile`, config);
-			console.error('2.3')
-			if(res.data.type == "student"){
+			console.error(config)
+			console.error('just praying to a god that i dont believe in')
+			const { data: user } = await axios.get(`${baseUrl}users/profile`, config);
+			console.error('i got time while shes got freedom')
+			console.error(user)
+			console.error(user.image)
+			if(user.type == "student"){
 				const userM = new StudentModel(
-					res.data.email,
-					res.data.name,
-					res.data.last,
+					user.email,
+					user.name,
+					user.last,
 					"placeholder",
-					res.data.title,
-					res.data.description,
-					res.data.image,
-					res.data.followup,
+					user.title,
+					user.description,
+					user.image,
+					user.followup,
 				);
-				userM.id = res.data._id;
+				userM._id = user._id;
+				console.error('all the things you said')
 				return userM;
 			}
-			else if(res.data.type == "professor"){
+			else if(user.type == "professor"){
 				const userM = new ProfessorModel(
-					res.data.email,
-					res.data.name,
-					res.data.last,
+					user.email,
+					user.name,
+					user.last,
 					"placeholder",
-					res.data.title,
-					res.data.description,
-					res.data.image,
-					res.data.followup,
+					user.title,
+					user.description,
+					user.image,
+					user.followup,
 				);
-				userM.id = res.data._id;
+				userM._id = user._id;
+				console.error('running rhough my head')
 				return userM;
 			}
 		} catch(error){
@@ -80,7 +84,7 @@ export class UserService {
 					res.data.followup,
 				);
 
-				userM.id = res.data._id;
+				userM._id = res.data._id;
 				return userM;
 			}
 			else if(res.data.type == "professor"){
@@ -94,7 +98,7 @@ export class UserService {
 					res.data.image,
 					res.data.followup,
 				);
-				userM.id = res.data._id;
+				userM._id = res.data._id;
 				return userM;
 			}
 		}catch(error){
