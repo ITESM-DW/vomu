@@ -1,16 +1,16 @@
 import { CourseModel } from './modules/professor/models/CourseModel';
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import { UserService } from './user.service';
 import { SubjectModel } from './modules/professor/models/SubjectModel';
 import { Subject } from 'rxjs';
 import { StudentModel } from './modules/student/models/StudentModel';
 import { ProfessorModel } from './modules/professor/models/ProfessorModel';
 import { AuthService } from './auth.service';
-import { HttpClient, HttpHeaders, HttpResponse, HttpErrorResponse} from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { baseUrl } from "./../environments/environment";
-import  axios from 'axios';
+import axios from 'axios';
 
-@Injectable ({
+@Injectable({
 	providedIn: 'root'
 })
 
@@ -18,26 +18,26 @@ export class CourseService {
 	courseChanged = new Subject<CourseModel[]>(); // TODO One for update/delete, another for adding
 	courses: CourseModel[];
 
-	constructor(private userService: UserService, private authService: AuthService) {}
+	constructor(private userService: UserService, private authService: AuthService) { }
 
-	async addCourse(course: CourseModel) {
+	async addCourse(course: Record<string, unknown>) {
 		try {
 			const config = {
-				headers: { Authorization: `Bearer ${localStorage.getItem("token")}`}
+				headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
 			};
 			await axios.post(`${baseUrl}courses/`, course, config);
 			this.courseChanged.next(this.courses);
 		} catch (error) {
 			console.error(error);
 		}
-		
+
 	}
 
 	async getCourse(id: string): Promise<CourseModel> {
-		try{
-			const { data: course } = await axios.get(`${baseUrl}courses/${id}`)
+		try {
+			const { data: course } = await axios.get(`${baseUrl}courses/${id}`);
 			return course;
-		} catch(error){
+		} catch (error) {
 			console.error(error);
 		}
 		// const index = this.courses.findIndex(c => c.id === id);
@@ -46,8 +46,8 @@ export class CourseService {
 		// }
 	}
 
-	async getCoursesByUserId(id: string) : Promise<CourseModel []> {
-		try{
+	async getCoursesByUserId(id: string): Promise<CourseModel[]> {
+		try {
 			const { data: courses } = await axios.get(`${baseUrl}users/${id}/courses`);
 			return courses;
 		} catch (error) {
@@ -103,6 +103,6 @@ export class CourseService {
 	}
 
 	async getCourseStudents(id: string): Promise<StudentModel[]> {
-		return Promise.all((await this.getCourse(id)).students.map( id => this.userService.getUser(id) as Promise<StudentModel> ));
+		return Promise.all((await this.getCourse(id)).students.map(id => this.userService.getUser(id) as Promise<StudentModel>));
 	}
 }

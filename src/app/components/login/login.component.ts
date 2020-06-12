@@ -93,9 +93,9 @@ export class LoginComponent implements OnInit {
 			} else {
 				console.error('1')
 				const user = await this.authService.getCurrentUserModel();
-				if (user instanceof StudentModel) {
+				if (user.type === 'student') {
 					this.router.navigateByUrl(`/student/profile`);
-				} else if (user instanceof ProfessorModel) {
+				} else if (user.type === 'professor') {
 					this.router.navigateByUrl(`/professor/profile`);
 				} else {
 					alert('Error: Intenta de nuevo.');

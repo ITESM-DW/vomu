@@ -121,4 +121,13 @@ export class AuthService {
 			return false;
 		}
 	}
+
+	async getGraphs(): Promise<any>{
+		try {
+			const { data: graphs } = await axios.get(`${baseUrl}graphs`);
+			return graphs;
+		} catch (error) {
+			console.log(error);
+		}
+	}
 }

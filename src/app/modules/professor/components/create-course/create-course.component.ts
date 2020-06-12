@@ -5,6 +5,7 @@ import { AuthService } from 'src/app/auth.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, FormArray } from '@angular/forms';
 import { SubjectModel } from '../../models/SubjectModel';
+import { StudentModel } from 'src/app/modules/student/models/StudentModel';
 
 interface Video {
 	id: String;
@@ -61,19 +62,17 @@ export class CreateCourseComponent implements OnInit {
 		const subjectModels = [];
 		this.courseForm.value.subjects.forEach((s, i) => {
 			console.log(s.f);
-			subjectModels.push(new SubjectModel(i, s.title, s.description, this.selectedOption[i]));
+			subjectModels.push({ title: s.title, description: s.description, videoURL: this.selectedOption[i] } );
 			console.log("Selected video for " + i + " is " + this.selectedOption[i]);
 		});
 		const values = this.courseForm.value;
 		console.error('3');
-		const course = new CourseModel(
-			values.title,
-			values.description,
-			values.imgURL,
-			subjectModels,
-			[],
-			(await this.authService.getCurrentUserModel() as StudentModel)._id,
-		);
+		const course = {
+			title: values.title,
+			description: values.description,
+			imgURL: values.imgURL,
+			subjects:	subjectModels
+		};
 		this.courseService.addCourse(course);
 	}
 
@@ -101,7 +100,7 @@ export class CreateCourseComponent implements OnInit {
 	authenticate() {
 		try {
 			gapi.load("client:auth2", function () {
-				gapi.auth2.init({ client_id: "CLIENT-ID" }).
+				gapi.auth2.init({ client_id: "314802327156-c33unne1i0d51r6n6fppmtf8l5qqao9h.apps.googleusercontent.com" }).
 					then(function (authInstance) {
 						console.log("Sign-in successful");
 						return gapi.auth2.getAuthInstance()
