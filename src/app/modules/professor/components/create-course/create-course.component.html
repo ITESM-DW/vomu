@@ -78,7 +78,7 @@
 							aria-label="With textarea"></textarea>
 						</div>
 						<!-- Video URL -->
-						<button (click)="authenticate().then(loadClient.bind(this))" class="button button-primary">Load a Video from your YouTube profile</button>
+						<button (click)="authenticate()" class="button button-primary">Load a Video from your YouTube profile</button>
 						<div *ngIf="showYTSearch === true" >
 							<div class="course-creation--group">
 								<div class="course-creation--prepend">
@@ -91,18 +91,21 @@
 								formControlName="keywordVideo" />
 								<button [id]="'button' + i" (click)="execute(this.i)" class="button button-primary">Search</button>
 							</div>
-							<div *ngIf="videos[i]" >
-								<div>
-									<!--{{i}}-->
-									<input (click) = "selectVideo(this.i,0)" id="0" type="radio" value="none" name="'video_'+{{i}}">
-									<label for="male">Don't load video</label>
-								</div>
-								<div *ngFor="let video of videos[i]">
-									<!--{{ video | json }} {{i}}-->
+							<div *ngIf="videos[i].length>0;else noVideos" >
+								<div *ngFor="let video of videos[i] | paginate: { itemsPerPage: 3, currentPage:p}">
 									<input (click) = "selectVideo(this.i,this.video.id)" id={{video.id}} type="radio" value={{video.id}} name="'video_'+{{i}}">
 									<label for={{video.id}}>{{video.name}}</label>
 								</div>
+								<div class="pagination-navigation" *ngIf="videos[i].length > 3">
+									<pagination-controls  (pageChange)="p =  $event"></pagination-controls>
+								</div>
 							</div>
+							<ng-template #noVideos>
+								<div>
+									<input (click) = "selectVideo(this.i,0)" id="0" type="radio" value="none" name="'video_'+{{i}}">
+									<label for="male">Search without results, don't load video</label>
+								</div>
+							</ng-template>
 						</div>
 					</div>
 				</div>

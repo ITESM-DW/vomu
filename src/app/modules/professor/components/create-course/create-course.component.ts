@@ -27,6 +27,7 @@ export class CreateCourseComponent implements OnInit {
 	keyword: string;
 	loadingVideo: Promise<Object>;
 	selectedOption: string[];
+	p: number = 1;
 
 	init() {
 		var tag = document.createElement('script');
@@ -50,7 +51,6 @@ export class CreateCourseComponent implements OnInit {
 				imgURL: new FormControl(null),
 				subjects: new FormArray([])
 			});
-
 			this.subjects = this.courseForm.get('subjects') as FormArray;
 		} else {
 			this.router.navigateByUrl('/');
@@ -98,41 +98,38 @@ export class CreateCourseComponent implements OnInit {
 	}
 
 
-	async authenticate() {
+	authenticate() {
 		try {
 			gapi.load("client:auth2", function() {
-				gapi.auth2.init({client_id: "314802327156-u3a9dtapvsdjo5vjpv7nfqf56vo75jg1.apps.googleusercontent.com"});
-			});
-			var res = await gapi.auth2.getAuthInstance()
-			.signIn({scope: "https://www.googleapis.com/auth/youtube.force-ssl"});
-			console.log("Sign-in successful");
-			return res;
+				gapi.auth2.init({client_id: "CLIENT-ID"}).
+				then(function (authInstance) {
+					console.log("Sign-in successful");
+					return gapi.auth2.getAuthInstance()
+					.signIn({scope: "https://www.googleapis.com/auth/youtube.force-ssl"})
+					.then(
+						this.loadClient.bind(this)
+					)
+				}.bind(this));
+			}.bind(this));
 		} catch (error) {
 			console.error("Error signing in", error);
 		}
-		/*gapi.load("client:auth2", function() {
-			gapi.auth2.init({client_id: "314802327156-u3a9dtapvsdjo5vjpv7nfqf56vo75jg1.apps.googleusercontent.com"});
-		});
-		return gapi.auth2.getAuthInstance()
-			.signIn({scope: "https://www.googleapis.com/auth/youtube.force-ssl"})
-			.then(function() { console.log("Sign-in successful"); },
-				  function(err) { console.error("Error signing in", err); });*/
 	}
 	
-	async loadClient() {
+	loadClient() {
 		try {
-			const res = await gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest", 'V3');
-			console.log("this.GAPI client loaded for API");
-			this.showYTSearch = true;
-			return res;
+			gapi.load("client:auth2", function() {
+				return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest", 'V3')
+				.then(function (){
+					console.log("this.GAPI client loaded for API");
+					alert("Please wait a minute while YouTube loads");
+					this.showYTSearch = true;
+				}.bind(this));
+			}.bind(this));
 		}
 		catch (error) {
 			console.error("Error loading this.GAPI client for API", error);
 		}
-		/*gapi.client.setApiKey(GOOGLE_API_KEY);
-		return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest", 'V3')
-			.then(function() { console.log("this.GAPI client loaded for API"); },
-				function(err) { console.error("Error loading this.GAPI client for API", err); });*/
 	}
 
 	async execute(subjectIdx: number) {
@@ -152,6 +149,7 @@ export class CreateCourseComponent implements OnInit {
 			});
 			console.log(this.courseForm);
 			console.log("Searched for "+ this.courseForm.value.subjects[subjectIdx].keywordVideo);
+			if (videosOrig.result.items.length>0) this.videos[subjectIdx].push({id: "", name: "Don't upload a video", image: ""});
 			for(var counter:number = 0; counter<videosOrig.result.items.length; counter++){
 				this.videos[subjectIdx].push({
 					"id" : videosOrig.result.items[counter].id.videoId,
