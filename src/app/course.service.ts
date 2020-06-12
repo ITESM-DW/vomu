@@ -1,12 +1,9 @@
 import { CourseModel } from './modules/professor/models/CourseModel';
 import { Injectable } from '@angular/core';
 import { UserService } from './user.service';
-import { SubjectModel } from './modules/professor/models/SubjectModel';
 import { Subject } from 'rxjs';
 import { StudentModel } from './modules/student/models/StudentModel';
-import { ProfessorModel } from './modules/professor/models/ProfessorModel';
 import { AuthService } from './auth.service';
-import { HttpClient, HttpHeaders, HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { baseUrl } from './../environments/environment';
 import axios from 'axios';
 

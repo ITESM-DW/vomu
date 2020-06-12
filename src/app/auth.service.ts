@@ -3,7 +3,6 @@ import { Subject, Observable, throwError, TimeoutError } from 'rxjs';
 import { UserService } from './user.service';
 import { StudentModel } from './modules/student/models/StudentModel';
 import { ProfessorModel } from './modules/professor/models/ProfessorModel';
-import { HttpClient, HttpHeaders, HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { baseUrl } from './../environments/environment';
 import axios from 'axios';
 
@@ -17,25 +16,7 @@ export class AuthService {
 	authChanged = new Subject<boolean>();
 	loggedIn = true;
 
-	// Error handler for angular console
-	handleError(error: HttpErrorResponse) {
-		let errorMessage = 'Unkown error!';
-		if (error.error instanceof ErrorEvent) {
-			errorMessage = `Error: ${error.error.message}`;
-		} else {
-			errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-		}
-		window.alert(errorMessage);
-		return throwError(errorMessage);
-	}
-
-	// Data for using in json response
-	private extractData(res: Response) {
-		const body = res;
-		return body || {};
-	}
-
-	constructor(private userService: UserService, private http: HttpClient) { }
+	constructor(private userService: UserService) { }
 
 	async isAuth() {
 		const token = localStorage.getItem('token');
