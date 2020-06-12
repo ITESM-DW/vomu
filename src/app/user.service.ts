@@ -64,7 +64,7 @@ export class UserService {
 				return userM;
 			}
 		} catch(error){
-			console.log('fuck me sideways');
+			console.log(error);
 		}
 	}
 
