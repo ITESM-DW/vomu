@@ -1,11 +1,12 @@
 <div class="course-view">
 	<div class="course-view__container">
 		<div class="course-view__video__container">
-			<iframe
-				class="course-view__video"
-				[src]="videoResource"
-				allowfullscreen
-			></iframe>
+			<youtube-player
+				[videoId]="id"
+				(ready)="savePlayer($event)"
+				(change)="onStateChange($event)"
+			></youtube-player>
 		</div>
 	</div>
 </div>
+
