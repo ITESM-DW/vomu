@@ -12,7 +12,6 @@ import axios from 'axios';
 
 
 export class AuthService {
-	user: StudentModel | ProfessorModel;
 	authChanged = new Subject<boolean>();
 	loggedIn = true;
 
@@ -34,13 +33,8 @@ export class AuthService {
 	}
 
 	async getCurrentUserModel(): Promise<StudentModel | ProfessorModel> {
-		if (this.user) {
-			return this.user;
-		} else {
 			const user = await this.userService.getCurrentUser();
-			this.user = user;
-			return this.user;
-		}
+			return user;
 	}
 
 	async login(email: string, password: string): Promise<boolean> {
@@ -54,7 +48,6 @@ export class AuthService {
 
 	logout() {
 		this.loggedIn = false;
-		this.user = null;
 		this.authChanged.next(this.loggedIn);
 		localStorage.removeItem('token');
 
