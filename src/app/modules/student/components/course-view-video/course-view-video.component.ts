@@ -9,10 +9,9 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 	styleUrls: ['./course-view-video.component.scss'],
 })
 export class CourseViewVideoComponent implements OnInit {
-	@Input() videoLink = 'https://www.youtube.com/embed/zpOULjyy-n8?rel=0';
+	@Input() id: string;
 
 	player: YT.Player;
-	id = 'Sv6dMFF_yts';
 
 	constructor(private sanitizer: DomSanitizer) { }
 
@@ -22,9 +21,7 @@ export class CourseViewVideoComponent implements OnInit {
 
 	savePlayer(player) {
 		this.player = player;
-		console.log('player instance', player);
 	}
 	onStateChange(event) {
-		console.log('player state', event.data);
 	}
 }
