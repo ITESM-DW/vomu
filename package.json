@@ -27,7 +27,7 @@
 		"ansi-colors": "^4.1.1",
 		"axios": "^0.19.2",
 		"bootstrap": "4",
-		"chart.js": "^2.9.3",
+		"chart.js": "^2.9.4",
 		"jquery": "~3.4.1",
 		"moment": "^2.25.1",
 		"ng2-charts": "^2.3.0",
